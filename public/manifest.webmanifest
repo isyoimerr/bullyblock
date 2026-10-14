@@ -1,0 +1,11 @@
+{
+  "name": "BullyBlock",
+  "short_name": "BullyBlock",
+  "description": "Detenemos el bullying. Juntos.",
+  "lang": "es-CO",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F6F9FC",
+  "theme_color": "#1B4F9C",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}
