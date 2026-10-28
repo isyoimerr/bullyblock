@@ -41,7 +41,7 @@ export default function Ingresar() {
       const demo = iniciarDemoSesion(email.trim(), clave)
       if (demo) {
         setEnviando(false)
-        nav(rutaPorRol(demo.perfil.rol), { replace: true })
+        window.location.assign(rutaPorRol(demo.perfil.rol))
         return
       }
     }
@@ -129,7 +129,7 @@ export default function Ingresar() {
         {error && <p className="aviso-error" role="alert">{error}</p>}
         {info && <p className="aviso-ok" role="status">{info}</p>}
 
-        <button className="btn btn-azul" disabled={enviando || !email || !clave}>
+        <button type="submit" className="btn btn-azul" disabled={enviando || !email || !clave}>
           {enviando ? 'Ingresando…' : 'Ingresar'}
         </button>
 

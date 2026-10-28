@@ -56,13 +56,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [perfil, setPerfil] = useState<Perfil | null | undefined>(undefined)
 
   useEffect(() => {
-    const demo = DEMO_MODE ? leerDemoSesion() : null
-    if (demo) {
-      setSession(demo.session as Session)
-      setPerfil(demo.perfil)
-      setSesionLista(true)
-      return
+    const syncDemo = () => {
+      const demo = DEMO_MODE ? leerDemoSesion() : null
+      if (demo) {
+        setSession(demo.session as Session)
+        setPerfil(demo.perfil)
+        setSesionLista(true)
+        return true
+      }
+      return false
     }
+
+    if (syncDemo()) return
 
     if (!supabaseConfigurada) {
       setSesionLista(true)
@@ -82,13 +87,35 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       })
 
     const { data } = supabase.auth.onAuthStateChange((_evento, s) => setSession(s))
-    return () => data.subscription.unsubscribe()
+    const onDemoSessionChanged = () => {
+      const demo = DEMO_MODE ? leerDemoSesion() : null
+      if (demo) {
+        setSession(demo.session as Session)
+        setPerfil(demo.perfil)
+        setSesionLista(true)
+      } else {
+        setSession(null)
+        setPerfil(null)
+        setSesionLista(true)
+      }
+    }
+    window.addEventListener('bullyblock-demo-session:changed', onDemoSessionChanged)
+    return () => {
+      data.subscription.unsubscribe()
+      window.removeEventListener('bullyblock-demo-session:changed', onDemoSessionChanged)
+    }
   }, [])
 
   const uid = session?.user.id
 
   const cargarPerfil = useCallback(async () => {
     if (!uid) return setPerfil(null)
+
+    if (DEMO_MODE && uid.startsWith('demo-')) {
+      const demo = leerDemoSesion()
+      setPerfil(demo?.perfil ?? null)
+      return
+    }
 
     try {
       const { data } = await supabase.from('perfiles').select('*').eq('id', uid).maybeSingle()
@@ -112,6 +139,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const salir = useCallback(async () => {
     if (DEMO_MODE) {
       localStorage.removeItem('bullyblock-demo-session')
+      window.dispatchEvent(new CustomEvent('bullyblock-demo-session:changed'))
       setSession(null)
       setPerfil(null)
       return
@@ -133,6 +161,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       salir: async () => {
         if (DEMO_MODE) {
           localStorage.removeItem('bullyblock-demo-session')
+          window.dispatchEvent(new CustomEvent('bullyblock-demo-session:changed'))
           setSession(null)
           setPerfil(null)
           return

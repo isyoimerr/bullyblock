@@ -45,6 +45,7 @@ export function iniciarDemoSesion(email: string, password: string) {
 
   const payload = { session: { user: { id: perfil.id, email: email.trim().toLowerCase() } }, perfil }
   localStorage.setItem('bullyblock-demo-session', JSON.stringify(payload))
+  window.dispatchEvent(new CustomEvent('bullyblock-demo-session:changed', { detail: payload }))
   return payload
 }
 
@@ -56,6 +57,11 @@ export function leerDemoSesion() {
   } catch {
     return null
   }
+}
+
+export function limpiarDemoSesion() {
+  localStorage.removeItem('bullyblock-demo-session')
+  window.dispatchEvent(new CustomEvent('bullyblock-demo-session:changed'))
 }
 
 export const supabase = createClient(
