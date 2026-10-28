@@ -4,7 +4,7 @@ import { Cargando, VolverA } from '../../components/ui'
 import { useAuth } from '../../lib/auth'
 import { mensajeError, supabase } from '../../lib/supabase'
 import { ESTADOS, ESTADO_PERSONAL, fmtDia, fmtFecha, lugarLabel, tipoLabel } from '../../lib/catalogo'
-import type { Estado, Mensaje, Nota, Perfil, Prioridad, Reporte } from '../../lib/types'
+import { formatoCurso, type Estado, type Mensaje, type Nota, type Perfil, type Prioridad, type Reporte } from '../../lib/types'
 import { Plazo } from './Casos'
 
 export default function CasoDetalle() {
@@ -69,7 +69,7 @@ export default function CasoDetalle() {
   if (r === undefined) return <Cargando />
   if (r === null) return <div className="card">No encontramos ese caso.</div>
 
-  const grupo = r.reportante?.grado ? `${r.reportante.grado}° ${r.reportante.grupo ?? ''}` : 'Docente'
+  const grupo = r.reportante?.grado ? formatoCurso(r.reportante.grado, r.reportante.grupo) : 'Docente'
 
   return (
     <div className="mx-auto max-w-5xl">

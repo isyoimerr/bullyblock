@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Cargando } from '../../components/ui'
 import { useAuth } from '../../lib/auth'
 import { mensajeError, supabase } from '../../lib/supabase'
-import type { Perfil, Rol } from '../../lib/types'
+import { formatoCurso, type Perfil, type Rol } from '../../lib/types'
 
 const ROLES: Rol[] = ['estudiante', 'docente', 'psicoorientador', 'admin']
 
@@ -49,7 +49,7 @@ export default function Usuarios() {
             {lista.map((p) => (
               <tr key={p.id} className="border-t border-borde">
                 <td className="p-3"><strong>{p.nombre}</strong><br /><span className="text-sm text-suave">{p.documento}</span></td>
-                <td className="p-3">{p.grado ? `${p.grado}° ${p.grupo ?? ''}` : '—'}</td>
+                <td className="p-3">{p.grado ? formatoCurso(p.grado, p.grupo) : '—'}</td>
                 <td className="p-3">
                   <label className="sr-only" htmlFor={`rol-${p.id}`}>Rol de {p.nombre}</label>
                   <select id={`rol-${p.id}`} className="input !min-h-[44px] capitalize" value={p.rol} disabled={p.id === yo?.id}

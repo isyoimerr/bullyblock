@@ -64,6 +64,14 @@ export const rutaPorRol = (rol?: Rol | null): string => {
   return '/app'
 }
 
+export const formatoCurso = (grado?: number | null, grupo?: string | null): string => {
+  if (grado == null) return 'Docente'
+  const rawGrupo = String(grupo ?? '').trim()
+  if (!rawGrupo) return `${grado}`
+  const grupoNormalizado = rawGrupo.toUpperCase().replace(/[^A-Z0-9-]/g, '')
+  return `${grado}-${grupoNormalizado}`
+}
+
 export const rolPorCorreo = (email: string): Rol => {
   const correo = email.toLowerCase()
   if (correo.includes('admin')) return 'admin'

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { BellRing, CalendarClock, DoorOpen, Eye, EyeOff, LifeBuoy, MapPin, PhoneCall, ShieldCheck, Users } from 'lucide-react'
 import { useAuth } from '../lib/auth'
 import { AYUDA_LABELS, guardarAyudaEnviada, leerAyudasEnviadas, obtenerContextoAula, type OpcionAyuda } from '../lib/ayuda'
+import { formatoCurso } from '../lib/types'
 
 const ICONS = {
   sacarme_de_clase: DoorOpen,
@@ -67,7 +68,7 @@ export default function AyudaAhora() {
         </div>
 
         <div className="card space-y-2 text-[15px]">
-          <p><strong>Curso:</strong> {contexto.grado}°{contexto.grupo}</p>
+          <p><strong>Curso:</strong> {formatoCurso(contexto.grado, contexto.grupo)}</p>
           <p><strong>Materia:</strong> {contexto.materia ?? 'Sin materia'}</p>
           <p><strong>Salón:</strong> {contexto.salon ?? 'Sin salón'}</p>
           <p><strong>Docente:</strong> {contexto.docente ?? 'Sin docente asignado'}</p>
@@ -86,7 +87,7 @@ export default function AyudaAhora() {
     <div className="mx-auto max-w-lg space-y-5">
       <div className="rounded-3xl border border-sky-200 bg-white p-4 shadow-sm">
         <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">Ahora estás en</p>
-        <h1 className="mt-2 text-2xl font-bold text-slate-900">{contexto.grado}°{contexto.grupo} · {contexto.materia ?? 'Clase'}</h1>
+        <h1 className="mt-2 text-2xl font-bold text-slate-900">{formatoCurso(contexto.grado, contexto.grupo)} · {contexto.materia ?? 'Clase'}</h1>
         <p className="mt-1 text-[15px] text-slate-700">{contexto.salon ? `Salón ${contexto.salon}` : 'Sin salón asignado'} · {contexto.docente ?? 'Docente por confirmar'}</p>
         <div className="mt-3 flex flex-wrap gap-2">
           <button type="button" className="btn btn-verde">Sí, es correcto</button>

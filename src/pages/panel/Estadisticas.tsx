@@ -50,7 +50,7 @@ export default function Estadisticas() {
         <Barras titulo="Por estado" datos={ESTADOS.map((e) => [ESTADO_PERSONAL[e], items.filter((r) => r.estado === e).length])} />
         <Barras titulo="Por tipo" datos={contar(items, (r) => tipoLabel(r.tipo))} />
         <Barras titulo="Por lugar" datos={contar(items, (r) => lugarLabel(r.lugar))} />
-        <Barras titulo="Por grado" datos={contar(items, (r) => (r.reportante?.grado ? `${r.reportante.grado}°` : 'Docentes'))} />
+        <Barras titulo="Por grado" datos={contar(items, (r) => (r.reportante?.grado ? `${r.reportante.grado}` : 'Docentes'))} />
         <Barras titulo="Por mes" datos={porMes} />
         <Barras titulo="Urgencia" datos={[['Urgentes', items.filter((r) => r.urgente).length], ['Normales', items.filter((r) => !r.urgente).length]]} />
       </div>

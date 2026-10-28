@@ -77,14 +77,14 @@ export default function Registro() {
             <label className="label" htmlFor="grado">Grado</label>
             <select id="grado" className="input" value={f.grado} onChange={(e) => set('grado', e.target.value)}>
               <option value="">Elige</option>
-              {GRADOS.map((g) => <option key={g} value={g}>{g}°</option>)}
+              {GRADOS.map((g) => <option key={g} value={g}>{g}</option>)}
             </select>
           </div>
 
           <div className="registro-field">
             <label className="label" htmlFor="grupo">Grupo</label>
-            <input id="grupo" className="input" maxLength={3} value={f.grupo}
-              onChange={(e) => set('grupo', e.target.value)} placeholder="A" />
+            <input id="grupo" className="input" maxLength={2} value={f.grupo}
+              onChange={(e) => set('grupo', e.target.value.replace(/[^0-9A-Z-]/gi, '').slice(0, 2).toUpperCase())} placeholder="01" />
           </div>
         </div>
 

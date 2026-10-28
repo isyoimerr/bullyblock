@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import PasswordField from '../components/PasswordField'
 import { useAuth } from '../lib/auth'
 import { mensajeError, supabase } from '../lib/supabase'
+import { formatoCurso } from '../lib/types'
 
 export default function Perfil() {
   const { perfil, session, salir } = useAuth()
@@ -25,7 +26,7 @@ export default function Perfil() {
       <div className="card">
         <h2 className="text-xl">{perfil?.nombre}</h2>
         <p className="text-suave">
-          {perfil?.grado ? `Grado ${perfil.grado}° · Grupo ${perfil.grupo ?? ''}` : 'Docente'}
+          {formatoCurso(perfil?.grado ?? null, perfil?.grupo ?? null)}
           <br />
           {session?.user.email}
         </p>

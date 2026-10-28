@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Cargando, EstadoBadge } from '../../components/ui'
 import { supabase } from '../../lib/supabase'
 import { ESTADOS, ESTADO_PERSONAL, TIPOS, fmtFecha, horasDesde, tipoLabel } from '../../lib/catalogo'
-import type { Estado, Reporte } from '../../lib/types'
+import { formatoCurso, type Estado, type Reporte } from '../../lib/types'
 
 const COL_CLASE: Record<Estado, string> = {
   nuevo: 'bg-azul-100/60',
@@ -67,7 +67,7 @@ export default function Casos() {
 
   const abiertos = items.filter((r) => r.estado !== 'cerrado')
   const urgentes = abiertos.filter((r) => r.urgente)
-  const grupo = (r: Reporte) => (r.reportante?.grado ? `${r.reportante.grado}°${r.reportante.grupo ?? ''}` : 'Docente')
+  const grupo = (r: Reporte) => (r.reportante?.grado ? formatoCurso(r.reportante.grado, r.reportante.grupo) : 'Docente')
 
   const Tarjeta = ({ r }: { r: Reporte }) => (
     <Link

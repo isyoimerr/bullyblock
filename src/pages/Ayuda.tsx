@@ -2,6 +2,7 @@ import { ArrowRight, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { obtenerContextoAula } from '../lib/ayuda'
 import { useAuth } from '../lib/auth'
+import { formatoCurso } from '../lib/types'
 
 const BLOQUES = [
   { t: 'Si te está pasando a ti', p: 'No es tu culpa. Cuéntale a una persona de confianza: un familiar, tu director de grupo u orientación. Cuando estés listo, haz tu reporte aquí. No tienes que enfrentar esto solo.' },
@@ -19,7 +20,7 @@ export default function Ayuda() {
     <div className="mx-auto max-w-2xl space-y-5">
       <div className="rounded-3xl border border-sky-200 bg-white p-4 shadow-sm">
         <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">Ahora estás en</p>
-        <h1 className="mt-2 text-2xl font-bold text-slate-900">{contexto.grado}°{contexto.grupo} · {contexto.materia ?? 'Clase'}</h1>
+        <h1 className="mt-2 text-2xl font-bold text-slate-900">{formatoCurso(contexto.grado, contexto.grupo)} · {contexto.materia ?? 'Clase'}</h1>
         <p className="mt-1 text-[15px] text-slate-700">{contexto.salon ? `Salón ${contexto.salon}` : 'Sin salón asignado'} · {contexto.docente ?? 'Docente por confirmar'}</p>
       </div>
 

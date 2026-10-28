@@ -37,22 +37,22 @@ const beneficios = [
 
 const creadores = [
   {
-    nombre: 'Estudiante Creador 1',
+    nombre: 'Andrés Felipe Castro Vergara',
     rol: 'Desarrollador',
     universidad: 'Institución Educativa Técnica José Agustín Blanco Barros',
-    iniciales: 'EC1',
+    iniciales: 'AC',
   },
   {
-    nombre: 'Estudiante Creador 2',
+    nombre: 'Alberto Mario Cuentas López',
     rol: 'Diseñador',
     universidad: 'Institución Educativa Técnica José Agustín Blanco Barros',
-    iniciales: 'EC2',
+    iniciales: 'AL',
   },
   {
-    nombre: 'Estudiante Creador 3',
-    rol: 'Investigador',
+    nombre: 'Equipo de innovación',
+    rol: 'Investigación',
     universidad: 'Institución Educativa Técnica José Agustín Blanco Barros',
-    iniciales: 'EC3',
+    iniciales: 'EQ',
   },
 ]
 

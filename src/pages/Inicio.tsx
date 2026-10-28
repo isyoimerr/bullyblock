@@ -7,7 +7,7 @@ import { useAuth } from '../lib/auth'
 import { obtenerContextoAula, leerAyudasEnviadas, type AyudaEnviada } from '../lib/ayuda'
 import { supabase } from '../lib/supabase'
 import { tipoLabel } from '../lib/catalogo'
-import type { Reporte } from '../lib/types'
+import { formatoCurso, type Reporte } from '../lib/types'
 
 export default function Inicio() {
   const { perfil } = useAuth()
@@ -34,7 +34,7 @@ export default function Inicio() {
 
       <div className="mb-4 rounded-3xl border border-sky-200 bg-white p-4 shadow-sm">
         <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">Ahora estás en</p>
-        <p className="mt-2 text-xl font-bold text-slate-900">{contexto.grado}°{contexto.grupo} · {contexto.materia ?? 'Clase'}</p>
+        <p className="mt-2 text-xl font-bold text-slate-900">{formatoCurso(contexto.grado, contexto.grupo)} · {contexto.materia ?? 'Clase'}</p>
         <p className="text-[15px] text-slate-700">{contexto.salon ? `Salón ${contexto.salon}` : 'Sin salón asignado'} · {contexto.docente ?? 'Docente por confirmar'}</p>
       </div>
 
