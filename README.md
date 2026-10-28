@@ -4,84 +4,35 @@
   <img src="./docs/github-banner.svg" alt="Banner BullyBlock" width="100%" />
 </p>
 
-BullyBlock es una plataforma web mobile-first para apoyar a estudiantes, docentes, orientación y administración en la gestión de situaciones de acoso escolar, riesgo y acompañamiento institucional.
+BullyBlock es una plataforma web mobile-first para apoyar a estudiantes, docentes, psicorientación y administración en la gestión de situaciones de acoso escolar, riesgo y acompañamiento institucional.
 
-La intención del proyecto es clara: que una persona pueda reportar lo que vive sin miedo, y que el colegio pueda responder con empatía, orden y claridad.
+La idea principal es clara: que una persona pueda reportar lo que vive sin miedo, y que el colegio pueda responder con empatía, orden y claridad.
 
 ## ¿Qué hace BullyBlock?
 
-BullyBlock ayuda a que la comunidad educativa pueda:
+BullyBlock ayuda a la comunidad escolar a:
 
-- reportar situaciones de acoso, exclusión o intimidación,
-- describir el caso con contexto y detalles,
-- recibir ayuda o apoyo cuando lo necesitan,
-- dar seguimiento a cada caso según el rol correspondiente,
-- organizar la atención del personal escolar,
+- reportar casos de acoso, exclusión o intimidación,
+- describir lo sucedido con contexto y detalle,
+- pedir ayuda sin sentirse perdida ni confundida,
+- dar seguimiento a cada caso según el rol responsable,
+- organizar la atención del personal académico y de apoyo,
 - y mejorar la respuesta institucional con una experiencia accesible.
 
-No es solo una app para “mandar un reporte”. Es una herramienta para dar apoyo real, acompañar a la persona afectada y dejar el proceso de atención más ordenado para toda la comunidad escolar.
+No es solo una app para “mandar un reporte”. Es una herramienta para apoyar real y humanamente a la comunidad educativa.
 
-## ¿Cómo impacta al colegio?
+## ¿Por qué importa?
 
-Este proyecto puede aportar mucho a una institución educativa porque:
+Muchas situaciones delicadas no se reportan por miedo, falta de claridad o porque el proceso parece complicado. BullyBlock busca reducir ese problema con una experiencia amigable, clara y segura.
+
+Esto impacta directamente en la institución porque:
 
 - reduce la confusión en la gestión de casos,
-- ayuda a detectar situaciones con mayor rapidez,
-- da una ruta clara para atención y seguimiento,
-- centraliza la información en un sistema ordenado,
-- mejora la comunicación entre estudiante y personal de apoyo,
-- y fortalece una respuesta más responsable, segura y humana.
-
-En otras palabras: BullyBlock busca convertir un problema difícil en un proceso claro, respetuoso y útil para todos.
-
-## Flujos principales del producto
-
-### 1) Estudiante
-
-El estudiante entra a la app y puede:
-
-- iniciar sesión,
-- acceder a su zona personal,
-- reportar una situación,
-- describir qué ocurrió,
-- indicar el tipo de caso,
-- y ver el estado de su atención.
-
-El flujo está pensado para que sea sencillo, directo y no abrumador, especialmente en móvil. Una persona que está pasando por una situación sensible necesita una experiencia clara y tranquila.
-
-### 2) Psicorientación y apoyo
-
-La parte de orientación tiene un rol muy importante:
-
-- revisa los casos,
-- prioriza la atención,
-- responde al estudiante,
-- puede pedir más información si hace falta,
-- y organiza un acompañamiento más cercano y humanizado.
-
-La app da opciones para que orientación pueda actuar con empatía, pero también con estructura y criterio.
-
-### 3) Docente
-
-El docente puede:
-
-- revisar casos asignados,
-- dar seguimiento,
-- detectar patrones y alertas,
-- y colaborar con la respuesta institucional.
-
-No se trata de cargar al docente con tareas complejas; la idea es que tenga una vista útil y organizada para apoyar a la comunidad escolar.
-
-### 4) Administración
-
-El admin tiene un rol de supervisión y control del sistema:
-
-- revisa la operación general,
-- verifica que el flujo funcione,
-- mantiene la estructura del proyecto,
-- y evita que el sistema se desorganice.
-
-El rol de admin no reemplaza la atención real; está pensado para apoyar la administración del entorno, no para sustituir la labor de orientación o docentes.
+- ayuda a detectar alertas con mayor rapidez,
+- da una vía ordenada para la atención del problema,
+- centraliza información importante en un mismo lugar,
+- mejora la comunicación entre estudiante y personal escolar,
+- y fortalece una respuesta más responsable, humana y estructurada.
 
 ## Roles del sistema
 
@@ -90,176 +41,153 @@ El proyecto está pensado con cuatro roles principales:
 | Rol | Función principal |
 | --- | --- |
 | Estudiante | Reporta situaciones y recibe apoyo o seguimiento. |
-| Docente | Acompaña y da seguimiento a casos dentro del proceso escolar. |
+| Docente | Acompaña y da seguimiento a casos del entorno escolar. |
 | Psicorientador | Revisa, prioriza y acompaña casos sensibles o de bienestar. |
 | Admin | Supervisa la operación general del sistema y la estructura institucional. |
 
-La lógica de roles se diseñó para mantener claridad en la organización y evitar que alguien tenga funciones sin sentido o sin responsabilidad real.
+La lógica de roles se diseña para evitar mezcla de funciones y asegurar que cada persona tenga un papel claro dentro del proceso.
 
-## ¿Cómo funciona la experiencia?
+## Cómo funciona la experiencia
 
-El flujo principal del producto se ve así:
+La app está pensada para recorrer el problema de forma guiada y segura:
 
-1. El estudiante accede y crea un reporte.
+1. El estudiante entra a la app.
 2. Selecciona el tipo de situación y la describe.
-3. El caso queda registrado en el sistema.
+3. El caso queda registrado con información útil.
 4. El equipo de apoyo revisa el caso.
-5. Se cambia el estado del caso y se responde oportunamente.
-6. El proceso queda documentado y ordenado.
+5. Se responde, se cambia de estado y se sigue la atención.
+6. La institución puede ver la evolución del caso de forma ordenada.
 
-Esto ayuda a que no se pierda información ni se vuelva confuso para quienes atienden.
+Esto hace que la gestión sea más clara y menos caótica para todos los actores.
 
-## Modo claro y oscuro
+## Modo claro, oscuro y accesibilidad
 
-La app incluye un sistema de modo claro y oscuro para mejorar la accesibilidad y la experiencia visual.
+BullyBlock incluye un sistema claro/oscuro para mejorar la experiencia visual y la accesibilidad.
 
 ### Modo claro
 
-- pensado para ambientes muy luminosos,
-- más cómodo para lectura en exteriores o contexto diario,
-- con tonos suaves y una estética limpia.
+- mejor para lectura en espacios luminosos,
+- más limpio y visualmente sobrio,
+- ideal para uso cotidiano en ambientes normales.
 
 ### Modo oscuro
 
-- reduce el brillo en pantallas largas,
-- es más cómodo para uso nocturno,
-- y mejora la experiencia visual en entornos con poca iluminación.
+- reduce la fatiga visual,
+- mejora el uso en ambientes con poca luz,
+- y ayuda a mantener una experiencia más cómoda en pantallas largas.
 
-Esto es importante porque el proyecto prioriza accesibilidad y cuidado visual, especialmente para personas con sensibilidad a la luz o dificultad de lectura.
+Además, la interfaz se diseña pensando en:
 
-## Accesibilidad y experiencia móvil
+- textos legibles,
+- botones grandes y sencillos,
+- navegación clara,
+- contraste adecuado,
+- y una experiencia pensada para móvil con urgencia y estrés.
 
-El proyecto está pensado para ser mobile-first y accesible.
+## Qué hace cada pantalla
 
-Incluye principios como:
-
-- interfaces compactas para móvil,
-- textos grandes y legibles,
-- espacios amplios para tocar con el dedo,
-- botones claros y de alto contraste,
-- navegación simple,
-- esquemas de color con buenos niveles de contraste,
-- y una experiencia que no obligue a pensar demasiado en medio de una situación difícil.
-
-La UI se diseñó para una persona que puede estar usando el celular con urgencia o estrés. Por eso la navegación busca ser fluida, clara y directa.
-
-## Capturas del flujo y explicación visual
-
-Estas pantallas muestran cómo se ve el producto en la práctica y cómo está pensado para cada tipo de usuario.
-
-### Landing y experiencia principal
+### 1) Landing y acceso
 
 <p align="center">
-  <img src="./docs/screenshots/home-claro.png" alt="Home claro de BullyBlock" width="100%" />
+  <img src="./docs/screenshots/home-claro.png" alt="Home de BullyBlock en modo claro" width="100%" />
 </p>
 
-La primera impresión se construye con un diseño limpio, serio y empático. La app presenta una promesa clara: hay un lugar para decir lo que pasó, sin miedo y con apoyo real.
+La primera vista presenta la intención del proyecto: dar un lugar seguro para pedir ayuda y organizar la respuesta institucional.
 
 <p align="center">
-  <img src="./docs/screenshots/home-oscuro.png" alt="Home oscuro de BullyBlock" width="100%" />
+  <img src="./docs/screenshots/home-oscuro.png" alt="Home de BullyBlock en modo oscuro" width="100%" />
 </p>
 
-El modo oscuro permite una experiencia más cómoda en ambientes con poca luz. Esto mejora la accesibilidad visual y hace que la app se sienta más pensada para uso real en diario escolar y nocturno.
+El modo oscuro muestra una versión más tenue y confortable para uso prolongado o en condiciones de baja luminosidad.
 
-### Estudiante: ayuda, flujo y reportes
+### 2) Estudiante y flujo de ayuda
 
 <p align="center">
-  <img src="./docs/screenshots/ayuda-estudiante.png" alt="Pantalla de ayuda para estudiante" width="32%" />
+  <img src="./docs/screenshots/ayuda-estudiante.png" alt="Ayuda para estudiante" width="32%" />
   <img src="./docs/screenshots/registro-situacion.png" alt="Registro de situación" width="32%" />
-  <img src="./docs/screenshots/reportes-estudiante.png" alt="Mis reportes del estudiante" width="32%" />
+  <img src="./docs/screenshots/reportes-estudiante.png" alt="Reportes del estudiante" width="32%" />
 </p>
 
-Desde el punto de vista del estudiante, la app busca ser clara y no abrumadora. Tiene un flujo de ayuda, un paso para describir el problema y una vista de reportes para que la persona vea qué pasó y en qué estado quedó su caso.
+Desde el punto de vista del estudiante, la app busca ser clara, amable y directa. El usuario puede pedir ayuda, explicar lo sucedido y ver el estado de su caso sin sentirse perdido.
 
-### Docente: seguimiento y estadísticas
+### 3) Docente y seguimiento
 
 <p align="center">
-  <img src="./docs/screenshots/panel-docente.png" alt="Panel docente" width="100%" />
+  <img src="./docs/screenshots/panel-docente.png" alt="Panel del docente" width="100%" />
 </p>
 
-El docente puede consultar casos, revisar el estado de los reportes y mirar tendencias o indicadores útiles para apoyar a la comunidad escolar. La idea es que no sea un tablero pesado, sino una vista funcional, ordenada y útil.
+El docente puede revisar casos, seguir su evolución y apoyar con criterio. La experiencia está pensada para no saturar ni confundir.
 
 <p align="center">
-  <img src="./docs/screenshots/estadisticas-docente.png" alt="Estadísticas para docente" width="100%" />
+  <img src="./docs/screenshots/estadisticas-docente.png" alt="Estadísticas del docente" width="100%" />
 </p>
 
-Las estadísticas ayudan a detectar patrones y momentos críticos sin saturar la pantalla. Son útiles para entrevistar, priorizar o responder con más criterio.
+Las estadísticas permiten detectar patrones y tener contexto visual para actuar mejor en cada caso.
 
-### Psicorientación: atención, respuesta y asignación
+### 4) Psicorientación
 
 <p align="center">
   <img src="./docs/screenshots/panel-psicorientador.png" alt="Panel de psicorientación" width="100%" />
 </p>
 
-Este flujo muestra la parte más sensible del sistema: orientación entra a responder, prioriza la atención, puede asignar al docente o al psicorientador correcto y da un acompañamiento más humano al caso.
+La parte de orientación es clave para acompañar de forma humana y estructurada. Aquí se responde, se prioriza la atención y se asigna el flujo correcto para cada caso.
 
-### Admin: supervisión y métricas institucionales
+### 5) Administración
 
 <p align="center">
   <img src="./docs/screenshots/panel-admin.png" alt="Panel administrativo" width="100%" />
 </p>
 
-La administración puede ver la operación general del sistema, revisar el estado de los reportes y tener una visión global. Esto ayuda a mantener todo más ordenado y a tomar decisiones con criterio.
+La administración tiene una vista general del sistema y puede supervisar que el flujo esté funcionando bien en la institución.
 
 <p align="center">
   <img src="./docs/screenshots/estadisticas-admin.png" alt="Estadísticas del administrador" width="100%" />
 </p>
 
-La parte administrativa ayuda a medir la carga de casos, los tipos más frecuentes y los eventos más complejos para que la institución responda mejor.
+Las métricas ayudan a medir la carga de casos y a entender la frecuencia de situaciones para responder mejor.
 
-### Alerta de riesgo y mensajes del estudiante
+### 6) Alerta y mensajes críticos
 
 <p align="center">
-  <img src="./docs/screenshots/peligro-mensaje-estudiante.png" alt="Pantalla de peligro o mensaje crítico del estudiante" width="100%" />
+  <img src="./docs/screenshots/peligro-mensaje-estudiante.png" alt="Pantalla de alerta o riesgo" width="100%" />
 </p>
 
-También hay una vista de emergencia o riesgo, donde se pone atención a mensajes que requieren prioridad, acompañamiento urgente o seguimiento más cercano.
-
-## Modo claro, oscuro y accesibilidad
-
-BullyBlock no solo cambia visualmente; también está pensado para apoyar a usuarios con distintas necesidades de lectura y uso diario.
-
-- Modo claro: más limpio para espacios luminosos y lectura general.
-- Modo oscuro: mejor para uso nocturno y para reducir fatiga visual.
-- Diseño responsivo: pensado para móvil y escritorio con una experiencia clara y consistente.
-- Colores y contrastes: pensados para ser legibles y seguir un criterio accesible.
-
-La idea es que la aplicación pueda usarse con comodidad, sin frustración ni cansancio visual, incluso en situaciones sensibles.
+También existe una vista enfocada en la urgencia, donde se prioriza la respuesta cuando la situación requiere apoyo cercano o atención inmediata.
 
 ## Stack tecnológico
 
-El proyecto usa una combinación moderna y útil para una app de este tipo:
+El proyecto usa una stack moderna para una solución web enfocada en accesibilidad y gestión escolar:
 
-- React: interfaz y lógica de la aplicación.
-- TypeScript: mejora la seguridad del código y su mantenimiento.
-- Vite: entorno de desarrollo y compilación rápida.
-- Tailwind CSS: diseño visual moderno y responsivo.
-- Supabase: autenticación, base de datos y lógica de backend.
-- PostgreSQL: almacenamiento principal y estructura de datos.
-- Vercel: despliegue para producción.
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Supabase
+- PostgreSQL
+- Vercel
 
-## Qué hace cada herramienta
+## Herramientas y para qué sirven
 
 ### React
-Construye la UI y la experiencia navegable de la app.
+Construye la interfaz de la aplicación y la experiencia de navegación.
 
 ### TypeScript
-Evita errores comunes y mejora la calidad del código.
+Mejora la seguridad del código y reduce errores durante el desarrollo.
 
 ### Vite
-Permite desarrollar y compilar la app de forma más ágil.
+Permite compilar y servir la app de forma rápida y eficiente.
 
 ### Tailwind CSS
-Acorta el trabajo de diseño para una interfaz visual limpia y consistente.
+Ayuda a diseñar interfaces limpias, responsivas y consistentes.
 
 ### Supabase
-Es la pieza central para autenticar usuarios, guardar información y gestionar el sistema de datos.
+Sirve para la autenticación, la base de datos y la lógica de acceso al sistema.
 
 ### PostgreSQL
-Guarda los reportes, perfiles y el estado de cada caso.
+Guarda los reportes, usuarios, perfiles y estados de cada caso.
 
 ### Vercel
-Publica la aplicación en producción y facilita el despliegue continuo.
+Permite desplegar la aplicación de manera sencilla y profesional.
 
 ## Estructura del proyecto
 
@@ -270,7 +198,17 @@ bullyblock/
 │  ├─ github-banner.svg
 │  ├─ app-preview.svg
 │  ├─ screenshots/
-│  │  └─ README.md
+│  │  ├─ home-claro.png
+│  │  ├─ home-oscuro.png
+│  │  ├─ ayuda-estudiante.png
+│  │  ├─ registro-situacion.png
+│  │  ├─ reportes-estudiante.png
+│  │  ├─ panel-docente.png
+│  │  ├─ estadisticas-docente.png
+│  │  ├─ panel-psicorientador.png
+│  │  ├─ panel-admin.png
+│  │  ├─ estadisticas-admin.png
+│  │  └─ peligro-mensaje-estudiante.png
 │  ├─ 01-arquitectura-software.md
 │  ├─ 02-ui-ux-roadmap.md
 │  ├─ 03-base-datos-supabase.md
@@ -318,11 +256,11 @@ VITE_SUPABASE_URL=https://tu-proyecto.supabase.co
 VITE_SUPABASE_ANON_KEY=tu-clave-anon-publica
 ```
 
-> Nunca subas la Service Role Key ni secretos del proyecto a GitHub.
+> Nunca subas la Service Role Key ni secretos del proyecto al repositorio.
 
 ## Base de datos y seguridad
 
-La base se maneja con Supabase y PostgreSQL. La recomendación es mantenerla ordenada y segura para no romper lo que ya existe.
+El sistema usa Supabase + PostgreSQL y se recomienda mantener la base organizada para no romper flujo y datos ya existentes.
 
 ### Archivos clave
 
@@ -330,17 +268,15 @@ La base se maneja con Supabase y PostgreSQL. La recomendación es mantenerla ord
 - [supabase/seed.sql](supabase/seed.sql)
 - [supabase/safe-roles-migration.sql](supabase/safe-roles-migration.sql)
 
-## Lo que falta por mejorar
+## Próximos pasos
 
-El proyecto ya tiene una base sólida, pero aún puede crecer en varias áreas:
+El proyecto ya tiene una base sólida, pero puede crecer aún más con:
 
 - noticias y consejos dentro de la app,
-- videos de apoyo y contenido educativo,
-- más indicadores para orientación,
-- mejor segmentación de reportes por contexto,
-- y una capa más avanzada de estadística para detectar patrones.
-
-Eso daría continuidad a la idea de que BullyBlock no sea solo un sistema de reporte, sino también un espacio de apoyo y educación escolar.
+- videos de apoyo,
+- materiales educativos,
+- más indicadores y estadísticas para orientación,
+- y paneles más avanzados para detectar patrones de forma institucional.
 
 ## Documentación adicional
 
@@ -353,9 +289,9 @@ Eso daría continuidad a la idea de que BullyBlock no sea solo un sistema de rep
 
 ## Objetivo final
 
-BullyBlock busca convertirse en una herramienta útil, segura y humana para instituciones educativas que necesitan manejar situaciones sensibles con confianza y orden.
+BullyBlock busca convertirse en una herramienta útil, segura y humana para instituciones educativas que necesitan atender situaciones sensibles con claridad, respeto y orden.
 
-La idea central es que nadie se sienta solo cuando necesita ayuda, y que el colegio pueda responder con una estructura clara, sin perder la empatía.
+La idea central es simple: que una persona no se sienta sola cuando necesita ayuda, y que la comunidad escolar pueda responder con estructura, empatía y responsabilidad.
 
 ## Licencia
 
