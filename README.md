@@ -37,7 +37,7 @@ Este producto está pensado para sentirse cómodo en dispositivos móviles, con 
 
 <p align="center">
   <a href="https://bullyblock-mu.vercel.app/" target="_blank" rel="noreferrer">
-    <img src="./docs/screenshots/RECORRIDORAPIDO-ezgif.com-remove-background.gif" alt="Recorrido rápido de la app en móvil" width="320" />
+    <img src="./docs/screenshots/mobile-demo.gif" alt="Recorrido rápido de la app en móvil" width="320" />
   </a>
 </p>
 
@@ -150,6 +150,36 @@ BullyBlock está diseñado como una experiencia guiada, sin fricción y clara pa
 5. La institución acompaña al estudiante con orden, empatía y seguimiento.
 
 El resultado es una respuesta más segura, clara y organizada frente a situaciones de riesgo y bienestar escolar.
+
+## ¿Cómo funciona por dentro?
+
+### 1. Introducción (Paso 1 de la infografía)
+
+> "Muchachos, si entramos a GitHub, la plataforma nos muestra exactamente de qué está construida nuestra aplicación con porcentajes. El motor de todo es TypeScript, que se lleva casi el 76% del proyecto porque es el lenguaje donde programamos toda la lógica. El 11% es CSS, que es la ropa de la app, lo que hace que se vea limpia y se adapte bien a las pantallas de sus celulares. Y el 10% es PLpgSQL, que es un lenguaje especial para hablar directamente con el servidor de la base de datos."
+
+### 2. El Frontend (Paso 2 de la infografía)
+
+> "Ahora, ¿dónde vive esto? El proyecto se divide en dos partes. La primera es el Frontend, que es básicamente todo lo que el usuario ve y toca en la pantalla de su teléfono. Esta interfaz la subimos a Vercel, que es el servicio encargado de publicarla en internet para que cuando alguien entre, la aplicación cargue al instante y de forma fluida."
+
+### 3. El Backend y los Datos (Paso 3 de la infografía)
+
+> "La segunda parte es el Backend, que es lo que pasa detrás de escena y el usuario no ve. Para esto usamos Supabase. Aquí es donde se almacena toda la información del sistema en una base de datos relacional (PostgreSQL). Todo lo que se guarde aquí viaja encriptado y seguro."
+
+### 4. Registro y Roles (Paso 4 de la infografía)
+
+> "Para conectar ambas partes, piensen en el flujo de registro. Cuando un usuario llena sus datos desde el celular, esa información viaja desde Vercel hasta Supabase. El sistema la procesa y automáticamente le asigna un rol en la base de datos: Estudiante, Profesor, Psicorientación o Administrador. Dependiendo del rol que tengan guardado en el servidor, la aplicación les da permiso para entrar a ciertas pantallas o les bloquea el acceso por seguridad."
+
+<p align="center">
+  <img src="./docs/screenshots/INFgrafia.jpeg" alt="Diagrama del flujo interno del sistema" width="90%" />
+</p>
+
+Esta infografía resume el funcionamiento real del proyecto: la app recoge información del estudiante, la procesa en la capa lógica del sistema, la guarda en la base de datos segura y la entrega al rol correcto dentro de la institución. En palabras simples, el estudiante reporta, el sistema organiza la información y la institución puede responder con orden, prioridad y seguimiento.
+
+## Documentación técnica
+
+Para ver la parte interna del proyecto, la arquitectura y el flujo técnico del sistema, revisa la documentación de desarrolladores:
+
+- [Documentación técnica](./docs/documentacion-tecnica.md)
 
 ## Stack tecnológico
 
