@@ -150,18 +150,23 @@ Estas pantallas muestran cómo se ve el producto en la práctica y cómo está p
 ### Landing y experiencia principal
 
 <p align="center">
-  <img src="./docs/screenshots/home-claro.png" alt="Home claro de BullyBlock" width="48%" />
-  <img src="./docs/screenshots/home-oscuro.png" alt="Home oscuro de BullyBlock" width="48%" />
+  <img src="./docs/screenshots/home-claro.png" alt="Home claro de BullyBlock" width="100%" />
 </p>
 
 La primera impresión se construye con un diseño limpio, serio y empático. La app presenta una promesa clara: hay un lugar para decir lo que pasó, sin miedo y con apoyo real.
 
+<p align="center">
+  <img src="./docs/screenshots/home-oscuro.png" alt="Home oscuro de BullyBlock" width="100%" />
+</p>
+
+El modo oscuro permite una experiencia más cómoda en ambientes con poca luz. Esto mejora la accesibilidad visual y hace que la app se sienta más pensada para uso real en diario escolar y nocturno.
+
 ### Estudiante: ayuda, flujo y reportes
 
 <p align="center">
-  <img src="./docs/screenshots/ayuda-estudiante.png" alt="Pantalla de ayuda para estudiante" width="31%" />
-  <img src="./docs/screenshots/registro-situacion.png" alt="Registro de situación" width="31%" />
-  <img src="./docs/screenshots/reportes-estudiante.png" alt="Mis reportes del estudiante" width="31%" />
+  <img src="./docs/screenshots/ayuda-estudiante.png" alt="Pantalla de ayuda para estudiante" width="32%" />
+  <img src="./docs/screenshots/registro-situacion.png" alt="Registro de situación" width="32%" />
+  <img src="./docs/screenshots/reportes-estudiante.png" alt="Mis reportes del estudiante" width="32%" />
 </p>
 
 Desde el punto de vista del estudiante, la app busca ser clara y no abrumadora. Tiene un flujo de ayuda, un paso para describir el problema y una vista de reportes para que la persona vea qué pasó y en qué estado quedó su caso.
@@ -169,11 +174,16 @@ Desde el punto de vista del estudiante, la app busca ser clara y no abrumadora. 
 ### Docente: seguimiento y estadísticas
 
 <p align="center">
-  <img src="./docs/screenshots/panel-docente.png" alt="Panel docente" width="48%" />
-  <img src="./docs/screenshots/estadisticas-docente.png" alt="Estadísticas para docente" width="48%" />
+  <img src="./docs/screenshots/panel-docente.png" alt="Panel docente" width="100%" />
 </p>
 
 El docente puede consultar casos, revisar el estado de los reportes y mirar tendencias o indicadores útiles para apoyar a la comunidad escolar. La idea es que no sea un tablero pesado, sino una vista funcional, ordenada y útil.
+
+<p align="center">
+  <img src="./docs/screenshots/estadisticas-docente.png" alt="Estadísticas para docente" width="100%" />
+</p>
+
+Las estadísticas ayudan a detectar patrones y momentos críticos sin saturar la pantalla. Son útiles para entrevistar, priorizar o responder con más criterio.
 
 ### Psicorientación: atención, respuesta y asignación
 
@@ -186,19 +196,35 @@ Este flujo muestra la parte más sensible del sistema: orientación entra a resp
 ### Admin: supervisión y métricas institucionales
 
 <p align="center">
-  <img src="./docs/screenshots/panel-admin.png" alt="Panel administrativo" width="48%" />
-  <img src="./docs/screenshots/estadisticas-admin.png" alt="Estadísticas del administrador" width="48%" />
+  <img src="./docs/screenshots/panel-admin.png" alt="Panel administrativo" width="100%" />
 </p>
 
 La administración puede ver la operación general del sistema, revisar el estado de los reportes y tener una visión global. Esto ayuda a mantener todo más ordenado y a tomar decisiones con criterio.
 
+<p align="center">
+  <img src="./docs/screenshots/estadisticas-admin.png" alt="Estadísticas del administrador" width="100%" />
+</p>
+
+La parte administrativa ayuda a medir la carga de casos, los tipos más frecuentes y los eventos más complejos para que la institución responda mejor.
+
 ### Alerta de riesgo y mensajes del estudiante
 
 <p align="center">
-  <img src="./docs/screenshots/peligro-mensaje-estudiante.png" alt="Pantalla de peligro o mensaje crítico del estudiante" width="48%" />
+  <img src="./docs/screenshots/peligro-mensaje-estudiante.png" alt="Pantalla de peligro o mensaje crítico del estudiante" width="100%" />
 </p>
 
 También hay una vista de emergencia o riesgo, donde se pone atención a mensajes que requieren prioridad, acompañamiento urgente o seguimiento más cercano.
+
+## Modo claro, oscuro y accesibilidad
+
+BullyBlock no solo cambia visualmente; también está pensado para apoyar a usuarios con distintas necesidades de lectura y uso diario.
+
+- Modo claro: más limpio para espacios luminosos y lectura general.
+- Modo oscuro: mejor para uso nocturno y para reducir fatiga visual.
+- Diseño responsivo: pensado para móvil y escritorio con una experiencia clara y consistente.
+- Colores y contrastes: pensados para ser legibles y seguir un criterio accesible.
+
+La idea es que la aplicación pueda usarse con comodidad, sin frustración ni cansancio visual, incluso en situaciones sensibles.
 
 ## Stack tecnológico
 
