@@ -1,75 +1,140 @@
 # BullyBlock
 
-Somos un grupo de estudiantes y desarrolladores trabajando en una solución para apoyar a la comunidad escolar con una herramienta clara, accesible y útil para reportar situaciones de acoso, recibir ayuda y gestionar casos con responsabilidad.
+BullyBlock es una aplicación web mobile-first para apoyar a estudiantes, docentes, psicorientación y administración en la gestión de situaciones de acoso escolar, riesgo y acompañamiento institucional.
 
-BullyBlock nace como una idea para que un estudiante pueda denunciar o reportar lo que vive con calma y sin miedo, y para que docentes, psicorientación y administración puedan atenderlo de forma ordenada, segura y humana.
+La idea principal del proyecto es simple pero importante: que una persona pueda reportar una situación de forma clara y segura, y que el colegio pueda responder con orden, empatía y una estructura de trabajo real.
 
-## Qué hace esta app
+## ¿Qué problema resuelve?
 
-- Permite a un estudiante registrar un caso de acoso o riesgo.
-- Ofrece un flujo simple para explicar lo sucedido con contexto y detalles.
-- Da visibilidad a docentes y psicorientación para atender casos de forma adecuada.
-- Centraliza la gestión de reportes y estados en un panel privado.
-- Ayuda a organizar la atención según cada rol y nivel de urgencia.
-- Está diseñada para ser clara en móvil, con una experiencia simple y accesible.
+Muchas veces las situaciones de acoso, intimidación o maltrato escolar no se reportan por miedo, falta de claridad o porque el proceso es confuso. BullyBlock busca reducir ese problema creando un espacio donde:
 
-## Roles del sistema
+- el estudiante puede describir lo que vivió sin sentirse perdido,
+- el docente puede ver el caso de forma organizada,
+- la psicorientación puede priorizar la atención adecuada,
+- la administración puede supervisar sin romper el flujo de trabajo real.
 
-La lógica del proyecto está pensada en 4 roles:
+## ¿Qué hace el proyecto?
 
-- Estudiante: reporta y revisa su estado.
-- Docente: acompaña, da seguimiento y toma decisiones de apoyo escolar.
-- Psicorientador: revisa casos sensibles, urgentes o de bienestar emocional.
-- Admin: supervisa y administra el sistema, sin reemplazar la intención ni la intervención real del equipo educativo.
+El sistema permite:
 
-## Objetivo del proyecto
+- registrar usuarios con roles diferenciados,
+- crear reportes de situaciones de acoso o riesgo,
+- clasificar y dar seguimiento a cada caso,
+- asignar atención según el perfil del responsable,
+- mantener un historial de evolución del caso,
+- dar una experiencia accesible, clara y pensada para móvil,
+- facilitar la coordinación entre estudiantes y personal escolar.
 
-Queremos crear una herramienta útil para una comunidad educativa que necesite:
+## Impacto en la comunidad educativa
 
-- denunciar situaciones con seguridad,
-- recibir apoyo real,
-- organizar la gestión de casos,
-- reducir la confusión,
-- y darle claridad a las personas que atienden estos reportes.
+Este proyecto impacta directamente en la forma como una institución puede responder ante situaciones sensibles. Su valor no es solo tecnológico, sino social:
 
-No es solo una app de “reporte”. Es una forma de acompañar a una comunidad con cuidado, respeto y acción.
+- mejora la visibilidad de los casos,
+- acelera la atención institucional,
+- reduce la confusión en la gestión,
+- ayuda a que la respuesta sea más responsable y organizada,
+- genera un canal más seguro para estudiantes que necesitan apoyo.
 
-## Cómo se ve el flujo
+En palabras simples: BullyBlock no es solo una app de reportes; es una herramienta para acompañar a la comunidad escolar con orden, cuidado y acción real.
 
-1. El estudiante entra a la app y crea su reporte.
-2. El caso queda registrado con la información necesaria.
-3. El docente o psicorientador revisa el caso según la lógica del sistema.
-4. La persona encargada puede responder, cambiar el estado y dar seguimiento.
-5. El admin puede supervisar la operación general.
+## Roles dentro del sistema
 
-## Stack
+El proyecto está pensado con 4 roles principales:
 
-- React + TypeScript
-- Vite
-- Tailwind CSS
-- Supabase
-- PostgreSQL
-- Vercel
+- Estudiante: reporta situaciones y consulta su estado.
+- Docente: acompaña, observa y da seguimiento al caso.
+- Psicorientador: revisa casos sensibles, prioriza y presta atención de bienestar.
+- Admin: supervisa el sistema y la operación general.
 
-## Requisitos para probarlo
+La lógica del sistema está diseñada para que cada rol tenga un papel claro, sin mezclar funciones ni hacer que alguien “todo lo haga” sin criterio.
 
-Necesitamos un proyecto real de Supabase con:
+## Flujo principal del producto
 
-- Auth activo
-- base de datos creada
-- políticas RLS bien configuradas
-- variables de entorno del proyecto
+1. El estudiante ingresa a la plataforma y realiza un reporte.
+2. Describe la situación con detalles relevantes y contexto.
+3. El caso queda registrado con información clave para la atención.
+4. Docente o psicorientación revisan y gestionan el caso.
+5. Se actualiza el estado y la atención continúa con seguimiento.
+6. El admin puede supervisar la operación y mantener el sistema en orden.
 
-### Variables de entorno
+## Stack tecnológico
 
-```env
-VITE_SUPABASE_URL=https://tu-proyecto.supabase.co
-VITE_SUPABASE_ANON_KEY=tu-clave-anon-publica
+El proyecto usa una combinación moderna y fácil de desplegar:
+
+- React + TypeScript: interfaz y lógica de la app.
+- Vite: entorno de desarrollo y compilación rápida.
+- Tailwind CSS: estilos modernos y responsivos.
+- Supabase: autenticación, base de datos y lógica de backend.
+- PostgreSQL: almacenamiento estructurado y control de datos.
+- Vercel: despliegue para producción.
+
+## Herramientas que usamos y para qué sirven
+
+### React
+Se usa para construir toda la interfaz web. Es la base de la experiencia visual y la navegación de la app.
+
+### TypeScript
+Aporta tipado fuerte para evitar errores y hacer el proyecto más seguro, mantenible y escalable.
+
+### Vite
+Es la herramienta que compila y sirve la app durante el desarrollo y la producción. Hace más rápida la experiencia de trabajo.
+
+### Tailwind CSS
+Permite diseñar la interfaz rápida y consistente, con un estilo limpio y adaptable a móvil.
+
+### Supabase
+Es el corazón del backend del proyecto. Aquí se manejan:
+
+- autenticación de usuarios,
+- perfiles,
+- base de datos relacional,
+- reglas de acceso,
+- y gestión de datos del sistema.
+
+### PostgreSQL
+Es la base de datos relacional que guarda los reportes, perfiles, estados y relación entre usuarios y casos.
+
+### Vercel
+Se usa para publicar la app en internet y dejarla disponible de forma directa para pruebas o despliegue final.
+
+## Estructura del proyecto
+
+```text
+bullyblock/
+├─ docs/
+│  ├─ README.md
+│  ├─ 01-arquitectura-software.md
+│  ├─ 02-ui-ux-roadmap.md
+│  ├─ 03-base-datos-supabase.md
+│  ├─ 04-github-vercel.md
+│  └─ 05-checklist.md
+├─ public/
+├─ scripts/
+│  └─ theme-regression.test.mjs
+├─ src/
+│  ├─ App.tsx
+│  ├─ components/
+│  ├─ lib/
+│  ├─ pages/
+│  ├─ index.css
+│  └─ main.tsx
+├─ supabase/
+│  ├─ schema.sql
+│  ├─ seed.sql
+│  ├─ staff.sql
+│  └─ safe-roles-migration.sql
+├─ .env
+├─ index.html
+├─ package.json
+├─ tailwind.config.js
+├─ tsconfig.json
+├─ vite.config.ts
+├─ vercel.json
+├─ README.md
+└─ build-log.txt
 ```
 
-> Nunca subir la Service Role Key ni los datos sensibles al repositorio.
-
-## Cómo arrancar el proyecto
+## Cómo correr el proyecto
 
 ```bash
 git clone https://github.com/isyoimerr/bullyblock.git
@@ -78,56 +143,52 @@ npm install
 npm run dev
 ```
 
-## Base de datos y pruebas rápidas
+### Variables de entorno
 
-La base debe quedar limpia y ordenada. Para probar el flujo sin romper el proyecto, usamos scripts seguros de demo.
+Necesitas configurar Supabase para que la app funcione:
 
-### 1) Ejecutar esquema base
-
-```sql
-supabase/schema.sql
+```env
+VITE_SUPABASE_URL=https://tu-proyecto.supabase.co
+VITE_SUPABASE_ANON_KEY=tu-clave-anon-publica
 ```
 
-### 2) Cargar datos iniciales de prueba
+> No se debe subir la Service Role Key ni ningún secreto del proyecto al repositorio.
 
-```sql
-supabase/seed.sql
-```
+## Base de datos y seguridad
 
-### 3) Crear usuarios del equipo en Supabase Auth
+El proyecto usa Supabase con PostgreSQL y se recomienda dejar la base organizada para no romper lo que ya existe.
 
-Se recomienda crear usuarios reales con estos emails de prueba:
+### Scripts importantes
 
-- estudiante@gmail.com
-- profesor@gmail.com
-- psicorientador@gmail.com
-- admin@gmail.com
+- [supabase/schema.sql](supabase/schema.sql): define la estructura principal del sistema.
+- [supabase/seed.sql](supabase/seed.sql): carga datos de prueba seguros y no destructivos.
+- [supabase/safe-roles-migration.sql](supabase/safe-roles-migration.sql): migración segura para normalizar roles sin destruir información.
 
-Las contraseñas pueden ser temporales para pruebas locales y se deben cambiar después.
+## Lógica recomendada para pruebas
 
-## Lógica recomendada para datos de prueba
+Para que la aplicación se vea real y útil, la base de prueba debería seguir una lógica clara:
 
-- El estudiante reporta un caso.
-- Los casos simples y operativos se asignan a docente.
-- Los casos más graves o sensibles se asignan a psicorientador.
-- El admin no debe aparecer como responsable directo del caso salvo casos muy específicos de supervisión.
+- estudiante reporta el caso,
+- docente atiende casos operativos,
+- psicorientador revisa casos sensibles,
+- admin supervisa y administra sin sustituir la atención real.
 
-Eso hace que el sistema se vea real y que la lógica de negocio se comprenda mejor.
+Eso hace que el sistema no parezca solo una maqueta, sino una solución pensada para uso real.
 
 ## Consejo y noticias (futuro)
 
-Como siguiente mejora, podría agregarse una sección de consejos y noticias para que la app también funcione como espacio de orientación y comunidad. Por ejemplo:
+Como siguiente mejora, la app puede crecer para tener también una sección de consejos y noticias dentro de la comunidad escolar. Por ejemplo:
 
-- noticias internas del colegio,
 - avisos institucionales,
+- noticias del colegio,
 - consejos para estudiantes,
 - videos de apoyo,
 - materiales educativos,
-- guías para docentes y estudiantes.
+- guías para docentes y familias.
 
-Eso ayudaría a que la app no sea solo un canal de denuncia, sino también un punto de información útil para la comunidad escolar.
+Esto es importante porque una plataforma de apoyo no debe limitarse solo a reportes; también puede educar, informar y acompañar.
 
-## Documentación del proyecto
+## Documentación adicional
 
 - [docs/README.md](docs/README.md)
 - [docs/01-arquitectura-software.md](docs/01-arquitectura-software.md)
@@ -136,12 +197,21 @@ Eso ayudaría a que la app no sea solo un canal de denuncia, sino también un pu
 - [docs/04-github-vercel.md](docs/04-github-vercel.md)
 - [docs/05-checklist.md](docs/05-checklist.md)
 
-## Lo importante
+## URL de despliegue
 
-Este proyecto es una base sólida para seguir creciendo con responsabilidad. No es solo una maqueta: busca ser una herramienta útil y seria para apoyar a una comunidad educativa real.
+La aplicación está pensada para desplegarse en Vercel y conectarse con Supabase en producción real.
 
-Nosotros lo estamos construyendo pensando en claridad, confianza y acción real. La idea es que una persona pueda pedir ayuda sin sentirse perdida, y que el equipo que atiende pueda hacerlo con orden.
+Ejemplo de estructura esperada:
+
+- https://bullyblock.vercel.app
+- o bien la URL válida del proyecto final en Vercel
+
+## Objetivo final
+
+BullyBlock busca convertirse en una solución útil para instituciones educativas que necesitan una forma más clara, segura y humana de atender situaciones de acoso, bienestar y acompañamiento escolar.
+
+La idea central es muy concreta: hacer que una persona no se sienta sola cuando necesita ayuda, y que el colegio tenga una forma ordenada de responder con responsabilidad.
 
 ## Licencia
 
-Este proyecto está pensado como base para uso institucional y adaptación. Es una herramienta de apoyo para la comunidad educativa y puede ajustarse según el contexto del colegio o institución que lo use.
+Este proyecto está pensado como base para uso institucional y adaptación. Puede ajustarse según las políticas y necesidades del colegio o la institución que lo use.
