@@ -26,8 +26,10 @@ export function mensajeError(e: unknown): string {
   if (/email not confirmed/i.test(msg)) return 'Falta confirmar tu correo. Revisa tu bandeja de entrada.'
   if (/password/i.test(msg) && /characters|weak|short/i.test(msg)) return 'La clave debe tener al menos 8 caracteres.'
   if (/muchos reportes/i.test(msg)) return 'Has enviado muchos reportes seguidos. Intenta de nuevo en un rato.'
-  if (/rate limit/i.test(msg)) return 'Hiciste muchos intentos. Espera unos minutos e int�ntalo de nuevo.'
+  if (/rate limit/i.test(msg)) return 'Hiciste muchos intentos. Espera unos minutos e inténtalo de nuevo.'
   if (/row-level security|permission denied/i.test(msg)) return 'No tienes permiso para hacer esto.'
-  if (/failed to fetch|network/i.test(msg)) return 'No hay conexi�n. Revisa tu internet e int�ntalo de nuevo.'
-  return 'Algo no sali� bien. Int�ntalo de nuevo.'
+  if (/failed to fetch|network|fetch failed/i.test(msg)) {
+    return 'No se pudo comunicar con Supabase. Revisa la conexión y la configuración del proyecto.'
+  }
+  return 'Algo no salió bien. Inténtalo de nuevo.'
 }
