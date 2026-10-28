@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { Link } from 'react-router-dom'
+import PasswordField from '../components/PasswordField'
 import { useAuth } from '../lib/auth'
 import { mensajeError, supabase } from '../lib/supabase'
 
@@ -33,7 +34,7 @@ export default function Perfil() {
         <h3>Cambiar clave</h3>
         <div>
           <label className="label" htmlFor="nc">Nueva clave</label>
-          <input id="nc" type="password" autoComplete="new-password" className="input" value={clave} onChange={(e) => setClave(e.target.value)} />
+          <PasswordField id="nc" autoComplete="new-password" value={clave} onChange={(e) => setClave(e.target.value)} />
         </div>
         {msg && <p className={msg.ok ? 'aviso-ok' : 'aviso-error'} role="status">{msg.t}</p>}
         <button className="btn btn-azul" disabled={!clave}>Guardar clave</button>

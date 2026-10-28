@@ -3,7 +3,8 @@ import type { Mensaje, Nota, Perfil, Reporte, Rol } from './types'
 
 const url = import.meta.env.VITE_SUPABASE_URL as string | undefined
 const key = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined
-const DEMO_MODE = !url || !key || /TU-PROYECTO|tu-clave/i.test(String(url + key))
+const demoOverride = String(import.meta.env.VITE_DEMO_MODE ?? 'false').toLowerCase() === 'true'
+const DEMO_MODE = demoOverride || !url || !key || /TU-PROYECTO|tu-clave/i.test(String(url + key))
 
 const STORAGE_KEY = 'bullyblock-demo-db-v1'
 
@@ -59,6 +60,7 @@ function obtenerRol(email: string): Rol {
 function crearEstadoBase(): DemoState {
   const base = new Date().toISOString()
   const estudianteId = 'demo-estudiante-id'
+  const docenteId = 'demo-docente-id'
   const orientadorId = 'demo-orientador-id'
   const adminId = 'demo-admin-id'
 
@@ -75,9 +77,20 @@ function crearEstadoBase(): DemoState {
       creado_en: base,
     },
     {
+      id: docenteId,
+      nombre: 'Sofía Pérez',
+      documento: '20000001',
+      grado: null,
+      grupo: null,
+      rol: 'docente',
+      activo: true,
+      aprobado: true,
+      creado_en: base,
+    },
+    {
       id: orientadorId,
       nombre: 'Lucía Morales',
-      documento: '20000001',
+      documento: '30000001',
       grado: null,
       grupo: null,
       rol: 'psicoorientador',
@@ -88,7 +101,7 @@ function crearEstadoBase(): DemoState {
     {
       id: adminId,
       nombre: 'Carlos Ruiz',
-      documento: '30000001',
+      documento: '40000001',
       grado: null,
       grupo: null,
       rol: 'admin',
@@ -120,8 +133,11 @@ function crearEstadoBase(): DemoState {
 
   const users: DemoUser[] = [
     { id: estudianteId, email: 'demo@estudiante.com', password: 'demo1234', user_metadata: { nombre: 'Ana Gómez', documento: '10000001', grado: 9, grupo: 'A' } },
-    { id: orientadorId, email: 'orientacion@estudiante.com', password: 'demo1234', user_metadata: { nombre: 'Lucía Morales' } },
-    { id: adminId, email: 'admin@estudiante.com', password: 'demo1234', user_metadata: { nombre: 'Carlos Ruiz' } },
+    { id: docenteId, email: 'docente.demo@estudiante.com', password: 'demo1234', user_metadata: { nombre: 'Sofía Pérez', documento: '20000001' } },
+    { id: orientadorId, email: 'orientacion.demo@estudiante.com', password: 'demo1234', user_metadata: { nombre: 'Lucía Morales', documento: '30000001' } },
+    { id: orientadorId, email: 'orientacion@estudiante.com', password: 'demo1234', user_metadata: { nombre: 'Lucía Morales', documento: '30000001' } },
+    { id: adminId, email: 'admin.demo@estudiante.com', password: 'demo1234', user_metadata: { nombre: 'Carlos Ruiz', documento: '40000001' } },
+    { id: adminId, email: 'admin@estudiante.com', password: 'demo1234', user_metadata: { nombre: 'Carlos Ruiz', documento: '40000001' } },
   ]
 
   return { users, profiles: perfiles, reports, mensajes: [], notas: [], session: null }

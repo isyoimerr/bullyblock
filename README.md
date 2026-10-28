@@ -15,6 +15,10 @@ Aplicación web (móvil primero, responsive) para prevenir y comunicar posibles 
 
 El rol **nunca** lo define el cliente: lo asigna un trigger en la base de datos y solo un admin puede cambiarlo.
 
+## Documentación del proyecto
+
+La documentación de arquitectura y planificación está en la carpeta [docs](./docs/README.md).
+
 ## 1. Requisitos
 
 - Node.js 18 o superior (recomendado 20)

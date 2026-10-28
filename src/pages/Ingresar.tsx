@@ -2,6 +2,7 @@ import { useMemo, useState, type FormEvent } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { BookOpen, GraduationCap, ShieldCheck } from 'lucide-react'
 import AuthShell from '../components/AuthShell'
+import PasswordField from '../components/PasswordField'
 import { mensajeError, supabase } from '../lib/supabase'
 import { rolPorCorreo, rutaPorRol } from '../lib/types'
 
@@ -24,7 +25,7 @@ const opciones: Record<RolLogin, { titulo: string; icono: typeof GraduationCap; 
     titulo: 'Orientación y administración',
     icono: ShieldCheck,
     sub: 'Gestiona casos y acompaña a los estudiantes',
-    color: 'bg-slate-900 text-white',
+    color: 'bg-[var(--superficie-alt)] text-[var(--texto-principal)]',
   },
 }
 
@@ -115,14 +116,14 @@ export default function Ingresar() {
             <Link
               key={tipo}
               to={tipo === 'equipo' ? '/ingresar/equipo' : `/ingresar/${tipo}`}
-              className={`flex min-h-[72px] items-center gap-3 rounded-2xl border p-3 transition ${activo ? 'border-[var(--verde-700)] bg-[var(--verde-50)] ring-1 ring-[var(--verde-200)]' : 'border-slate-200 bg-white hover:border-slate-300'}`}
+              className={`flex min-h-[72px] items-center gap-3 rounded-2xl border p-3 transition ${activo ? 'border-[var(--verde-700)] bg-[var(--verde-50)] ring-1 ring-[var(--verde-200)]' : 'border-[var(--borde)] bg-[var(--superficie)] hover:border-[var(--brand-green)]'}`}
             >
               <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${opcion.color}`}>
                 <Icon size={24} aria-hidden="true" />
               </span>
               <span className="flex-1 text-left">
-                <span className="block text-base font-bold text-slate-900">{opcion.titulo}</span>
-                <span className="mt-1 block text-sm text-slate-600">{opcion.sub}</span>
+                <span className="block text-base font-bold text-[var(--texto-principal)]">{opcion.titulo}</span>
+                <span className="mt-1 block text-sm text-[var(--texto-secundario)]">{opcion.sub}</span>
               </span>
             </Link>
           )
@@ -152,7 +153,7 @@ export default function Ingresar() {
         </div>
         <div>
           <label className="label" htmlFor="clave">Clave</label>
-          <input id="clave" className="input" type="password" autoComplete="current-password" required value={clave} onChange={(e) => setClave(e.target.value)} />
+          <PasswordField id="clave" autoComplete="current-password" required value={clave} onChange={(e) => setClave(e.target.value)} />
         </div>
         {error && <p className="aviso-error" role="alert">{error}</p>}
         {info && <p className="aviso-ok" role="status">{info}</p>}

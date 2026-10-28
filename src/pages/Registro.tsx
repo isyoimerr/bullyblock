@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import AuthShell from '../components/AuthShell'
+import PasswordField from '../components/PasswordField'
 import { mensajeError, supabase } from '../lib/supabase'
 
 const GRADOS = [6, 7, 8, 9, 10, 11]
@@ -89,8 +90,7 @@ export default function Registro() {
 
         <div className="registro-field">
           <label className="label" htmlFor="clave">Clave</label>
-          <input id="clave" className="input" type="password" autoComplete="new-password" value={f.clave}
-            onChange={(e) => set('clave', e.target.value)} />
+          <PasswordField id="clave" autoComplete="new-password" value={f.clave} onChange={(e) => set('clave', e.target.value)} />
           <p className="hint">Mínimo 8 caracteres.</p>
         </div>
 

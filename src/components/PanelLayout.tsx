@@ -12,15 +12,15 @@ export default function PanelLayout() {
   ]
   const clase = ({ isActive }: { isActive: boolean }) =>
     `flex min-h-[44px] items-center gap-2 rounded-xl px-3 font-semibold ${
-      isActive ? 'bg-azul-700 text-white shadow-sm' : 'text-slate-700 hover:bg-slate-100'
+      isActive ? 'bg-[var(--brand-green)] text-[var(--texto-inverso)] shadow-sm' : 'text-[var(--texto-secundario)] hover:bg-[var(--superficie-alt)]'
     }`
 
   return (
-    <div className="min-h-dvh bg-[#f6faf8] lg:flex">
-      <aside className="hidden w-60 shrink-0 flex-col border-r border-white/60 bg-white/80 p-4 text-slate-800 shadow-[0_12px_30px_rgba(59,130,246,0.05)] backdrop-blur-sm lg:flex">
+    <div className="app-shell min-h-dvh bg-[var(--fondo)] text-[var(--texto-principal)] lg:flex">
+      <aside className="hidden w-60 shrink-0 flex-col border-r border-[var(--borde)] bg-[var(--superficie)]/90 p-4 text-[var(--texto-principal)] shadow-[0_12px_30px_rgba(14,27,41,0.04)] backdrop-blur-sm lg:flex">
         <div className="mb-6 flex items-center gap-2 px-2">
           <Escudo size={36} />
-          <Marca className="text-xl text-slate-900 [&>span]:text-slate-900" />
+          <Marca className="text-xl text-[var(--texto-principal)] [&>span]:text-[var(--texto-principal)]" />
         </div>
         <nav className="flex flex-1 flex-col gap-1" aria-label="Panel">
           {links.map(({ to, label, icon: Icon, end }) => (
@@ -29,21 +29,21 @@ export default function PanelLayout() {
             </NavLink>
           ))}
         </nav>
-        <div className="border-t border-slate-200 pt-3 text-sm text-slate-600">
-          <p className="truncate font-semibold text-slate-900">{perfil?.nombre}</p>
+        <div className="border-t border-[var(--borde)] pt-3 text-sm text-[var(--texto-secundario)]">
+          <p className="truncate font-semibold text-[var(--texto-principal)]">{perfil?.nombre}</p>
           <p className="mb-2 capitalize">{perfil?.rol}</p>
-          <button onClick={() => void salir()} className="flex min-h-[44px] items-center gap-2 font-semibold text-slate-700 hover:text-slate-900">
+          <button onClick={() => void salir()} className="flex min-h-[44px] items-center gap-2 font-semibold text-[var(--texto-principal)] hover:text-[var(--brand-green)]">
             <LogOut size={18} aria-hidden="true" />Cerrar sesión
           </button>
         </div>
       </aside>
 
-      <div className="min-w-0 flex-1 bg-[#f6faf8]">
-        <header className="border-b border-white/50 bg-[linear-gradient(180deg,rgba(59,130,246,0.12),rgba(29,78,216,0.06))] pt-[env(safe-area-inset-top)] shadow-[0_8px_24px_rgba(59,130,246,0.05)] lg:hidden">
-          <div className="flex items-center gap-2 px-4 py-3">
-            <Escudo size={32} />
-            <Marca className="flex-1 text-lg text-slate-900 [&>span]:text-slate-900" />
-            <button onClick={() => void salir()} className="min-h-[44px] rounded-full bg-white/80 px-4 text-sm font-bold text-slate-900 shadow-sm">
+      <div className="min-w-0 flex-1 bg-[var(--fondo)]">
+        <header className="border-b border-[var(--borde)] bg-[var(--superficie)]/90 pt-[env(safe-area-inset-top)] shadow-[0_8px_24px_rgba(14,27,41,0.04)] lg:hidden">
+          <div className="flex items-center gap-2 px-3 py-2 pr-[3.6rem]">
+            <Escudo size={30} />
+            <Marca className="flex-1 text-base text-[var(--texto-principal)] [&>span]:text-[var(--texto-principal)]" />
+            <button onClick={() => void salir()} className="min-h-[40px] rounded-full bg-[var(--superficie-alt)] px-3 text-[11px] font-bold text-[var(--texto-principal)] shadow-sm sm:text-sm">
               Salir
             </button>
           </div>
@@ -53,7 +53,7 @@ export default function PanelLayout() {
             ))}
           </nav>
         </header>
-        <main className="p-4 md:p-6"><Outlet /></main>
+        <main className="p-4 text-[var(--texto-principal)] md:p-6"><Outlet /></main>
       </div>
     </div>
   )
