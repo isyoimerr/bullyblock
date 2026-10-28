@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
 import type { Session } from '@supabase/supabase-js'
-import { supabase, supabaseConfigurada } from './supabase'
+import { DEMO_MODE, leerDemoSesion, supabase, supabaseConfigurada } from './supabase'
 import type { Perfil } from './types'
 
 async function crearPerfilSiFalta(uid: string, session?: Session | null) {
@@ -56,6 +56,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [perfil, setPerfil] = useState<Perfil | null | undefined>(undefined)
 
   useEffect(() => {
+    const demo = DEMO_MODE ? leerDemoSesion() : null
+    if (demo) {
+      setSession(demo.session as Session)
+      setPerfil(demo.perfil)
+      setSesionLista(true)
+      return
+    }
+
     if (!supabaseConfigurada) {
       setSesionLista(true)
       setPerfil(null)
@@ -102,6 +110,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [cargarPerfil])
 
   const salir = useCallback(async () => {
+    if (DEMO_MODE) {
+      localStorage.removeItem('bullyblock-demo-session')
+      setSession(null)
+      setPerfil(null)
+      return
+    }
     await supabase.auth.signOut()
     setPerfil(null)
   }, [])
@@ -112,10 +126,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       perfil: perfil ?? null,
       cargando: !supabaseConfigurada ? false : !sesionLista || (!!session && perfil === undefined),
       refrescar: async () => {
+        if (DEMO_MODE) return
         if (!supabaseConfigurada) return
         await cargarPerfil()
       },
       salir: async () => {
+        if (DEMO_MODE) {
+          localStorage.removeItem('bullyblock-demo-session')
+          setSession(null)
+          setPerfil(null)
+          return
+        }
         if (!supabaseConfigurada) return
         await supabase.auth.signOut()
         setPerfil(null)

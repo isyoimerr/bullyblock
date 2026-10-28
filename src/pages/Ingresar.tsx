@@ -1,8 +1,8 @@
-import { useState, type FormEvent } from 'react'
+import { useEffect, useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import AuthShell from '../components/AuthShell'
 import PasswordField from '../components/PasswordField'
-import { mensajeError, supabase } from '../lib/supabase'
+import { DEMO_MODE, iniciarDemoSesion, mensajeError, supabase } from '../lib/supabase'
 import { rolPorCorreo, rutaPorRol } from '../lib/types'
 
 export default function Ingresar() {
@@ -13,6 +13,11 @@ export default function Ingresar() {
   const [info, setInfo] = useState('')
   const [enviando, setEnviando] = useState(false)
 
+  useEffect(() => {
+    setEmail('')
+    setClave('')
+  }, [])
+
   const rolDetectado = rolPorCorreo(email.trim())
 
   async function entrar(e: FormEvent) {
@@ -20,6 +25,15 @@ export default function Ingresar() {
     setError('')
     setInfo('')
     setEnviando(true)
+
+    if (DEMO_MODE) {
+      const demo = iniciarDemoSesion(email.trim(), clave)
+      if (demo) {
+        setEnviando(false)
+        nav(rutaPorRol(demo.perfil.rol), { replace: true })
+        return
+      }
+    }
 
     const { error: loginError } = await supabase.auth.signInWithPassword({
       email: email.trim(),
@@ -47,15 +61,16 @@ export default function Ingresar() {
 
   return (
     <AuthShell titulo="Ingresar">
-      <form onSubmit={entrar} className="space-y-4" noValidate>
+      <form onSubmit={entrar} className="space-y-4" noValidate autoComplete="off">
         <div>
           <label className="label" htmlFor="email">Correo</label>
           <input
             id="email"
             className="input"
             type="email"
-            autoComplete="email"
+            autoComplete="username"
             inputMode="email"
+            spellCheck={false}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="nombre@estudiante.com"
