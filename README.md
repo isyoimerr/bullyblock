@@ -36,7 +36,9 @@ Este entorno permite validar de forma real el flujo de onboarding, la experienci
 Este producto está pensado para sentirse cómodo en dispositivos móviles, con objetivos grandes, menos ruido visual y flujos claros para situaciones urgentes.
 
 <p align="center">
-  <video src="https://raw.githubusercontent.com/isyoimerr/bullyblock/isyoimerr/docs/screenshots/RECORRIDO%20RAPIDO%20.mp4" width="360" autoplay loop muted playsinline controls></video>
+  <a href="https://bullyblock-mu.vercel.app/" target="_blank" rel="noreferrer">
+    <img src="./docs/screenshots/RECORRIDORAPIDO-ezgif.com-remove-background.gif" alt="Recorrido rápido de la app en móvil" width="320" />
+  </a>
 </p>
 
 <p align="center">
@@ -45,12 +47,6 @@ Este producto está pensado para sentirse cómodo en dispositivos móviles, con 
 
 <p align="center">
   <strong>Entrar a la app:</strong> <a href="https://bullyblock-mu.vercel.app/">https://bullyblock-mu.vercel.app/</a>
-</p>
-
-<p align="center">
-  <a href="https://bullyblock-mu.vercel.app/" target="_blank" rel="noreferrer">
-    <img src="./docs/screenshots/home-claro.png" alt="Vista previa responsiva del producto" width="320" />
-  </a>
 </p>
 
 ## Intención central del proyecto
