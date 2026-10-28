@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
 import type { Session } from '@supabase/supabase-js'
-import { supabase } from './supabase'
+import { supabase, supabaseConfigurada } from './supabase'
 import type { Perfil } from './types'
 
 interface AuthCtx {
@@ -20,10 +20,23 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [perfil, setPerfil] = useState<Perfil | null | undefined>(undefined)
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      setSession(data.session)
+    if (!supabaseConfigurada) {
       setSesionLista(true)
-    })
+      setPerfil(null)
+      return
+    }
+
+    supabase.auth
+      .getSession()
+      .then(({ data }) => {
+        setSession(data.session)
+        setSesionLista(true)
+      })
+      .catch(() => {
+        setSession(null)
+        setSesionLista(true)
+      })
+
     const { data } = supabase.auth.onAuthStateChange((_evento, s) => setSession(s))
     return () => data.subscription.unsubscribe()
   }, [])
@@ -50,9 +63,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     () => ({
       session,
       perfil: perfil ?? null,
-      cargando: !sesionLista || (!!session && perfil === undefined),
-      refrescar: cargarPerfil,
-      salir,
+      cargando: !supabaseConfigurada ? false : !sesionLista || (!!session && perfil === undefined),
+      refrescar: async () => {
+        if (!supabaseConfigurada) return
+        await cargarPerfil()
+      },
+      salir: async () => {
+        if (!supabaseConfigurada) return
+        await supabase.auth.signOut()
+        setPerfil(null)
+      },
     }),
     [session, perfil, sesionLista, cargarPerfil, salir],
   )
