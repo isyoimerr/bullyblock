@@ -38,23 +38,22 @@ const beneficios = [
 const creadores = [
   {
     nombre: 'Andrés Felipe Castro Vergara',
-    rol: 'Desarrollador',
-    universidad: 'Institución Educativa Técnica José Agustín Blanco Barros',
+   universidad: 'Institución Educativa Técnica José Agustín Blanco Barros',
     iniciales: 'AC',
   },
   {
     nombre: 'Alberto Mario Cuentas López',
-    rol: 'Diseñador',
     universidad: 'Institución Educativa Técnica José Agustín Blanco Barros',
     iniciales: 'AL',
   },
   {
-    nombre: 'Equipo de innovación',
-    rol: 'Investigación',
+    nombre: 'Nicole Andrea Soto Martinez',
     universidad: 'Institución Educativa Técnica José Agustín Blanco Barros',
-    iniciales: 'EQ',
+    iniciales: 'NS',
   },
 ]
+
+const fotoGrupo = 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80'
 
 const fondoEstudiante =
   'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80'
@@ -226,7 +225,7 @@ export default function Bienvenida() {
                     <div className="mt-5 flex items-center justify-between gap-3 rounded-[22px] border border-white/10 bg-[#0f172a]/70 p-3 backdrop-blur-sm">
                       <div>
                         <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#a5b4fc]">Porque importas</p>
-                        <p className="mt-1 text-sm font-semibold text-slate-100">Te escuchamos desde el primer momento</p>
+                        <p className="mt-1 text-sm font-semibold text-[var(--texto-inverso)]">Te escuchamos desde el primer momento</p>
                       </div>
                       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#171d2d] text-[#facc15] font-black">
                         ♥
@@ -392,11 +391,15 @@ export default function Bienvenida() {
               </h2>
             </div>
 
-            <div className="flex flex-col gap-4 md:flex-row md:items-stretch">
+            <div className="mb-5 overflow-hidden rounded-[28px] border border-[var(--borde)] bg-[var(--superficie-alt)] shadow-[0_16px_28px_rgba(14,27,41,0.04)]">
+              <img src={fotoGrupo} alt="Equipo de trabajo del proyecto" className="h-56 w-full object-cover md:h-72" />
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-3">
               {creadores.map((creador) => (
                 <article
                   key={creador.nombre}
-                  className="group flex flex-1 flex-col items-center gap-4 rounded-[28px] border border-[var(--borde)] bg-[var(--superficie-alt)] p-4 text-center shadow-[0_16px_28px_rgba(14,27,41,0.04)] transition duration-300 hover:bg-[var(--superficie)] md:items-start md:text-left"
+                  className="group flex h-full flex-col items-center gap-4 rounded-[28px] border border-[var(--borde)] bg-[var(--superficie-alt)] p-4 text-center shadow-[0_16px_28px_rgba(14,27,41,0.04)] transition duration-300 hover:bg-[var(--superficie)] md:items-start md:text-left"
                 >
                   <div className="flex w-full items-center justify-center md:justify-start">
                     <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-[24px] border border-[var(--borde)] bg-[linear-gradient(135deg,var(--superficie-alt),var(--superficie))] text-lg font-black text-[var(--texto-principal)] shadow-[0_12px_24px_rgba(14,27,41,0.08)] md:h-24 md:w-24">
@@ -406,7 +409,6 @@ export default function Bienvenida() {
 
                   <div className="w-full">
                     <h3 className="text-xl font-extrabold tracking-[-0.04em] text-[var(--texto-principal)]">{creador.nombre}</h3>
-                    <p className="mt-1 text-sm font-semibold text-[var(--brand-green)]">{creador.rol}</p>
                     <p className="mt-3 text-sm leading-6 text-[var(--texto-secundario)]">{creador.universidad}</p>
                   </div>
                 </article>

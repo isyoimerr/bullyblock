@@ -102,7 +102,7 @@ export default function Reportar() {
             {TIPOS.map(({ id, label, icon: Icon }) => (
               <button key={id} type="button" onClick={() => setTipo(id)} aria-pressed={tipo === id}
                 className={`flex min-h-[104px] flex-col items-center justify-center gap-2 rounded-2xl border-2 p-3 text-center font-bold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98] ${
-                  tipo === id ? 'border-verde-700 bg-verde-100 text-verde-700' : 'border-borde bg-white text-azul-900'
+                  tipo === id ? 'border-verde-700 bg-verde-100 text-verde-700' : 'border-borde bg-[var(--superficie)] text-[var(--texto-principal)]'
                 }`}>
                 <Icon size={30} aria-hidden="true" />
                 {label}
@@ -131,7 +131,7 @@ export default function Reportar() {
               {LUGARES.map((l) => (
                 <button key={l.id} type="button" onClick={() => setLugar(l.id)} aria-pressed={lugar === l.id}
                   className={`min-h-[48px] rounded-full border-2 px-4 font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm active:scale-[0.98] ${
-                    lugar === l.id ? 'border-verde-700 bg-verde-100 text-verde-700' : 'border-borde bg-white'
+                    lugar === l.id ? 'border-verde-700 bg-verde-100 text-verde-700' : 'border-borde bg-[var(--superficie)]'
                   }`}>{l.label}</button>
               ))}
             </div>
@@ -142,7 +142,7 @@ export default function Reportar() {
               {([['hoy', 'Hoy'], ['ayer', 'Ayer'], ['otra', 'Otra fecha']] as const).map(([id, l]) => (
                 <button key={id} type="button" onClick={() => setCuando(id)} aria-pressed={cuando === id}
                   className={`min-h-[48px] rounded-full border-2 px-4 font-semibold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm active:scale-[0.98] ${
-                    cuando === id ? 'border-verde-700 bg-verde-100 text-verde-700' : 'border-borde bg-white'
+                    cuando === id ? 'border-verde-700 bg-verde-100 text-verde-700' : 'border-borde bg-[var(--superficie)]'
                   }`}>{l}</button>
               ))}
             </div>
@@ -173,7 +173,7 @@ export default function Reportar() {
             {([[true, 'Sí, ahora'], [false, 'No por ahora']] as const).map(([v, l]) => (
               <button key={l} type="button" onClick={() => setUrgente(v)} aria-pressed={urgente === v}
                 className={`min-h-[72px] rounded-2xl border-2 p-3 font-bold transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98] ${
-                  urgente === v ? (v ? 'border-ambar-500 bg-ambar-100 text-ambar-800' : 'border-verde-700 bg-verde-100 text-verde-700') : 'border-borde bg-white'
+                  urgente === v ? (v ? 'border-ambar-500 bg-ambar-100 text-ambar-800' : 'border-verde-700 bg-verde-100 text-verde-700') : 'border-borde bg-[var(--superficie)]'
                 }`}>{l}</button>
             ))}
           </div>

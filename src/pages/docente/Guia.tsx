@@ -9,11 +9,11 @@ const puntos = [
 export default function DocenteGuia() {
   return (
     <div className="space-y-4">
-      <h1 className="text-2xl font-bold text-slate-900">Guía para docentes</h1>
+      <h1 className="text-2xl font-bold text-[var(--texto-principal)]">Guía para docentes</h1>
       <div className="card p-4">
         <ul className="space-y-3">
           {puntos.map((punto) => (
-            <li key={punto} className="flex gap-2 text-sm text-slate-700">
+            <li key={punto} className="flex gap-2 text-sm text-[var(--texto-secundario)]">
               <span className="mt-1 h-2 w-2 rounded-full bg-blue-700" aria-hidden="true" />
               <span>{punto}</span>
             </li>

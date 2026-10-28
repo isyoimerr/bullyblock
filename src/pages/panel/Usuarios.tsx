@@ -40,7 +40,7 @@ export default function Usuarios() {
         <label className="label" htmlFor="bq">Buscar por nombre o documento</label>
         <input id="bq" className="input" value={q} onChange={(e) => setQ(e.target.value)} />
       </div>
-      <div className="overflow-x-auto rounded-2xl border border-borde bg-white">
+      <div className="overflow-x-auto rounded-2xl border border-borde bg-[var(--superficie)]">
         <table className="w-full min-w-[720px] text-left text-[15px]">
           <thead className="bg-azul-100 text-azul-900">
             <tr><th className="p-3">Nombre</th><th className="p-3">Grado</th><th className="p-3">Rol</th><th className="p-3">Aprobado</th><th className="p-3">Activo</th></tr>

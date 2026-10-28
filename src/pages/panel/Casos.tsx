@@ -9,7 +9,7 @@ const COL_CLASE: Record<Estado, string> = {
   nuevo: 'bg-azul-100/60',
   en_revision: 'bg-ambar-100/70',
   en_atencion: 'bg-verde-100/70',
-  cerrado: 'bg-slate-100',
+  cerrado: 'bg-[var(--superficie-alt)]',
 }
 
 export function Plazo({ r }: { r: Reporte }) {
@@ -74,7 +74,7 @@ export default function Casos() {
       to={`/panel/casos/${r.id}`}
       draggable
       onDragStart={(e) => e.dataTransfer.setData('text/plain', r.id)}
-      className={`block rounded-xl border bg-white p-3 text-[15px] shadow-sm hover:shadow-md ${
+      className={`block rounded-xl border bg-[var(--superficie)] p-3 text-[15px] shadow-sm hover:shadow-md ${
         r.urgente ? 'border-l-[5px] border-rojo-600 bg-rojo-100/50' : 'border-borde'
       }`}
     >
@@ -90,7 +90,7 @@ export default function Casos() {
     <div>
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <h1 className="text-2xl md:text-3xl">Gestión de casos</h1>
-        <div className="flex rounded-xl border border-borde bg-white p-1" role="group" aria-label="Vista">
+        <div className="flex rounded-xl border border-borde bg-[var(--superficie)] p-1" role="group" aria-label="Vista">
           {(['tablero', 'lista'] as const).map((v) => (
             <button key={v} onClick={() => setVista(v)} aria-pressed={vista === v}
               className={`min-h-[40px] rounded-lg px-4 font-semibold capitalize ${vista === v ? 'bg-azul-700 text-white' : 'text-azul-900'}`}>{v}</button>
@@ -144,7 +144,7 @@ export default function Casos() {
                 className={`min-h-[200px] rounded-2xl border p-3 ${COL_CLASE[e]} ${arrastrando === e ? 'border-azul-500 ring-2 ring-azul-500' : 'border-borde'}`}
               >
                 <h2 className="mb-3 flex items-center justify-between text-base md:text-base">
-                  {ESTADO_PERSONAL[e]} <span className="rounded-full bg-white px-2 text-sm">{col.length}</span>
+                  {ESTADO_PERSONAL[e]} <span className="rounded-full bg-[var(--superficie)] px-2 text-sm">{col.length}</span>
                 </h2>
                 <div className="space-y-2">
                   {col.map((r) => <Tarjeta key={r.id} r={r} />)}
@@ -155,7 +155,7 @@ export default function Casos() {
           })}
         </div>
       ) : (
-        <div className="overflow-x-auto rounded-2xl border border-borde bg-white">
+        <div className="overflow-x-auto rounded-2xl border border-borde bg-[var(--superficie)]">
           <table className="w-full min-w-[640px] text-left text-[15px]">
             <thead className="bg-azul-100 text-azul-900">
               <tr><th className="p-3">Código</th><th className="p-3">Estudiante</th><th className="p-3">Tipo</th><th className="p-3">Estado</th><th className="p-3">Fecha</th></tr>

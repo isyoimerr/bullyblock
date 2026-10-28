@@ -40,58 +40,10 @@ export interface AyudaEnviada {
 
 const STORAGE_KEY = 'bullyblock-ayudas-enviadas-v1'
 
-const HORARIO_DEMO = [
-  { dia: 1, horaInicio: '7:00', horaFin: '7:55', materia: 'Matemáticas', docente: 'Carlos Mendoza', salon: '8A-02' },
-  { dia: 1, horaInicio: '8:00', horaFin: '8:55', materia: 'Ciencias', docente: 'Paula Rojas', salon: '8A-05' },
-  { dia: 1, horaInicio: '9:15', horaFin: '10:10', materia: 'Lenguaje', docente: 'María López', salon: '8A-04' },
-  { dia: 1, horaInicio: '10:15', horaFin: '11:10', materia: 'Historia', docente: 'Diego Salazar', salon: '8A-06' },
-  { dia: 1, horaInicio: '11:15', horaFin: '12:10', materia: 'Ética', docente: 'Sofía Ramírez', salon: '8A-03' },
-  { dia: 2, horaInicio: '7:00', horaFin: '7:55', materia: 'Inglés', docente: 'Rosa García', salon: '8B-01' },
-  { dia: 2, horaInicio: '8:00', horaFin: '8:55', materia: 'Biología', docente: 'Alicia Torres', salon: '8A-07' },
-  { dia: 2, horaInicio: '9:15', horaFin: '10:10', materia: 'Educación física', docente: 'Daniel Castro', salon: 'Gimnasio 2' },
-  { dia: 2, horaInicio: '10:15', horaFin: '11:10', materia: 'Física', docente: 'Camilo Paredes', salon: '8A-08' },
-  { dia: 2, horaInicio: '11:15', horaFin: '12:10', materia: 'Tecnología', docente: 'Laura Peña', salon: 'Lab 3' },
-  { dia: 3, horaInicio: '7:00', horaFin: '7:55', materia: 'Geografía', docente: 'Elena Vega', salon: '8A-09' },
-  { dia: 3, horaInicio: '8:00', horaFin: '8:55', materia: 'Química', docente: 'Nicolás Díaz', salon: 'Lab 4' },
-  { dia: 3, horaInicio: '9:15', horaFin: '10:10', materia: 'Sociales', docente: 'Isabel Mora', salon: '8A-10' },
-  { dia: 3, horaInicio: '10:15', horaFin: '11:10', materia: 'Artes', docente: 'Valentina Ruiz', salon: 'Taller 1' },
-  { dia: 3, horaInicio: '11:15', horaFin: '12:10', materia: 'Religión', docente: 'Mónica Cifuentes', salon: '8A-05' },
-  { dia: 4, horaInicio: '7:00', horaFin: '7:55', materia: 'Matemáticas', docente: 'Carlos Mendoza', salon: '8A-02' },
-  { dia: 4, horaInicio: '8:00', horaFin: '8:55', materia: 'Español', docente: 'Marta Ocampo', salon: '8A-03' },
-  { dia: 4, horaInicio: '9:15', horaFin: '10:10', materia: 'Cívica', docente: 'Sandra Beltrán', salon: '8A-06' },
-  { dia: 4, horaInicio: '10:15', horaFin: '11:10', materia: 'Filosofía', docente: 'José Arango', salon: '8A-04' },
-  { dia: 4, horaInicio: '11:15', horaFin: '12:10', materia: 'Informática', docente: 'Ana Torrez', salon: 'Lab 1' },
-  { dia: 5, horaInicio: '7:00', horaFin: '7:55', materia: 'Taller', docente: 'Lucía Ortiz', salon: 'Taller 2' },
-  { dia: 5, horaInicio: '8:00', horaFin: '8:55', materia: 'Biología', docente: 'Alicia Torres', salon: '8A-07' },
-  { dia: 5, horaInicio: '9:15', horaFin: '10:10', materia: 'Inglés', docente: 'Rosa García', salon: '8B-01' },
-  { dia: 5, horaInicio: '10:15', horaFin: '11:10', materia: 'Matemáticas', docente: 'Carlos Mendoza', salon: '8A-02' },
-  { dia: 5, horaInicio: '11:15', horaFin: '12:10', materia: 'Ciencias', docente: 'Paula Rojas', salon: '8A-05' },
-]
-
-function horaEnMinutos(hora: string) {
-  const [h, m] = hora.split(':').map(Number)
-  return h * 60 + m
-}
-
 export function obtenerContextoAula(perfil: Perfil | null, fecha = new Date()): ContextoAula {
   const grado = perfil?.grado ?? 9
   const grupo = perfil?.grupo ?? 'A'
   const horaActual = `${String(fecha.getHours()).padStart(2, '0')}:${String(fecha.getMinutes()).padStart(2, '0')}`
-  const diaSemana = fecha.getDay() === 0 || fecha.getDay() === 6 ? 0 : fecha.getDay()
-  const item = HORARIO_DEMO.find((h) => h.dia === diaSemana && horaEnMinutos(horaActual) >= horaEnMinutos(h.horaInicio) && horaEnMinutos(horaActual) < horaEnMinutos(h.horaFin))
-
-  if (item) {
-    return {
-      grado,
-      grupo,
-      materia: item.materia,
-      salon: item.salon,
-      docente: item.docente,
-      hora: horaActual,
-      enClase: true,
-      ubicacion: 'en_clase',
-    }
-  }
 
   return {
     grado,

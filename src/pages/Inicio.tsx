@@ -32,10 +32,10 @@ export default function Inicio() {
         <p className="text-suave">Detenemos el bullying. Juntos.</p>
       </div>
 
-      <div className="mb-4 rounded-3xl border border-sky-200 bg-white p-4 shadow-sm">
-        <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-500">Ahora estás en</p>
-        <p className="mt-2 text-xl font-bold text-slate-900">{formatoCurso(contexto.grado, contexto.grupo)} · {contexto.materia ?? 'Clase'}</p>
-        <p className="text-[15px] text-slate-700">{contexto.salon ? `Salón ${contexto.salon}` : 'Sin salón asignado'} · {contexto.docente ?? 'Docente por confirmar'}</p>
+      <div className="mb-4 rounded-3xl border border-[var(--borde)] bg-[var(--superficie)] p-4 shadow-sm">
+        <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--texto-suave)]">Ahora estás en</p>
+        <p className="mt-2 text-xl font-bold text-[var(--texto-principal)]">{formatoCurso(contexto.grado, contexto.grupo)} · {contexto.materia ?? 'Clase'}</p>
+        <p className="text-[15px] text-[var(--texto-secundario)]">{contexto.salon ? `Salón ${contexto.salon}` : 'Sin salón asignado'} · {contexto.docente ?? 'Docente por confirmar'}</p>
       </div>
 
       <div className="mb-4 rounded-2xl bg-verde-100 px-4 py-3 text-[15px]">
@@ -51,9 +51,9 @@ export default function Inicio() {
 
       {ultimaAyuda && (
         <div className="card mt-5 block">
-          <p className="text-xs font-bold uppercase tracking-[0.12em] text-slate-500">Te esperan</p>
-          <h3 className="mt-2 text-base font-bold text-slate-900">Hoy, {ultimaAyuda.salon ? `en ${ultimaAyuda.salon}` : 'en Orientación'} · {ultimaAyuda.folio}</h3>
-          <p className="text-[15px] text-slate-700">Es para acompañarte, no es un llamado de atención. Tu profe ya sabe que puedes salir con naturalidad.</p>
+          <p className="text-xs font-bold uppercase tracking-[0.12em] text-[var(--texto-suave)]">Te esperan</p>
+          <h3 className="mt-2 text-base font-bold text-[var(--texto-principal)]">Hoy, {ultimaAyuda.salon ? `en ${ultimaAyuda.salon}` : 'en Orientación'} · {ultimaAyuda.folio}</h3>
+          <p className="text-[15px] text-[var(--texto-secundario)]">Es para acompañarte, no es un llamado de atención. Tu profe ya sabe que puedes salir con naturalidad.</p>
         </div>
       )}
 
