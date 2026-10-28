@@ -1,195 +1,154 @@
 # BullyBlock
 
 <p align="center">
-  <img src="./docs/github-banner.svg" alt="Banner BullyBlock" width="100%" />
+  <a href="https://bullyblock-mu.vercel.app/" target="_blank" rel="noreferrer">
+    <img src="./docs/screenshots/home-claro.png" alt="BullyBlock landing page" width="100%" />
+  </a>
 </p>
-
-BullyBlock es una plataforma web mobile-first para apoyar a estudiantes, docentes, psicorientación y administración en la gestión de situaciones de acoso escolar, riesgo y acompañamiento institucional.
-
-La idea principal es clara: que una persona pueda reportar lo que vive sin miedo, y que el colegio pueda responder con empatía, orden y claridad.
-
-## ¿Qué hace BullyBlock?
-
-BullyBlock ayuda a la comunidad escolar a:
-
-- reportar casos de acoso, exclusión o intimidación,
-- describir lo sucedido con contexto y detalle,
-- pedir ayuda sin sentirse perdida ni confundida,
-- dar seguimiento a cada caso según el rol responsable,
-- organizar la atención del personal académico y de apoyo,
-- y mejorar la respuesta institucional con una experiencia accesible.
-
-No es solo una app para “mandar un reporte”. Es una herramienta para apoyar real y humanamente a la comunidad educativa.
-
-## ¿Por qué importa?
-
-Muchas situaciones delicadas no se reportan por miedo, falta de claridad o porque el proceso parece complicado. BullyBlock busca reducir ese problema con una experiencia amigable, clara y segura.
-
-Esto impacta directamente en la institución porque:
-
-- reduce la confusión en la gestión de casos,
-- ayuda a detectar alertas con mayor rapidez,
-- da una vía ordenada para la atención del problema,
-- centraliza información importante en un mismo lugar,
-- mejora la comunicación entre estudiante y personal escolar,
-- y fortalece una respuesta más responsable, humana y estructurada.
-
-## Roles del sistema
-
-El proyecto está pensado con cuatro roles principales:
-
-| Rol | Función principal |
-| --- | --- |
-| Estudiante | Reporta situaciones y recibe apoyo o seguimiento. |
-| Docente | Acompaña y da seguimiento a casos del entorno escolar. |
-| Psicorientador | Revisa, prioriza y acompaña casos sensibles o de bienestar. |
-| Admin | Supervisa la operación general del sistema y la estructura institucional. |
-
-La lógica de roles se diseña para evitar mezcla de funciones y asegurar que cada persona tenga un papel claro dentro del proceso.
-
-## Cómo funciona la experiencia
-
-La app está pensada para recorrer el problema de forma guiada y segura:
-
-1. El estudiante entra a la app.
-2. Selecciona el tipo de situación y la describe.
-3. El caso queda registrado con información útil.
-4. El equipo de apoyo revisa el caso.
-5. Se responde, se cambia de estado y se sigue la atención.
-6. La institución puede ver la evolución del caso de forma ordenada.
-
-Esto hace que la gestión sea más clara y menos caótica para todos los actores.
-
-## Modo claro, oscuro y accesibilidad
-
-BullyBlock incluye un sistema claro/oscuro para mejorar la experiencia visual y la accesibilidad.
-
-### Modo claro
-
-- mejor para lectura en espacios luminosos,
-- más limpio y visualmente sobrio,
-- ideal para uso cotidiano en ambientes normales.
-
-### Modo oscuro
-
-- reduce la fatiga visual,
-- mejora el uso en ambientes con poca luz,
-- y ayuda a mantener una experiencia más cómoda en pantallas largas.
-
-Además, la interfaz se diseña pensando en:
-
-- textos legibles,
-- botones grandes y sencillos,
-- navegación clara,
-- contraste adecuado,
-- y una experiencia pensada para móvil con urgencia y estrés.
-
-## Qué hace cada pantalla
-
-### 1) Landing y acceso
 
 <p align="center">
-  <img src="./docs/screenshots/home-claro.png" alt="Home de BullyBlock en modo claro" width="100%" />
+  <a href="https://bullyblock-mu.vercel.app/" target="_blank" rel="noreferrer">
+    <img alt="Open live demo" src="https://img.shields.io/badge/Live%20Demo-BullyBlock%20App-1A73E8?style=for-the-badge&logo=vercel&logoColor=white" />
+  </a>
+  <a href="https://github.com/isyoimerr/bullyblock" target="_blank" rel="noreferrer">
+    <img alt="GitHub Repository" src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white" />
+  </a>
 </p>
-
-La primera vista presenta la intención del proyecto: dar un lugar seguro para pedir ayuda y organizar la respuesta institucional.
 
 <p align="center">
-  <img src="./docs/screenshots/home-oscuro.png" alt="Home de BullyBlock en modo oscuro" width="100%" />
+  <strong>Open the app:</strong> <a href="https://bullyblock-mu.vercel.app/">https://bullyblock-mu.vercel.app/</a>
 </p>
-
-El modo oscuro muestra una versión más tenue y confortable para uso prolongado o en condiciones de baja luminosidad.
-
-### 2) Estudiante y flujo de ayuda
 
 <p align="center">
-  <img src="./docs/screenshots/ayuda-estudiante.png" alt="Ayuda para estudiante" width="32%" />
-  <img src="./docs/screenshots/registro-situacion.png" alt="Registro de situación" width="32%" />
-  <img src="./docs/screenshots/reportes-estudiante.png" alt="Reportes del estudiante" width="32%" />
+  <img alt="Environment: Production Ready" src="https://img.shields.io/badge/Environment-Production%20Ready-22c55e?style=for-the-badge&logo=vercel&logoColor=white" />
+  <img alt="Mobile-First Design" src="https://img.shields.io/badge/Mobile-First%20Design-111827?style=for-the-badge&logo=smartphone&logoColor=white" />
+  <img alt="Institutional Purpose" src="https://img.shields.io/badge/Purpose-Student%20Care%20%26%20Protection-8b5cf6?style=for-the-badge&logo=shield&logoColor=white" />
 </p>
 
-Desde el punto de vista del estudiante, la app busca ser clara, amable y directa. El usuario puede pedir ayuda, explicar lo sucedido y ver el estado de su caso sin sentirse perdido.
+## Live Demo
 
-### 3) Docente y seguimiento
+BullyBlock is already deployed and available for testing in production.
+
+This live environment is meant for quick validation of the onboarding flow, student reporting experience, educator dashboard, and institutional response workflow in a real deployment context.
+
+## Mobile Experience
+
+This product is designed to feel comfortable on mobile devices, with large touch targets, reduced visual clutter, and clear flows for urgent situations.
 
 <p align="center">
-  <img src="./docs/screenshots/panel-docente.png" alt="Panel del docente" width="100%" />
+  <a href="https://bullyblock-mu.vercel.app/" target="_blank" rel="noreferrer">
+    <img src="./docs/screenshots/home-claro.png" alt="Responsive mobile preview" width="320" />
+  </a>
 </p>
 
-El docente puede revisar casos, seguir su evolución y apoyar con criterio. La experiencia está pensada para no saturar ni confundir.
+> For an even stronger product presentation, a short MP4 or GIF recording of the app in mobile mode can be added here after upload.
+
+## Project Core Intent
+
+BullyBlock is a mobile-first school wellbeing and reporting platform designed to protect students and improve institutional response. The core purpose is simple and urgent: students can report risk situations without fear, and the institution can respond with empathy, order, and absolute clarity.
+
+This project was built to reduce uncertainty in sensitive situations, ensure that no incident is ignored or lost in informal communication, and give school staff a clear system for accompaniment, triage, and follow-up.
+
+## Why this project matters
+
+- Students can report bullying, exclusion, intimidation, or risk without facing confusion or pressure.
+- Teachers and support staff can follow a structured process instead of relying on fragmented communication.
+- The school can prioritize interventions with context, traceability, and clarity.
+- The experience is designed for mobile use, clarity, and emotional safety.
+
+## Role Architecture
+
+| Role | Focus | Responsibility |
+| --- | --- | --- |
+| Estudiante | Reporting and support | Reports situations, receives guidance, and tracks case status. |
+| Docente | Daily accompaniment | Follows context, identifies patterns, and supports referrals. |
+| Psicorientación | Risk intervention | Reviews sensitive cases, prioritizes attention, and provides human accompaniment. |
+| Admin | Institutional oversight | Monitors overall system flow, reports, and operational visibility. |
+
+## UI Gallery
 
 <p align="center">
-  <img src="./docs/screenshots/estadisticas-docente.png" alt="Estadísticas del docente" width="100%" />
+  <img src="./docs/screenshots/home-claro.png" alt="Landing page in light mode" width="32%" />
+  <img src="./docs/screenshots/home-oscuro.png" alt="Landing page in dark mode" width="32%" />
+  <img src="./docs/screenshots/ayuda-estudiante.png" alt="Student assistance flow" width="32%" />
 </p>
-
-Las estadísticas permiten detectar patrones y tener contexto visual para actuar mejor en cada caso.
-
-### 4) Psicorientación
 
 <p align="center">
-  <img src="./docs/screenshots/panel-psicorientador.png" alt="Panel de psicorientación" width="100%" />
+  <img src="./docs/screenshots/registro-situacion.png" alt="Report creation screen" width="32%" />
+  <img src="./docs/screenshots/reportes-estudiante.png" alt="Student reports view" width="32%" />
+  <img src="./docs/screenshots/panel-docente.png" alt="Teacher dashboard" width="32%" />
 </p>
-
-La parte de orientación es clave para acompañar de forma humana y estructurada. Aquí se responde, se prioriza la atención y se asigna el flujo correcto para cada caso.
-
-### 5) Administración
 
 <p align="center">
-  <img src="./docs/screenshots/panel-admin.png" alt="Panel administrativo" width="100%" />
+  <img src="./docs/screenshots/panel-psicorientador.png" alt="Orientation dashboard" width="32%" />
+  <img src="./docs/screenshots/panel-admin.png" alt="Administrative panel" width="32%" />
+  <img src="./docs/screenshots/estadisticas-admin.png" alt="Administrative analytics" width="32%" />
 </p>
-
-La administración tiene una vista general del sistema y puede supervisar que el flujo esté funcionando bien en la institución.
 
 <p align="center">
-  <img src="./docs/screenshots/estadisticas-admin.png" alt="Estadísticas del administrador" width="100%" />
+  <img src="./docs/screenshots/estadisticas-docente.png" alt="Teacher analytics" width="49%" />
+  <img src="./docs/screenshots/peligro-mensaje-estudiante.png" alt="Urgent risk alert" width="49%" />
 </p>
 
-Las métricas ayudan a medir la carga de casos y a entender la frecuencia de situaciones para responder mejor.
+## Product Experience
 
-### 6) Alerta y mensajes críticos
+BullyBlock is designed as a guided, low-friction experience for people in stressful situations. Each screen is built to help the user understand what is happening, what action to take next, and who can help them.
+
+### Core user flow
+
+1. The student enters the app.
+2. The person describes the situation in a clear and structured way.
+3. The report is registered with context and safety signals.
+4. The educational team reviews and prioritizes the case.
+5. The institution accompanies the student with order, empathy, and follow-up.
+
+The result is a safer, clearer, and more organized response to risk and wellbeing situations in the school environment.
+
+## Tech Stack
 
 <p align="center">
-  <img src="./docs/screenshots/peligro-mensaje-estudiante.png" alt="Pantalla de alerta o riesgo" width="100%" />
+  <img alt="React" src="https://img.shields.io/badge/React-18-%2361DAFB?style=for-the-badge&logo=react&logoColor=white" />
+  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5.x-%233178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+  <img alt="Vite" src="https://img.shields.io/badge/Vite-5.x-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+  <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind-CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+  <img alt="Supabase" src="https://img.shields.io/badge/Supabase-Database%20%26%20Auth-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" />
+  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img alt="Vercel" src="https://img.shields.io/badge/Vercel-Deploy-000000?style=for-the-badge&logo=vercel&logoColor=white" />
 </p>
 
-También existe una vista enfocada en la urgencia, donde se prioriza la respuesta cuando la situación requiere apoyo cercano o atención inmediata.
+## Project Context
 
-## Stack tecnológico
+This project is associated with the educational institution:
 
-El proyecto usa una stack moderna para una solución web enfocada en accesibilidad y gestión escolar:
+**Institución Educativa Técnica José Agustín Blanco Barros**
 
-- React
-- TypeScript
-- Vite
-- Tailwind CSS
-- Supabase
-- PostgreSQL
-- Vercel
+The application is designed to support student wellbeing, institutional response, and a safe communication channel for reporting risk situations inside the school ecosystem.
 
-## Herramientas y para qué sirven
+## Contributors
 
-### React
-Construye la interfaz de la aplicación y la experiencia de navegación.
+This repository is open to collaboration and community contribution.
 
-### TypeScript
-Mejora la seguridad del código y reduce errores durante el desarrollo.
+[View contributors](https://github.com/isyoimerr/bullyblock/graphs/contributors)
 
-### Vite
-Permite compilar y servir la app de forma rápida y eficiente.
+## Getting Started
 
-### Tailwind CSS
-Ayuda a diseñar interfaces limpias, responsivas y consistentes.
+```bash
+git clone https://github.com/isyoimerr/bullyblock.git
+cd bullyblock
+npm install
+npm run dev
+```
 
-### Supabase
-Sirve para la autenticación, la base de datos y la lógica de acceso al sistema.
+### Environment variables
 
-### PostgreSQL
-Guarda los reportes, usuarios, perfiles y estados de cada caso.
+```env
+VITE_SUPABASE_URL=https://tu-proyecto.supabase.co
+VITE_SUPABASE_ANON_KEY=tu-clave-anon-publica
+```
 
-### Vercel
-Permite desplegar la aplicación de manera sencilla y profesional.
+> Keep all secrets and service-role credentials out of the repository.
 
-## Estructura del proyecto
+## Project Structure
 
 ```text
 bullyblock/
@@ -229,7 +188,6 @@ bullyblock/
 │  ├─ seed.sql
 │  ├─ staff.sql
 │  └─ safe-roles-migration.sql
-├─ .env
 ├─ index.html
 ├─ package.json
 ├─ tailwind.config.js
@@ -240,59 +198,17 @@ bullyblock/
 └─ build-log.txt
 ```
 
-## Cómo ejecutar el proyecto
+## Institutional License
 
-```bash
-git clone https://github.com/isyoimerr/bullyblock.git
-cd bullyblock
-npm install
-npm run dev
-```
+© 2026 **Institución Educativa Técnica José Agustín Blanco Barros**. All rights reserved.
 
-### Variables de entorno
+This repository and the associated project assets are the property of the institution for educational, operational, and institutional use. Any reuse, adaptation, redistribution, or commercial exploitation must be previously authorized in writing by the institution.
 
-```env
-VITE_SUPABASE_URL=https://tu-proyecto.supabase.co
-VITE_SUPABASE_ANON_KEY=tu-clave-anon-publica
-```
+## Status
 
-> Nunca subas la Service Role Key ni secretos del proyecto al repositorio.
+- Mobile-first UX: active
+- Institutional reporting flow: active
+- Multi-role access model: active
+- Visual dashboard and reporting system: active
+- Production-ready deployment pathway: active
 
-## Base de datos y seguridad
-
-El sistema usa Supabase + PostgreSQL y se recomienda mantener la base organizada para no romper flujo y datos ya existentes.
-
-### Archivos clave
-
-- [supabase/schema.sql](supabase/schema.sql)
-- [supabase/seed.sql](supabase/seed.sql)
-- [supabase/safe-roles-migration.sql](supabase/safe-roles-migration.sql)
-
-## Próximos pasos
-
-El proyecto ya tiene una base sólida, pero puede crecer aún más con:
-
-- noticias y consejos dentro de la app,
-- videos de apoyo,
-- materiales educativos,
-- más indicadores y estadísticas para orientación,
-- y paneles más avanzados para detectar patrones de forma institucional.
-
-## Documentación adicional
-
-- [docs/README.md](docs/README.md)
-- [docs/01-arquitectura-software.md](docs/01-arquitectura-software.md)
-- [docs/02-ui-ux-roadmap.md](docs/02-ui-ux-roadmap.md)
-- [docs/03-base-datos-supabase.md](docs/03-base-datos-supabase.md)
-- [docs/04-github-vercel.md](docs/04-github-vercel.md)
-- [docs/05-checklist.md](docs/05-checklist.md)
-
-## Objetivo final
-
-BullyBlock busca convertirse en una herramienta útil, segura y humana para instituciones educativas que necesitan atender situaciones sensibles con claridad, respeto y orden.
-
-La idea central es simple: que una persona no se sienta sola cuando necesita ayuda, y que la comunidad escolar pueda responder con estructura, empatía y responsabilidad.
-
-## Licencia
-
-Este proyecto está pensado como base para uso institucional y adaptación en un contexto escolar real.
