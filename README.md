@@ -153,6 +153,13 @@ El resultado es una respuesta más segura, clara y organizada frente a situacion
 
 ## ¿Cómo funciona por dentro?
 
+<p align="center">
+  <img src="./docs/screenshots/INFgrafia.jpeg" alt="Diagrama del flujo interno del sistema" width="90%" />
+</p>
+
+
+Esta infografía resume el funcionamiento real del proyecto: la app recoge información del estudiante, la procesa en la capa lógica del sistema, la guarda en la base de datos segura y la entrega al rol correcto dentro de la institución. En palabras simples, el estudiante reporta, el sistema organiza la información y la institución puede responder con orden, prioridad y seguimiento.
+
 ### 1. Introducción (Paso 1 de la infografía)
 
 > "Muchachos, si entramos a GitHub, la plataforma nos muestra exactamente de qué está construida nuestra aplicación con porcentajes. El motor de todo es TypeScript, que se lleva casi el 76% del proyecto porque es el lenguaje donde programamos toda la lógica. El 11% es CSS, que es la ropa de la app, lo que hace que se vea limpia y se adapte bien a las pantallas de sus celulares. Y el 10% es PLpgSQL, que es un lenguaje especial para hablar directamente con el servidor de la base de datos."
@@ -169,11 +176,8 @@ El resultado es una respuesta más segura, clara y organizada frente a situacion
 
 > "Para conectar ambas partes, piensen en el flujo de registro. Cuando un usuario llena sus datos desde el celular, esa información viaja desde Vercel hasta Supabase. El sistema la procesa y automáticamente le asigna un rol en la base de datos: Estudiante, Profesor, Psicorientación o Administrador. Dependiendo del rol que tengan guardado en el servidor, la aplicación les da permiso para entrar a ciertas pantallas o les bloquea el acceso por seguridad."
 
-<p align="center">
-  <img src="./docs/screenshots/INFgrafia.jpeg" alt="Diagrama del flujo interno del sistema" width="90%" />
-</p>
 
-Esta infografía resume el funcionamiento real del proyecto: la app recoge información del estudiante, la procesa en la capa lógica del sistema, la guarda en la base de datos segura y la entrega al rol correcto dentro de la institución. En palabras simples, el estudiante reporta, el sistema organiza la información y la institución puede responder con orden, prioridad y seguimiento.
+
 
 ## Documentación técnica
 
