@@ -5,7 +5,9 @@
 
 create extension if not exists pgcrypto;
 
-create type public.rol_usuario as enum ('estudiante', 'docente', 'psicoorientador', 'admin');
+-- Mantener compatibilidad con cuentas antiguas: el sistema actual usa solo estudiante y maestro,
+-- pero al migrar datos legados se normalizan los roles del personal a 'maestro'.
+create type public.rol_usuario as enum ('estudiante', 'maestro');
 create type public.estado_caso as enum ('nuevo', 'en_revision', 'en_atencion', 'cerrado');
 
 -- ---------------------------------------------------------------------
@@ -88,12 +90,12 @@ create table public.auditoria (
 create or replace function public.es_personal() returns boolean
 language sql stable security definer set search_path = public as $$
   select exists (select 1 from perfiles
-                 where id = auth.uid() and activo and rol in ('psicoorientador', 'admin'));
+                 where id = auth.uid() and activo and rol = 'maestro');
 $$;
 
 create or replace function public.es_admin() returns boolean
 language sql stable security definer set search_path = public as $$
-  select exists (select 1 from perfiles where id = auth.uid() and activo and rol = 'admin');
+  select exists (select 1 from perfiles where id = auth.uid() and activo and rol = 'maestro');
 $$;
 
 create or replace function public.es_aprobado() returns boolean
@@ -128,7 +130,7 @@ end $$;
 create trigger on_auth_user_created
   after insert on auth.users for each row execute function public.handle_new_user();
 
--- Solo un admin puede cambiar rol, activo y aprobado (desde el SQL Editor sí se permite).
+-- Solo un usuario maestro puede cambiar rol, activo y aprobado (desde el SQL Editor sí se permite).
 create or replace function public.perfiles_guard() returns trigger
 language plpgsql security definer set search_path = public as $$
 begin

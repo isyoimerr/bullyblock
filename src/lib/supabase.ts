@@ -1,9 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
-import type { Perfil, Rol } from './types'
 
 const url = import.meta.env.VITE_SUPABASE_URL as string | undefined
 const key = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined
-export const DEMO_MODE = String(import.meta.env.VITE_DEMO_MODE ?? 'true').toLowerCase() === 'true'
 
 export const supabaseConfigurada = Boolean(
   url && key && !/TU-PROYECTO|tu-clave/i.test(String(url + key)),
@@ -15,54 +13,7 @@ if (!supabaseConfigurada) {
   )
 }
 
-export const demoUsers: Array<{ email: string; password: string; rol: Rol; nombre: string; grado: number; grupo: string }> = [
-  { email: 'demo@estudiante.com', password: 'demo1234', rol: 'estudiante', nombre: 'Estudiante demo', grado: 9, grupo: '01' },
-  { email: 'docente@estudiante.com', password: 'demo1234', rol: 'docente', nombre: 'Docente demo', grado: 9, grupo: '01' },
-  { email: 'orientacion@estudiante.com', password: 'demo1234', rol: 'psicoorientador', nombre: 'Orientación demo', grado: 9, grupo: '01' },
-  { email: 'admin@estudiante.com', password: 'demo1234', rol: 'admin', nombre: 'Admin demo', grado: 9, grupo: '01' },
-]
-
-export function credencialDemoValida(email: string, password: string) {
-  const valueEmail = email.trim().toLowerCase()
-  return demoUsers.some((u) => u.email.toLowerCase() === valueEmail && u.password === password)
-}
-
-export function iniciarDemoSesion(email: string, password: string) {
-  const usuario = demoUsers.find((u) => u.email.toLowerCase() === email.trim().toLowerCase() && u.password === password)
-  if (!usuario) return null
-
-  const perfil: Perfil = {
-    id: `demo-${usuario.rol}`,
-    nombre: usuario.nombre,
-    documento: `demo-${usuario.rol}`,
-    grado: usuario.grado,
-    grupo: usuario.grupo,
-    rol: usuario.rol,
-    activo: true,
-    aprobado: true,
-    creado_en: new Date().toISOString(),
-  }
-
-  const payload = { session: { user: { id: perfil.id, email: email.trim().toLowerCase() } }, perfil }
-  localStorage.setItem('bullyblock-demo-session', JSON.stringify(payload))
-  window.dispatchEvent(new CustomEvent('bullyblock-demo-session:changed', { detail: payload }))
-  return payload
-}
-
-export function leerDemoSesion() {
-  try {
-    const raw = localStorage.getItem('bullyblock-demo-session')
-    if (!raw) return null
-    return JSON.parse(raw) as { session: { user: { id: string; email: string } }; perfil: Perfil }
-  } catch {
-    return null
-  }
-}
-
-export function limpiarDemoSesion() {
-  localStorage.removeItem('bullyblock-demo-session')
-  window.dispatchEvent(new CustomEvent('bullyblock-demo-session:changed'))
-}
+const authStorage = typeof window !== 'undefined' ? window.localStorage : undefined
 
 export const supabase = createClient(
   url || 'https://placeholder.supabase.co',
@@ -72,6 +23,7 @@ export const supabase = createClient(
       persistSession: true,
       autoRefreshToken: true,
       detectSessionInUrl: true,
+      storage: authStorage,
     },
   },
 )

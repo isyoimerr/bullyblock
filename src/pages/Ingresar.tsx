@@ -1,8 +1,8 @@
-import { useEffect, useState, type FormEvent } from 'react'
+import { useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import AuthShell from '../components/AuthShell'
 import PasswordField from '../components/PasswordField'
-import { DEMO_MODE, credencialDemoValida, demoUsers, iniciarDemoSesion, mensajeError, supabase } from '../lib/supabase'
+import { mensajeError, supabase, supabaseConfigurada } from '../lib/supabase'
 import { rolPorCorreo, rutaPorRol } from '../lib/types'
 
 export default function Ingresar() {
@@ -12,49 +12,52 @@ export default function Ingresar() {
   const [error, setError] = useState('')
   const [info, setInfo] = useState('')
   const [enviando, setEnviando] = useState(false)
-  const demoOptions = demoUsers.filter((u) => u.rol !== 'admin')
-  const [demoSeleccionado, setDemoSeleccionado] = useState(demoOptions[0]?.email ?? '')
-
-  useEffect(() => {
-    setEmail('')
-    setClave('')
-  }, [])
-
-  const rolDetectado = rolPorCorreo(email.trim())
-
-  function aplicarCuentaDemo(emailDemo: string, claveDemo: string) {
-    setDemoSeleccionado(emailDemo)
-    setEmail(emailDemo)
-    setClave(claveDemo)
-    setInfo('Cuenta demo cargada temporalmente.')
-    setError('')
-  }
 
   async function entrar(e: FormEvent) {
     e.preventDefault()
     setError('')
     setInfo('')
-    setEnviando(true)
 
-    const esDemo = DEMO_MODE || credencialDemoValida(email, clave)
-    if (esDemo) {
-      const demo = iniciarDemoSesion(email.trim(), clave)
-      if (demo) {
-        setEnviando(false)
-        window.location.assign(rutaPorRol(demo.perfil.rol))
-        return
-      }
+    if (!email.trim() || !clave.trim()) {
+      setError('Debes ingresar correo y contraseña para continuar.')
+      return
     }
 
-    const { error: loginError } = await supabase.auth.signInWithPassword({
-      email: email.trim(),
-      password: clave,
-    })
-    setEnviando(false)
+    if (!supabaseConfigurada) {
+      setError('Supabase no está configurado en esta instancia. Revisa las variables VITE_SUPABASE_URL y VITE_SUPABASE_ANON_KEY.')
+      return
+    }
 
-    if (loginError) return setError(mensajeError(loginError))
+    setEnviando(true)
 
-    nav(rutaPorRol(rolDetectado), { replace: true })
+    try {
+      const { data, error: loginError } = await supabase.auth.signInWithPassword({
+        email: email.trim().toLowerCase(),
+        password: clave,
+      })
+
+      if (loginError) {
+        setError(mensajeError(loginError))
+        setEnviando(false)
+        return
+      }
+
+      const uid = data.user?.id
+      let rol = rolPorCorreo(email)
+
+      if (uid) {
+        const { data: perfilData } = await supabase.from('perfiles').select('*').eq('id', uid).maybeSingle()
+        if (perfilData?.rol) {
+          rol = perfilData.rol
+        }
+      }
+
+      nav(rutaPorRol(rol), { replace: true })
+    } catch (err) {
+      setError(mensajeError(err))
+    } finally {
+      setEnviando(false)
+    }
   }
 
   async function olvide() {
@@ -62,45 +65,21 @@ export default function Ingresar() {
     setInfo('')
     if (!email.trim()) return setError('Escribe tu correo arriba y vuelve a tocar “Olvidé mi clave”.')
 
-    const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
-      redirectTo: window.location.origin + '/ingresar',
-    })
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(email.trim().toLowerCase(), {
+        redirectTo: window.location.origin + '/ingresar',
+      })
 
-    if (error) return setError(mensajeError(error))
-    setInfo('Si el correo existe, te enviamos un enlace para cambiar tu clave.')
+      if (error) return setError(mensajeError(error))
+      setInfo('Si el correo existe, te enviamos un enlace para cambiar tu clave.')
+    } catch (err) {
+      setError(mensajeError(err))
+    }
   }
 
   return (
     <AuthShell titulo="Inicia sesión">
       <form onSubmit={entrar} className="space-y-4" noValidate autoComplete="off">
-        {DEMO_MODE && demoOptions.length > 0 && (
-          <div>
-            <label className="label">Acceso rápido</label>
-            <div className="grid gap-2 sm:grid-cols-3">
-              {demoOptions.map((usuario) => {
-                const activo = demoSeleccionado === usuario.email
-                const rolLabel = usuario.rol === 'estudiante' ? 'Estudiante' : usuario.rol === 'docente' ? 'Docente' : 'Orientación'
-                return (
-                  <button
-                    key={usuario.email}
-                    type="button"
-                    onClick={() => aplicarCuentaDemo(usuario.email, usuario.password)}
-                    className={`flex min-h-[80px] flex-col justify-center rounded-2xl border px-3 py-2 text-left text-sm font-semibold transition ${
-                      activo
-                        ? 'border-[var(--brand-green)] bg-[var(--brand-green)]/10 text-[var(--texto-principal)] shadow-[0_8px_20px_rgba(27,180,76,0.08)]'
-                        : 'border-[var(--borde)] bg-[var(--superficie-alt)] text-[var(--texto-principal)] hover:border-[var(--brand-green)]/50'
-                    }`}
-                  >
-                    <span className="block text-[10px] uppercase tracking-[0.14em] text-[var(--texto-suave)]">Rol</span>
-                    <span className="mt-1 block text-sm font-bold">{rolLabel}</span>
-                    <span className="mt-1 block text-[11px] break-all text-[var(--texto-suave)]">{usuario.email}</span>
-                  </button>
-                )
-              })}
-            </div>
-          </div>
-        )}
-
         <div>
           <label className="label" htmlFor="email">Correo</label>
           <input
@@ -112,7 +91,9 @@ export default function Ingresar() {
             spellCheck={false}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="nombre@estudiante.com"
+            placeholder="nombre@colegio.edu.co"
+            aria-invalid={Boolean(error)}
+            aria-describedby={error ? 'login-error' : undefined}
           />
         </div>
 
@@ -123,10 +104,16 @@ export default function Ingresar() {
             autoComplete="current-password"
             value={clave}
             onChange={(e) => setClave(e.target.value)}
+            aria-invalid={Boolean(error)}
+            aria-describedby={error ? 'login-error' : undefined}
           />
         </div>
 
-        {error && <p className="aviso-error" role="alert">{error}</p>}
+        {error && (
+          <p id="login-error" className="aviso-error" role="alert">
+            {error}
+          </p>
+        )}
         {info && <p className="aviso-ok" role="status">{info}</p>}
 
         <button type="submit" className="btn btn-azul" disabled={enviando || !email || !clave}>

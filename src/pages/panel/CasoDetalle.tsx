@@ -24,7 +24,7 @@ export default function CasoDetalle() {
       supabase.from('reportes').select('*, reportante:perfiles!reportante_id(nombre, grado, grupo)').eq('id', id!).maybeSingle(),
       supabase.from('mensajes').select('*').eq('reporte_id', id!).order('creado_en'),
       supabase.from('notas_internas').select('*, autor:perfiles!autor_id(nombre)').eq('reporte_id', id!).order('creado_en'),
-      supabase.from('perfiles').select('*').in('rol', ['psicoorientador', 'admin']).eq('activo', true),
+      supabase.from('perfiles').select('*').in('rol', ['maestro', 'psicoorientador', 'admin']).eq('activo', true),
     ])
     setR((a.data as unknown as Reporte | null) ?? null)
     setMensajes((b.data as Mensaje[]) ?? [])
@@ -100,7 +100,7 @@ export default function CasoDetalle() {
             <div className="space-y-3">
               {mensajes.length === 0 && <p className="text-suave">Aún no hay mensajes.</p>}
               {mensajes.map((m) => {
-                const equipoMsg = m.autor_rol === 'psicoorientador' || m.autor_rol === 'admin'
+                const equipoMsg = m.autor_rol === 'maestro' || m.autor_rol === 'psicoorientador' || m.autor_rol === 'admin'
                 return (
                   <div key={m.id} className={`max-w-[90%] rounded-2xl px-4 py-3 text-[15px] ${equipoMsg ? 'ml-auto rounded-br-sm bg-verde-100' : 'rounded-bl-sm bg-azul-100'}`}>
                     <p className="text-sm font-bold text-azul-900">{equipoMsg ? 'Orientación' : r.reportante?.nombre}</p>

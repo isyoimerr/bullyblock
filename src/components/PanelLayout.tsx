@@ -8,7 +8,7 @@ export default function PanelLayout() {
   const links = [
     { to: '/panel', label: 'Casos', icon: ClipboardList, end: true },
     { to: '/panel/estadisticas', label: 'Estadísticas', icon: BarChart3, end: false },
-    ...(perfil?.rol === 'admin' ? [{ to: '/panel/usuarios', label: 'Usuarios', icon: Users, end: false }] : []),
+    ...(perfil?.rol === 'maestro' ? [{ to: '/panel/usuarios', label: 'Usuarios', icon: Users, end: false }] : []),
   ]
   const clase = ({ isActive }: { isActive: boolean }) =>
     `flex min-h-[44px] items-center gap-2 rounded-xl px-3 font-semibold ${

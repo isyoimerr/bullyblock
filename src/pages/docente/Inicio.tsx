@@ -6,8 +6,8 @@ export default function DocenteInicio() {
 
   return (
     <div className="space-y-5">
-      <section className="rounded-3xl bg-[linear-gradient(135deg,#dbeafe,#eef6ff)] p-5 shadow-sm">
-        <p className="text-sm font-semibold uppercase tracking-[0.12em] text-blue-700">Área docente</p>
+      <section className="docente-hero rounded-3xl p-5 shadow-sm">
+        <p className="docente-label text-sm font-semibold uppercase tracking-[0.12em]">Área docente</p>
         <h1 className="mt-2 text-3xl font-bold text-[var(--texto-principal)]">Hola, {perfil?.nombre ?? 'docente'}</h1>
         <p className="mt-2 text-[var(--texto-secundario)]">Aquí puedes ver los avisos dirigidos a ti, responder con calma y pasar casos a orientación cuando lo necesites.</p>
       </section>

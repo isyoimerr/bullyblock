@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Lock, Phone } from 'lucide-react'
 import { useAuth } from '../lib/auth'
-import { DEMO_MODE, mensajeError, supabase, supabaseConfigurada } from '../lib/supabase'
+import { mensajeError, supabase, supabaseConfigurada } from '../lib/supabase'
 import { LUGARES, TIPOS, isoLocal, lugarLabel, tipoLabel } from '../lib/catalogo'
 
 const TOTAL = 6
@@ -39,31 +39,9 @@ export default function Reportar() {
     setError('')
     setEnviando(true)
 
-    const guardarLocal = (codigoLocal: string) => {
-      const entrada = {
-        id: crypto.randomUUID ? crypto.randomUUID() : `reporte-demo-${Date.now()}`,
-        codigo: codigoLocal,
-        reportante_id: perfil.id,
-        tipo,
-        descripcion: descripcion.trim(),
-        lugar,
-        fecha_hecho: fecha,
-        involucrados: involucrados.trim() || null,
-        urgente: urgente === true,
-        estado: 'nuevo',
-        creado_en: new Date().toISOString(),
-      }
-
-      const prev = JSON.parse(localStorage.getItem('bullyblock-reportes-demo-v1') ?? '[]')
-      const siguiente = [entrada, ...(Array.isArray(prev) ? prev : [])].slice(0, 25)
-      localStorage.setItem('bullyblock-reportes-demo-v1', JSON.stringify(siguiente))
-      setCodigo(codigoLocal)
-    }
-
     try {
-      if (DEMO_MODE || !supabaseConfigurada) {
-        const codigoLocal = `DEMO-${new Date().getFullYear()}-${String(Math.random()).slice(2, 8).toUpperCase()}`
-        guardarLocal(codigoLocal)
+      if (!supabaseConfigurada) {
+        setError('Supabase no está configurado en esta instancia. Revisa VITE_SUPABASE_URL y VITE_SUPABASE_ANON_KEY.')
         setEnviando(false)
         return
       }
@@ -84,15 +62,12 @@ export default function Reportar() {
 
       setEnviando(false)
       if (error || !data) {
-        const codigoLocal = `OFFLINE-${new Date().getFullYear()}-${String(Math.random()).slice(2, 8).toUpperCase()}`
-        guardarLocal(codigoLocal)
+        setError(mensajeError(error ?? 'No se pudo guardar el reporte en la base de datos.'))
         return
       }
 
       setCodigo((data as { codigo: string }).codigo)
     } catch (err) {
-      const codigoLocal = `OFFLINE-${new Date().getFullYear()}-${String(Math.random()).slice(2, 8).toUpperCase()}`
-      guardarLocal(codigoLocal)
       setEnviando(false)
       setError(mensajeError(err))
     }

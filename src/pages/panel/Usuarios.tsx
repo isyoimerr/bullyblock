@@ -4,7 +4,7 @@ import { useAuth } from '../../lib/auth'
 import { mensajeError, supabase } from '../../lib/supabase'
 import { formatoCurso, type Perfil, type Rol } from '../../lib/types'
 
-const ROLES: Rol[] = ['estudiante', 'docente', 'psicoorientador', 'admin']
+const ROLES: Rol[] = ['estudiante', 'maestro']
 
 export default function Usuarios() {
   const { perfil: yo } = useAuth()

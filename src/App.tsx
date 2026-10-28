@@ -1,7 +1,7 @@
 import { Navigate, Outlet, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import { useEffect, useRef, useState } from 'react'
 import { useAuth } from './lib/auth'
-import { esDocente, esEstudiante, esPersonal, rutaPorRol, type ModoAcceso } from './lib/types'
+import { esEstudiante, esMaestro, esPersonal, rutaPorRol, type ModoAcceso } from './lib/types'
 import { Cargando } from './components/ui'
 import StudentLayout from './components/StudentLayout'
 import PanelLayout from './components/PanelLayout'
@@ -52,13 +52,13 @@ function Protegida({ modo }: { modo: ModoAcceso }) {
   if (modo === 'estudiante' && !esEstudiante(perfil.rol)) {
     return <Navigate to={rutaPorRol(perfil.rol)} replace />
   }
-  if (modo === 'docente' && !esDocente(perfil.rol)) {
+  if (modo === 'maestro' && !esMaestro(perfil.rol)) {
     return <Navigate to={rutaPorRol(perfil.rol)} replace />
   }
   if (modo === 'personal' && !esPersonal(perfil.rol)) {
     return <Navigate to={rutaPorRol(perfil.rol)} replace />
   }
-  if (modo === 'admin' && perfil.rol !== 'admin') {
+  if (modo === 'admin' && !esPersonal(perfil.rol)) {
     return <Navigate to={rutaPorRol(perfil.rol)} replace />
   }
 
@@ -251,7 +251,7 @@ function MobileGestureController({ tema, setTema }: { tema: 'light' | 'dark'; se
           </Route>
         </Route>
 
-        <Route element={<Protegida modo="docente" />}>
+        <Route element={<Protegida modo="maestro" />}>
           <Route path="/docente" element={<DocenteLayout />}>
             <Route index element={<DocenteInicio />} />
             <Route path="avisos" element={<DocenteAvisos />} />

@@ -1,7 +1,21 @@
-export type Rol = 'estudiante' | 'docente' | 'psicoorientador' | 'admin'
+export type Rol = 'estudiante' | 'maestro' | 'docente' | 'psicoorientador' | 'admin'
 export type Estado = 'nuevo' | 'en_revision' | 'en_atencion' | 'cerrado'
 export type Prioridad = 'normal' | 'alta' | 'urgente'
-export type ModoAcceso = 'estudiante' | 'docente' | 'personal' | 'admin'
+export type ModoAcceso = 'estudiante' | 'maestro' | 'personal' | 'admin'
+
+const LEGACY_ROLES: Record<string, Rol> = {
+  docente: 'maestro',
+  maestro: 'maestro',
+  psicoorientador: 'maestro',
+  personal: 'maestro',
+  admin: 'maestro',
+  estudiante: 'estudiante',
+}
+
+export const normalizarRol = (rol?: string | null): Rol => {
+  const valor = String(rol ?? '').trim().toLowerCase()
+  return LEGACY_ROLES[valor] ?? (valor === 'estudiante' ? 'estudiante' : 'maestro')
+}
 
 export interface Perfil {
   id: string
@@ -54,13 +68,13 @@ export interface Nota {
   autor?: { nombre: string } | null
 }
 
-export const esEstudiante = (rol?: Rol | null) => rol === 'estudiante'
-export const esDocente = (rol?: Rol | null) => rol === 'docente'
-export const esPersonal = (rol?: Rol | null) => rol === 'psicoorientador' || rol === 'admin'
+export const esEstudiante = (rol?: Rol | null) => normalizarRol(rol) === 'estudiante'
+export const esDocente = (rol?: Rol | null) => normalizarRol(rol) === 'maestro'
+export const esMaestro = (rol?: Rol | null) => normalizarRol(rol) === 'maestro'
+export const esPersonal = (rol?: Rol | null) => normalizarRol(rol) === 'maestro'
 
 export const rutaPorRol = (rol?: Rol | null): string => {
-  if (rol === 'docente') return '/docente'
-  if (rol === 'psicoorientador' || rol === 'admin') return '/panel'
+  if (normalizarRol(rol) === 'maestro') return '/panel'
   return '/app'
 }
 
@@ -74,8 +88,8 @@ export const formatoCurso = (grado?: number | null, grupo?: string | null): stri
 
 export const rolPorCorreo = (email: string): Rol => {
   const correo = email.toLowerCase()
-  if (correo.includes('admin')) return 'admin'
-  if (correo.includes('orientacion') || correo.includes('psico') || correo.includes('personal')) return 'psicoorientador'
-  if (correo.includes('docente')) return 'docente'
+  if (correo.includes('admin') || correo.includes('orientacion') || correo.includes('psico') || correo.includes('personal') || correo.includes('docente') || correo.includes('maestro')) {
+    return 'maestro'
+  }
   return 'estudiante'
 }

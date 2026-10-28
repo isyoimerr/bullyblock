@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
 import type { Session } from '@supabase/supabase-js'
-import { DEMO_MODE, leerDemoSesion, supabase, supabaseConfigurada } from './supabase'
+import { supabase, supabaseConfigurada } from './supabase'
 import type { Perfil } from './types'
 
 async function crearPerfilSiFalta(uid: string, session?: Session | null) {
@@ -14,6 +14,10 @@ async function crearPerfilSiFalta(uid: string, session?: Session | null) {
 
   const userMeta = session?.user?.user_metadata ?? {}
   const nombre = String(userMeta.nombre ?? session?.user?.email?.split('@')[0] ?? 'Sin nombre').trim() || 'Sin nombre'
+  const rolBase = String(userMeta.rol ?? userMeta.role ?? 'estudiante').trim().toLowerCase() || 'estudiante'
+  const rolFinal = rolBase === 'estudiante' || rolBase === 'maestro' || rolBase === 'docente' || rolBase === 'psicoorientador' || rolBase === 'admin'
+    ? (rolBase === 'maestro' || rolBase === 'docente' || rolBase === 'psicoorientador' || rolBase === 'admin' ? 'maestro' : 'estudiante')
+    : 'estudiante'
 
   const { data, error } = await supabase
     .from('perfiles')
@@ -24,7 +28,7 @@ async function crearPerfilSiFalta(uid: string, session?: Session | null) {
         documento: userMeta.documento ?? null,
         grado: userMeta.grado ?? null,
         grupo: userMeta.grupo ?? null,
-        rol: 'estudiante',
+        rol: rolFinal,
         activo: true,
         aprobado: true,
       },
@@ -52,23 +56,9 @@ const Ctx = createContext<AuthCtx | null>(null)
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | null>(null)
   const [sesionLista, setSesionLista] = useState(false)
-  // undefined = cargando, null = no existe
   const [perfil, setPerfil] = useState<Perfil | null | undefined>(undefined)
 
   useEffect(() => {
-    const syncDemo = () => {
-      const demo = DEMO_MODE ? leerDemoSesion() : null
-      if (demo) {
-        setSession(demo.session as Session)
-        setPerfil(demo.perfil)
-        setSesionLista(true)
-        return true
-      }
-      return false
-    }
-
-    if (syncDemo()) return
-
     if (!supabaseConfigurada) {
       setSesionLista(true)
       setPerfil(null)
@@ -87,35 +77,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       })
 
     const { data } = supabase.auth.onAuthStateChange((_evento, s) => setSession(s))
-    const onDemoSessionChanged = () => {
-      const demo = DEMO_MODE ? leerDemoSesion() : null
-      if (demo) {
-        setSession(demo.session as Session)
-        setPerfil(demo.perfil)
-        setSesionLista(true)
-      } else {
-        setSession(null)
-        setPerfil(null)
-        setSesionLista(true)
-      }
-    }
-    window.addEventListener('bullyblock-demo-session:changed', onDemoSessionChanged)
-    return () => {
-      data.subscription.unsubscribe()
-      window.removeEventListener('bullyblock-demo-session:changed', onDemoSessionChanged)
-    }
+    return () => data.subscription.unsubscribe()
   }, [])
 
   const uid = session?.user.id
 
   const cargarPerfil = useCallback(async () => {
     if (!uid) return setPerfil(null)
-
-    if (DEMO_MODE && uid.startsWith('demo-')) {
-      const demo = leerDemoSesion()
-      setPerfil(demo?.perfil ?? null)
-      return
-    }
 
     try {
       const { data } = await supabase.from('perfiles').select('*').eq('id', uid).maybeSingle()
@@ -137,14 +105,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [cargarPerfil])
 
   const salir = useCallback(async () => {
-    if (DEMO_MODE) {
-      localStorage.removeItem('bullyblock-demo-session')
-      window.dispatchEvent(new CustomEvent('bullyblock-demo-session:changed'))
-      setSession(null)
-      setPerfil(null)
-      return
-    }
+    if (!supabaseConfigurada) return
     await supabase.auth.signOut()
+    setSession(null)
     setPerfil(null)
   }, [])
 
@@ -154,20 +117,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       perfil: perfil ?? null,
       cargando: !supabaseConfigurada ? false : !sesionLista || (!!session && perfil === undefined),
       refrescar: async () => {
-        if (DEMO_MODE) return
         if (!supabaseConfigurada) return
         await cargarPerfil()
       },
       salir: async () => {
-        if (DEMO_MODE) {
-          localStorage.removeItem('bullyblock-demo-session')
-          window.dispatchEvent(new CustomEvent('bullyblock-demo-session:changed'))
-          setSession(null)
-          setPerfil(null)
-          return
-        }
         if (!supabaseConfigurada) return
         await supabase.auth.signOut()
+        setSession(null)
         setPerfil(null)
       },
     }),
