@@ -36,12 +36,22 @@ Este entorno permite validar de forma real el flujo de onboarding, la experienci
 Este producto está pensado para sentirse cómodo en dispositivos móviles, con objetivos grandes, menos ruido visual y flujos claros para situaciones urgentes.
 
 <p align="center">
+  <video src="https://raw.githubusercontent.com/isyoimerr/bullyblock/isyoimerr/docs/screenshots/RECORRIDO%20RAPIDO%20.mp4" width="360" autoplay loop muted playsinline controls></video>
+</p>
+
+<p align="center">
+  <strong>App web responsiva.</strong> La experiencia está optimizada para celular y escritorio, con navegación clara, texto legible y acciones rápidas en contextos urgentes.
+</p>
+
+<p align="center">
+  <strong>Entrar a la app:</strong> <a href="https://bullyblock-mu.vercel.app/">https://bullyblock-mu.vercel.app/</a>
+</p>
+
+<p align="center">
   <a href="https://bullyblock-mu.vercel.app/" target="_blank" rel="noreferrer">
     <img src="./docs/screenshots/home-claro.png" alt="Vista previa responsiva del producto" width="320" />
   </a>
 </p>
-
-> Para una presentación aún más fuerte, se puede agregar aquí un video corto en MP4 o GIF del uso en celular una vez se suba.
 
 ## Intención central del proyecto
 
