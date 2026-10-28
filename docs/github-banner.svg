@@ -1,0 +1,60 @@
+<svg width="1600" height="520" viewBox="0 0 1600 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0D1B2A"/>
+      <stop offset="0.5" stop-color="#132A3F"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="250" y1="80" x2="1190" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1BB44C"/>
+      <stop offset="1" stop-color="#26C6DA"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#152B3E"/>
+      <stop offset="1" stop-color="#0E1B29"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="26" flood-color="#08131D" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="520" fill="url(#bg)"/>
+  <circle cx="1340" cy="120" r="220" fill="#1BB44C" fill-opacity="0.08"/>
+  <circle cx="220" cy="440" r="280" fill="#26C6DA" fill-opacity="0.06"/>
+
+  <g filter="url(#shadow)">
+    <rect x="112" y="120" width="660" height="290" rx="32" fill="url(#card)"/>
+    <rect x="150" y="162" width="320" height="18" rx="9" fill="#2B4E67"/>
+    <rect x="150" y="194" width="220" height="14" rx="7" fill="#B9D2E3" fill-opacity="0.7"/>
+
+    <rect x="150" y="240" width="240" height="108" rx="20" fill="#0F2334" stroke="#244A68"/>
+    <rect x="430" y="240" width="150" height="108" rx="20" fill="#1BB44C" fill-opacity="0.16" stroke="#1BB44C"/>
+    <rect x="610" y="240" width="110" height="108" rx="20" fill="#122B40" stroke="#244A68"/>
+
+    <rect x="176" y="270" width="86" height="58" rx="12" fill="url(#accent)"/>
+    <rect x="280" y="270" width="98" height="12" rx="6" fill="#E2EFF8" fill-opacity="0.9"/>
+    <rect x="280" y="291" width="72" height="10" rx="5" fill="#9EB6C9"/>
+    <rect x="456" y="270" width="92" height="12" rx="6" fill="#D5FCE7"/>
+    <rect x="456" y="291" width="82" height="10" rx="5" fill="#AEE9C3" fill-opacity="0.9"/>
+
+    <rect x="634" y="262" width="62" height="12" rx="6" fill="#D7F6FF" fill-opacity="0.9"/>
+    <rect x="634" y="284" width="48" height="10" rx="5" fill="#90BFD5"/>
+    <rect x="634" y="312" width="48" height="10" rx="5" fill="#90BFD5"/>
+  </g>
+
+  <g>
+    <rect x="850" y="150" width="550" height="230" rx="34" fill="#081A28" stroke="#233C54"/>
+    <rect x="890" y="186" width="200" height="20" rx="10" fill="#E8F5FF" fill-opacity="0.9"/>
+    <rect x="890" y="220" width="290" height="14" rx="7" fill="#7DA2BD"/>
+    <rect x="890" y="252" width="320" height="58" rx="18" fill="url(#accent)" fill-opacity="0.92"/>
+    <rect x="914" y="272" width="158" height="16" rx="8" fill="#ECFFF5"/>
+    <rect x="890" y="328" width="120" height="18" rx="9" fill="#152C40"/>
+    <rect x="1030" y="328" width="150" height="18" rx="9" fill="#152C40"/>
+  </g>
+
+  <g>
+    <text x="120" y="106" fill="#EAF6FF" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="3">BULLYBLOCK</text>
+    <text x="120" y="432" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="62" font-weight="800">Habla sin miedo.</text>
+    <text x="120" y="486" fill="#D8EAF8" font-family="Segoe UI, Arial, sans-serif" font-size="31" font-weight="500">Acompañamiento seguro para estudiantes y comunidad escolar.</text>
+  </g>
+</svg>

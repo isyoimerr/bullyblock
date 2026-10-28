@@ -1,157 +1,169 @@
+<p align="center">
+  <img src="./docs/github-banner.svg" alt="BullyBlock banner" width="100%" />
+</p>
+
+<div align="center">
+
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite)](https://vite.dev)
+[![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase)](https://supabase.com)
+[![Vercel](https://img.shields.io/badge/Vercel-Deploy-000000?style=for-the-badge&logo=vercel)](https://vercel.com)
+
+</div>
+
 # BullyBlock
 
-Aplicación web (móvil primero, responsive) para prevenir y comunicar posibles situaciones de bullying en la Institución Educativa Técnica José Agustín Blanco Barros. Los estudiantes reportan, piden ayuda y consultan el estado de su caso. Psicoorientación gestiona los casos desde un panel privado.
+Aplicación web móvil primero para prevenir, denunciar y acompañar situaciones de acoso escolar con una experiencia clara, accesible y segura para estudiantes, docentes, orientación y administración.
 
-**Stack:** React 18 + TypeScript + Vite + Tailwind CSS · Supabase (PostgreSQL, Auth, RLS) · Vercel.
+BullyBlock permite que la comunidad educativa reporte hechos con calma, reciba apoyo real y centralice la gestión de casos con una interfaz moderna y amigable.
 
-## Roles
+## ✨ ¿Qué hace?
 
-| Rol | Qué hace |
-|---|---|
-| estudiante | Se registra, reporta, ve solo sus reportes y escribe en el hilo de cada caso |
-| docente | Igual que el estudiante (reporta lo que observó). No ve el tablero |
-| psicoorientador | Panel: tablero de casos, detalle, notas internas, respuestas, estadísticas |
-| admin | Todo lo anterior, más gestión de usuarios y roles |
+- Registro e ingreso con roles diferenciados
+- Reportes de bullying o situaciones de riesgo
+- Seguimiento de casos por el personal institucional
+- Comunicación interna segura entre estudiante y equipo escolar
+- Panel privado para orientación y administración
+- Diseño responsive para móvil y escritorio
+- Tema claro/oscuro con enfoque en accesibilidad y navegación táctil
 
-El rol **nunca** lo define el cliente: lo asigna un trigger en la base de datos y solo un admin puede cambiarlo.
+## 🧩 Roles del sistema
 
-## Documentación del proyecto
+| Rol | Función principal |
+| --- | --- |
+| estudiante | Reporta situaciones y consulta el estado de su caso |
+| docente | Acompaña, informa y alerta cuando se detecta una necesidad |
+| psicoorientador | Revisa, asigna y gestiona casos con seguimiento |
+| admin | Administración del sistema y gestión de usuarios |
 
-La documentación de arquitectura y planificación está en la carpeta [docs](./docs/README.md).
+## 🛠️ Stack tecnológico
 
-## 1. Requisitos
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- Supabase Auth + PostgreSQL + RLS
+- Vercel
+- Lucide React
 
-- Node.js 18 o superior (recomendado 20)
-- Cuenta en Supabase, GitHub y Vercel
-- VS Code
+## 📸 Vista previa
 
-## 2. Instalar y abrir
+<p align="center">
+  <img src="./docs/app-preview.svg" alt="Vista previa de BullyBlock" width="100%" />
+</p>
+
+## 🚀 Inicio rápido
 
 ```bash
+git clone https://github.com/isyoimerr/bullyblock.git
 cd bullyblock
 npm install
-```
-
-## 3. Crear la base de datos en Supabase
-
-1. En supabase.com crea un proyecto nuevo (guarda la contraseña de la base de datos).
-2. Ve a **SQL Editor > New query**, pega TODO el contenido de `supabase/schema.sql` y pulsa **Run**. Se ejecuta una sola vez.
-3. Ve a **Authentication > Providers > Email**. Para el prototipo, desactiva **Confirm email** (así el registro entra directo, sin verificar correo). Para producción déjalo activado.
-4. Ve a **Project Settings > API** y copia la **Project URL** y la clave **anon public**.
-
-> Nunca uses la clave `service_role` en este proyecto. No debe estar jamás en el navegador ni en GitHub.
-
-## 4. Variables de entorno
-
-```bash
 cp .env.example .env
-```
-
-Edita `.env` y pega tus dos valores:
-
-```
-VITE_SUPABASE_URL=https://xxxx.supabase.co
-VITE_SUPABASE_ANON_KEY=eyJ...
-```
-
-## 5. Probar en local
-
-```bash
 npm run dev
 ```
 
-Abre http://localhost:5173. Para verlo como celular usa las herramientas de desarrollo del navegador (F12 > icono de móvil).
+## ⚙️ Variables de entorno
 
-## 6. Crear el personal (psicoorientador, admin, docente)
+Crea tu archivo .env con estos valores:
 
-El personal NO se registra desde la app.
+```env
+VITE_SUPABASE_URL=https://tu-proyecto.supabase.co
+VITE_SUPABASE_ANON_KEY=tu-clave-anon-public
+VITE_DEMO_MODE=false
+```
 
-1. En Supabase: **Authentication > Users > Add user > Create new user**. Pon correo y clave y marca **Auto Confirm User**. Por ejemplo `admin@estudiante.com`, `orientacion@estudiante.com`, `docente@estudiante.com`.
-2. Abre `supabase/staff.sql`, ajusta los correos y ejecútalo en el SQL Editor. Esto asigna el rol y el nombre.
-3. Ingresa en la app con esas cuentas. El psicoorientador y el admin entran directo a `/panel`.
-4. Después, el admin puede cambiar roles y activar o desactivar cuentas desde **Usuarios** en el panel.
+> Nunca uses la service role en el frontend ni la publiques en GitHub.
 
-## 7. Datos de demostración (opcional)
+## 🗄️ Base de datos en Supabase
 
-1. Registra un estudiante desde la app con el correo `demo@estudiante.com`.
-2. Ejecuta `supabase/seed.sql` en el SQL Editor. Crea 5 reportes ficticios en distintos estados.
+Ejecuta los archivos SQL en este orden:
 
-No ejecutes el seed en producción real.
+```sql
+supabase/schema.sql
+supabase/staff.sql
+supabase/seed.sql
+```
 
-## 8. Subir a GitHub
+- Authentication > Users: crea usuarios de personal
+- SQL Editor: ejecuta los scripts de esquema y roles
+- Project Settings > API: copia URL y anon key
+
+## ☁️ Despliegue en Vercel
+
+1. Importa el repositorio en Vercel
+2. Selecciona el framework Vite
+3. Usa estas configuraciones:
+   - Build Command: `npm run build`
+   - Output Directory: `dist`
+4. Agrega estas variables de entorno:
+   - `VITE_SUPABASE_URL`
+   - `VITE_SUPABASE_ANON_KEY`
+   - `VITE_DEMO_MODE=false`
+5. Haz deploy
+
+## 📁 Estructura del proyecto
+
+```text
+bullyblock/
+├─ docs/
+│  ├─ github-banner.svg
+│  ├─ app-preview.svg
+│  ├─ README.md
+│  ├─ 01-arquitectura-software.md
+│  ├─ 02-ui-ux-roadmap.md
+│  ├─ 03-base-datos-supabase.md
+│  ├─ 04-github-vercel.md
+│  └─ 05-checklist.md
+├─ scripts/
+│  └─ theme-regression.test.mjs
+├─ src/
+│  ├─ App.tsx
+│  ├─ index.css
+│  ├─ components/
+│  ├─ lib/
+│  └─ pages/
+├─ supabase/
+│  ├─ schema.sql
+│  ├─ staff.sql
+│  └─ seed.sql
+├─ .env.example
+├─ .gitignore
+├─ index.html
+├─ package.json
+├─ tailwind.config.js
+├─ vercel.json
+├─ vite.config.ts
+└─ README.md
+```
+
+## 🧪 Validación
 
 ```bash
-git init
-git add .
-git commit -m "BullyBlock: prototipo funcional"
-git branch -M main
-git remote add origin https://github.com/TU-USUARIO/bullyblock.git
-git push -u origin main
+npm run test:theme
+npm run typecheck
 ```
 
-Crea antes el repositorio vacío en github.com (de preferencia **privado**). Verifica que `.env` NO aparezca en `git status`: el `.gitignore` ya lo excluye.
+## 📘 Documentación adicional
 
-## 9. Desplegar en Vercel
+- [docs/README.md](docs/README.md)
+- [docs/01-arquitectura-software.md](docs/01-arquitectura-software.md)
+- [docs/02-ui-ux-roadmap.md](docs/02-ui-ux-roadmap.md)
+- [docs/03-base-datos-supabase.md](docs/03-base-datos-supabase.md)
+- [docs/04-github-vercel.md](docs/04-github-vercel.md)
+- [docs/05-checklist.md](docs/05-checklist.md)
 
-1. En vercel.com: **Add New > Project** e importa el repositorio.
-2. Framework: **Vite** (lo detecta solo). Build command `npm run build`, output `dist`.
-3. En **Environment Variables** agrega `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY` con los mismos valores del `.env`.
-4. Pulsa **Deploy**. Cada `git push` a `main` vuelve a desplegar.
-5. En Supabase: **Authentication > URL Configuration**, pon tu URL de Vercel en **Site URL** y agrégala a **Redirect URLs** (necesario para restablecer clave).
+## 🌍 Objetivo
 
-`vercel.json` ya incluye las reglas para que las rutas funcionen al recargar y las cabeceras de seguridad (CSP, HSTS, X-Frame-Options). Si cambias de proyecto de Supabase, la CSP ya permite `*.supabase.co`.
+BullyBlock busca convertirse en una plataforma clara, útil y segura para instituciones educativas que quieren acompañar a estudiantes, prevenir el bullying y mejorar la respuesta institucional con empatía, respeto y organización.
 
-## 10. Probar que todo funciona (criterios de aceptación)
+## 🔒 Recomendaciones
 
-1. Un estudiante se registra, ingresa, envía un reporte y recibe un código `BB-2026-0001`.
-2. Ve su reporte con estado y puede escribir en el hilo.
-3. Un segundo estudiante **no** ve ese reporte.
-4. El psicoorientador lo ve en la columna Nuevo, lo arrastra a otro estado, escribe una nota interna y una respuesta.
-5. El estudiante ve la respuesta pero **no** la nota interna.
-6. Un reporte con "Sí, estoy en peligro" aparece como URGENTE y muestra el 123.
-7. Un estudiante que escribe `/panel` en la barra es redirigido a `/app`.
-8. Funciona en pantallas de 360 px, tableta y computador.
+- Nunca publiques la clave de servicio de Supabase
+- No subas archivos `.env` al repositorio
+- Mantén activado el RLS de Supabase en producción
+- Usa correo verificado y flujo de autenticación con cuidado
 
-## Estructura
+## Licencia
 
-```
-src/
-  App.tsx                rutas y protección por rol
-  lib/                   supabase, auth, tipos, catálogos
-  components/            Escudo, layouts, UI base
-  pages/                 estudiante (Inicio, Reportar, Reportes, Ayuda, Información, Perfil)
-  pages/panel/           Casos (tablero), CasoDetalle, Estadísticas, Usuarios
-supabase/
-  schema.sql             tablas, triggers y reglas RLS
-  staff.sql              asignar roles al personal
-  seed.sql               datos de demostración
-```
-
-## Diseño
-
-- Colores en `tailwind.config.js` (azul y verde del escudo del colegio). **Ajústalos con los valores exactos de los escudos originales.**
-- Fuentes: Plus Jakarta Sans (títulos) y Nunito Sans (texto), cargadas desde Google Fonts en `index.html`.
-- Texto mínimo de 16 px, botones de al menos 48 px, el rojo solo existe en el panel del personal.
-- Sin emojis: los íconos son de `lucide-react`.
-
-## Pendiente para producción
-
-- **Evidencias con foto** (Fase 2): subida a un bucket privado de Supabase Storage y limpieza de metadatos EXIF.
-- **Correos de aviso** de casos nuevos y urgentes (Fase 2): Supabase Edge Function + proveedor de correo.
-- **Captcha** (hCaptcha o Turnstile) en registro y envío.
-- **Verificación en dos pasos** para personal (Supabase MFA).
-- **Validar estudiantes**: cambia `VALIDAR_ESTUDIANTES` a `true` en la tabla `configuracion` para que queden pendientes hasta que el admin los apruebe.
-- Íconos PNG de 192 y 512 px (con versión *maskable*) para la instalación como PWA. Hoy se usa el SVG.
-- Cambiar la salida rápida (`StudentLayout.tsx`, función `salidaRapida`) si el colegio prefiere otra página neutra.
-- Texto del **aviso de privacidad** (`pages/Privacidad.tsx`): es provisional y debe aprobarlo el colegio.
-- Reemplazar el escudo (`components/Escudo.tsx`, `public/*.svg`) por el logo original.
-- El indicador de "horas sin atender" cuenta horas corridas, no hábiles.
-- Backups automáticos y plan de Supabase acorde al volumen (el plan gratuito pausa proyectos inactivos).
-
-## Solución de problemas
-
-- **Pantalla blanca con error de variables:** falta `.env` o las variables en Vercel. Revisa los pasos 4 y 9.
-- **"No tienes permiso" al enviar un reporte:** la cuenta está sin aprobar o desactivada, o no se ejecutó `schema.sql` completo.
-- **Registro pide confirmar correo:** desactiva Confirm email (paso 3) o confirma desde el correo.
-- **El personal entra como estudiante:** no se ejecutó `staff.sql` con el correo correcto.
-- **404 al recargar en Vercel:** falta `vercel.json` en la raíz del repositorio.
+Este proyecto se entrega como base de desarrollo para uso institucional y adaptación. Ajusta la licencia final según la política del colegio o equipo que lo publique.
