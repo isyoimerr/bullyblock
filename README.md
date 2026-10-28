@@ -1,101 +1,199 @@
 # BullyBlock
 
-BullyBlock es una aplicación web mobile-first para apoyar a estudiantes, docentes, psicorientación y administración en la gestión de situaciones de acoso escolar, riesgo y acompañamiento institucional.
+<p align="center">
+  <img src="./docs/github-banner.svg" alt="Banner BullyBlock" width="100%" />
+</p>
 
-La idea principal del proyecto es simple pero importante: que una persona pueda reportar una situación de forma clara y segura, y que el colegio pueda responder con orden, empatía y una estructura de trabajo real.
+BullyBlock es una plataforma web mobile-first para apoyar a estudiantes, docentes, orientación y administración en la gestión de situaciones de acoso escolar, riesgo y acompañamiento institucional.
 
-## ¿Qué problema resuelve?
+La intención del proyecto es clara: que una persona pueda reportar lo que vive sin miedo, y que el colegio pueda responder con empatía, orden y claridad.
 
-Muchas veces las situaciones de acoso, intimidación o maltrato escolar no se reportan por miedo, falta de claridad o porque el proceso es confuso. BullyBlock busca reducir ese problema creando un espacio donde:
+## ¿Qué hace BullyBlock?
 
-- el estudiante puede describir lo que vivió sin sentirse perdido,
-- el docente puede ver el caso de forma organizada,
-- la psicorientación puede priorizar la atención adecuada,
-- la administración puede supervisar sin romper el flujo de trabajo real.
+BullyBlock ayuda a que la comunidad educativa pueda:
 
-## ¿Qué hace el proyecto?
+- reportar situaciones de acoso, exclusión o intimidación,
+- describir el caso con contexto y detalles,
+- recibir ayuda o apoyo cuando lo necesitan,
+- dar seguimiento a cada caso según el rol correspondiente,
+- organizar la atención del personal escolar,
+- y mejorar la respuesta institucional con una experiencia accesible.
 
-El sistema permite:
+No es solo una app para “mandar un reporte”. Es una herramienta para dar apoyo real, acompañar a la persona afectada y dejar el proceso de atención más ordenado para toda la comunidad escolar.
 
-- registrar usuarios con roles diferenciados,
-- crear reportes de situaciones de acoso o riesgo,
-- clasificar y dar seguimiento a cada caso,
-- asignar atención según el perfil del responsable,
-- mantener un historial de evolución del caso,
-- dar una experiencia accesible, clara y pensada para móvil,
-- facilitar la coordinación entre estudiantes y personal escolar.
+## ¿Cómo impacta al colegio?
 
-## Impacto en la comunidad educativa
+Este proyecto puede aportar mucho a una institución educativa porque:
 
-Este proyecto impacta directamente en la forma como una institución puede responder ante situaciones sensibles. Su valor no es solo tecnológico, sino social:
+- reduce la confusión en la gestión de casos,
+- ayuda a detectar situaciones con mayor rapidez,
+- da una ruta clara para atención y seguimiento,
+- centraliza la información en un sistema ordenado,
+- mejora la comunicación entre estudiante y personal de apoyo,
+- y fortalece una respuesta más responsable, segura y humana.
 
-- mejora la visibilidad de los casos,
-- acelera la atención institucional,
-- reduce la confusión en la gestión,
-- ayuda a que la respuesta sea más responsable y organizada,
-- genera un canal más seguro para estudiantes que necesitan apoyo.
+En otras palabras: BullyBlock busca convertir un problema difícil en un proceso claro, respetuoso y útil para todos.
 
-En palabras simples: BullyBlock no es solo una app de reportes; es una herramienta para acompañar a la comunidad escolar con orden, cuidado y acción real.
+## Flujos principales del producto
 
-## Roles dentro del sistema
+### 1) Estudiante
 
-El proyecto está pensado con 4 roles principales:
+El estudiante entra a la app y puede:
 
-- Estudiante: reporta situaciones y consulta su estado.
-- Docente: acompaña, observa y da seguimiento al caso.
-- Psicorientador: revisa casos sensibles, prioriza y presta atención de bienestar.
-- Admin: supervisa el sistema y la operación general.
+- iniciar sesión,
+- acceder a su zona personal,
+- reportar una situación,
+- describir qué ocurrió,
+- indicar el tipo de caso,
+- y ver el estado de su atención.
 
-La lógica del sistema está diseñada para que cada rol tenga un papel claro, sin mezclar funciones ni hacer que alguien “todo lo haga” sin criterio.
+El flujo está pensado para que sea sencillo, directo y no abrumador, especialmente en móvil. Una persona que está pasando por una situación sensible necesita una experiencia clara y tranquila.
 
-## Flujo principal del producto
+### 2) Psicorientación y apoyo
 
-1. El estudiante ingresa a la plataforma y realiza un reporte.
-2. Describe la situación con detalles relevantes y contexto.
-3. El caso queda registrado con información clave para la atención.
-4. Docente o psicorientación revisan y gestionan el caso.
-5. Se actualiza el estado y la atención continúa con seguimiento.
-6. El admin puede supervisar la operación y mantener el sistema en orden.
+La parte de orientación tiene un rol muy importante:
+
+- revisa los casos,
+- prioriza la atención,
+- responde al estudiante,
+- puede pedir más información si hace falta,
+- y organiza un acompañamiento más cercano y humanizado.
+
+La app da opciones para que orientación pueda actuar con empatía, pero también con estructura y criterio.
+
+### 3) Docente
+
+El docente puede:
+
+- revisar casos asignados,
+- dar seguimiento,
+- detectar patrones y alertas,
+- y colaborar con la respuesta institucional.
+
+No se trata de cargar al docente con tareas complejas; la idea es que tenga una vista útil y organizada para apoyar a la comunidad escolar.
+
+### 4) Administración
+
+El admin tiene un rol de supervisión y control del sistema:
+
+- revisa la operación general,
+- verifica que el flujo funcione,
+- mantiene la estructura del proyecto,
+- y evita que el sistema se desorganice.
+
+El rol de admin no reemplaza la atención real; está pensado para apoyar la administración del entorno, no para sustituir la labor de orientación o docentes.
+
+## Roles del sistema
+
+El proyecto está pensado con cuatro roles principales:
+
+| Rol | Función principal |
+| --- | --- |
+| Estudiante | Reporta situaciones y recibe apoyo o seguimiento. |
+| Docente | Acompaña y da seguimiento a casos dentro del proceso escolar. |
+| Psicorientador | Revisa, prioriza y acompaña casos sensibles o de bienestar. |
+| Admin | Supervisa la operación general del sistema y la estructura institucional. |
+
+La lógica de roles se diseñó para mantener claridad en la organización y evitar que alguien tenga funciones sin sentido o sin responsabilidad real.
+
+## ¿Cómo funciona la experiencia?
+
+El flujo principal del producto se ve así:
+
+1. El estudiante accede y crea un reporte.
+2. Selecciona el tipo de situación y la describe.
+3. El caso queda registrado en el sistema.
+4. El equipo de apoyo revisa el caso.
+5. Se cambia el estado del caso y se responde oportunamente.
+6. El proceso queda documentado y ordenado.
+
+Esto ayuda a que no se pierda información ni se vuelva confuso para quienes atienden.
+
+## Modo claro y oscuro
+
+La app incluye un sistema de modo claro y oscuro para mejorar la accesibilidad y la experiencia visual.
+
+### Modo claro
+
+- pensado para ambientes muy luminosos,
+- más cómodo para lectura en exteriores o contexto diario,
+- con tonos suaves y una estética limpia.
+
+### Modo oscuro
+
+- reduce el brillo en pantallas largas,
+- es más cómodo para uso nocturno,
+- y mejora la experiencia visual en entornos con poca iluminación.
+
+Esto es importante porque el proyecto prioriza accesibilidad y cuidado visual, especialmente para personas con sensibilidad a la luz o dificultad de lectura.
+
+## Accesibilidad y experiencia móvil
+
+El proyecto está pensado para ser mobile-first y accesible.
+
+Incluye principios como:
+
+- interfaces compactas para móvil,
+- textos grandes y legibles,
+- espacios amplios para tocar con el dedo,
+- botones claros y de alto contraste,
+- navegación simple,
+- esquemas de color con buenos niveles de contraste,
+- y una experiencia que no obligue a pensar demasiado en medio de una situación difícil.
+
+La UI se diseñó para una persona que puede estar usando el celular con urgencia o estrés. Por eso la navegación busca ser fluida, clara y directa.
+
+## Capturas del flujo
+
+La app cuenta con varias pantallas clave que muestran la idea del producto. En esta carpeta se pueden dejar organizadas las capturas reales:
+
+- [docs/screenshots/README.md](docs/screenshots/README.md)
+
+Se recomienda guardar imágenes como:
+
+- home-dark.png
+- home-light.png
+- login.png
+- inicio-estudiante.png
+- reporte.png
+- detalle-caso.png
+- panel-psicorientacion.png
+- estadisticas.png
 
 ## Stack tecnológico
 
-El proyecto usa una combinación moderna y fácil de desplegar:
+El proyecto usa una combinación moderna y útil para una app de este tipo:
 
-- React + TypeScript: interfaz y lógica de la app.
+- React: interfaz y lógica de la aplicación.
+- TypeScript: mejora la seguridad del código y su mantenimiento.
 - Vite: entorno de desarrollo y compilación rápida.
-- Tailwind CSS: estilos modernos y responsivos.
+- Tailwind CSS: diseño visual moderno y responsivo.
 - Supabase: autenticación, base de datos y lógica de backend.
-- PostgreSQL: almacenamiento estructurado y control de datos.
+- PostgreSQL: almacenamiento principal y estructura de datos.
 - Vercel: despliegue para producción.
 
-## Herramientas que usamos y para qué sirven
+## Qué hace cada herramienta
 
 ### React
-Se usa para construir toda la interfaz web. Es la base de la experiencia visual y la navegación de la app.
+Construye la UI y la experiencia navegable de la app.
 
 ### TypeScript
-Aporta tipado fuerte para evitar errores y hacer el proyecto más seguro, mantenible y escalable.
+Evita errores comunes y mejora la calidad del código.
 
 ### Vite
-Es la herramienta que compila y sirve la app durante el desarrollo y la producción. Hace más rápida la experiencia de trabajo.
+Permite desarrollar y compilar la app de forma más ágil.
 
 ### Tailwind CSS
-Permite diseñar la interfaz rápida y consistente, con un estilo limpio y adaptable a móvil.
+Acorta el trabajo de diseño para una interfaz visual limpia y consistente.
 
 ### Supabase
-Es el corazón del backend del proyecto. Aquí se manejan:
-
-- autenticación de usuarios,
-- perfiles,
-- base de datos relacional,
-- reglas de acceso,
-- y gestión de datos del sistema.
+Es la pieza central para autenticar usuarios, guardar información y gestionar el sistema de datos.
 
 ### PostgreSQL
-Es la base de datos relacional que guarda los reportes, perfiles, estados y relación entre usuarios y casos.
+Guarda los reportes, perfiles y el estado de cada caso.
 
 ### Vercel
-Se usa para publicar la app en internet y dejarla disponible de forma directa para pruebas o despliegue final.
+Publica la aplicación en producción y facilita el despliegue continuo.
 
 ## Estructura del proyecto
 
@@ -103,6 +201,10 @@ Se usa para publicar la app en internet y dejarla disponible de forma directa pa
 bullyblock/
 ├─ docs/
 │  ├─ README.md
+│  ├─ github-banner.svg
+│  ├─ app-preview.svg
+│  ├─ screenshots/
+│  │  └─ README.md
 │  ├─ 01-arquitectura-software.md
 │  ├─ 02-ui-ux-roadmap.md
 │  ├─ 03-base-datos-supabase.md
@@ -134,7 +236,7 @@ bullyblock/
 └─ build-log.txt
 ```
 
-## Cómo correr el proyecto
+## Cómo ejecutar el proyecto
 
 ```bash
 git clone https://github.com/isyoimerr/bullyblock.git
@@ -145,48 +247,34 @@ npm run dev
 
 ### Variables de entorno
 
-Necesitas configurar Supabase para que la app funcione:
-
 ```env
 VITE_SUPABASE_URL=https://tu-proyecto.supabase.co
 VITE_SUPABASE_ANON_KEY=tu-clave-anon-publica
 ```
 
-> No se debe subir la Service Role Key ni ningún secreto del proyecto al repositorio.
+> Nunca subas la Service Role Key ni secretos del proyecto a GitHub.
 
 ## Base de datos y seguridad
 
-El proyecto usa Supabase con PostgreSQL y se recomienda dejar la base organizada para no romper lo que ya existe.
+La base se maneja con Supabase y PostgreSQL. La recomendación es mantenerla ordenada y segura para no romper lo que ya existe.
 
-### Scripts importantes
+### Archivos clave
 
-- [supabase/schema.sql](supabase/schema.sql): define la estructura principal del sistema.
-- [supabase/seed.sql](supabase/seed.sql): carga datos de prueba seguros y no destructivos.
-- [supabase/safe-roles-migration.sql](supabase/safe-roles-migration.sql): migración segura para normalizar roles sin destruir información.
+- [supabase/schema.sql](supabase/schema.sql)
+- [supabase/seed.sql](supabase/seed.sql)
+- [supabase/safe-roles-migration.sql](supabase/safe-roles-migration.sql)
 
-## Lógica recomendada para pruebas
+## Lo que falta por mejorar
 
-Para que la aplicación se vea real y útil, la base de prueba debería seguir una lógica clara:
+El proyecto ya tiene una base sólida, pero aún puede crecer en varias áreas:
 
-- estudiante reporta el caso,
-- docente atiende casos operativos,
-- psicorientador revisa casos sensibles,
-- admin supervisa y administra sin sustituir la atención real.
+- noticias y consejos dentro de la app,
+- videos de apoyo y contenido educativo,
+- más indicadores para orientación,
+- mejor segmentación de reportes por contexto,
+- y una capa más avanzada de estadística para detectar patrones.
 
-Eso hace que el sistema no parezca solo una maqueta, sino una solución pensada para uso real.
-
-## Consejo y noticias (futuro)
-
-Como siguiente mejora, la app puede crecer para tener también una sección de consejos y noticias dentro de la comunidad escolar. Por ejemplo:
-
-- avisos institucionales,
-- noticias del colegio,
-- consejos para estudiantes,
-- videos de apoyo,
-- materiales educativos,
-- guías para docentes y familias.
-
-Esto es importante porque una plataforma de apoyo no debe limitarse solo a reportes; también puede educar, informar y acompañar.
+Eso daría continuidad a la idea de que BullyBlock no sea solo un sistema de reporte, sino también un espacio de apoyo y educación escolar.
 
 ## Documentación adicional
 
@@ -197,21 +285,12 @@ Esto es importante porque una plataforma de apoyo no debe limitarse solo a repor
 - [docs/04-github-vercel.md](docs/04-github-vercel.md)
 - [docs/05-checklist.md](docs/05-checklist.md)
 
-## URL de despliegue
-
-La aplicación está pensada para desplegarse en Vercel y conectarse con Supabase en producción real.
-
-Ejemplo de estructura esperada:
-
-- https://bullyblock.vercel.app
-- o bien la URL válida del proyecto final en Vercel
-
 ## Objetivo final
 
-BullyBlock busca convertirse en una solución útil para instituciones educativas que necesitan una forma más clara, segura y humana de atender situaciones de acoso, bienestar y acompañamiento escolar.
+BullyBlock busca convertirse en una herramienta útil, segura y humana para instituciones educativas que necesitan manejar situaciones sensibles con confianza y orden.
 
-La idea central es muy concreta: hacer que una persona no se sienta sola cuando necesita ayuda, y que el colegio tenga una forma ordenada de responder con responsabilidad.
+La idea central es que nadie se sienta solo cuando necesita ayuda, y que el colegio pueda responder con una estructura clara, sin perder la empatía.
 
 ## Licencia
 
-Este proyecto está pensado como base para uso institucional y adaptación. Puede ajustarse según las políticas y necesidades del colegio o la institución que lo use.
+Este proyecto está pensado como base para uso institucional y adaptación en un contexto escolar real.
