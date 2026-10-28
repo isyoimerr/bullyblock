@@ -151,7 +151,7 @@ BullyBlock está diseñado como una experiencia guiada, sin fricción y clara pa
 
 El resultado es una respuesta más segura, clara y organizada frente a situaciones de riesgo y bienestar escolar.
 
-## ¿Cómo funciona por dentro?
+## Funcionamiento Simplificado
 
 <p align="center">
   <img src="./docs/screenshots/INFgrafia.jpeg" alt="Diagrama del flujo interno del sistema" width="90%" />
