@@ -23,22 +23,54 @@ export default function Registro() {
     if (!valido) return
     setError('')
     setEnviando(true)
-    const { data, error } = await supabase.auth.signUp({
-      email: f.email.trim(),
-      password: f.clave,
-      options: {
-        data: {
-          nombre: f.nombre.trim(),
-          documento: f.documento.trim(),
-          grado: f.grado,
-          grupo: f.grupo.trim().toUpperCase(),
+
+    try {
+      const { data, error } = await supabase.auth.signUp({
+        email: f.email.trim(),
+        password: f.clave,
+        options: {
+          data: {
+            nombre: f.nombre.trim(),
+            documento: f.documento.trim(),
+            grado: f.grado,
+            grupo: f.grupo.trim().toUpperCase(),
+          },
         },
-      },
-    })
-    setEnviando(false)
-    if (error) return setError(mensajeError(error))
-    if (data.session) nav('/', { replace: true })
-    else setRevisaCorreo(true)
+      })
+
+      if (error) {
+        setEnviando(false)
+        return setError(mensajeError(error))
+      }
+
+      const uid = data.user?.id
+      if (uid) {
+        const { error: perfilError } = await supabase.from('perfiles').upsert(
+          {
+            id: uid,
+            nombre: f.nombre.trim(),
+            documento: f.documento.trim(),
+            grado: Number(f.grado),
+            grupo: f.grupo.trim().toUpperCase(),
+            rol: 'estudiante',
+            activo: true,
+            aprobado: true,
+          },
+          { onConflict: 'id' },
+        )
+
+        if (perfilError) {
+          console.error('No se pudo crear el perfil del usuario:', perfilError)
+        }
+      }
+
+      setEnviando(false)
+      if (data.session) nav('/', { replace: true })
+      else setRevisaCorreo(true)
+    } catch (err) {
+      setEnviando(false)
+      setError(mensajeError(err))
+    }
   }
 
   if (revisaCorreo) {

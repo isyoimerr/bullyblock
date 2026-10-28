@@ -3,6 +3,42 @@ import type { Session } from '@supabase/supabase-js'
 import { supabase, supabaseConfigurada } from './supabase'
 import type { Perfil } from './types'
 
+async function crearPerfilSiFalta(uid: string, session?: Session | null) {
+  const { data: existente } = await supabase
+    .from('perfiles')
+    .select('id')
+    .eq('id', uid)
+    .maybeSingle()
+
+  if (existente?.id) return existente as Perfil
+
+  const userMeta = session?.user?.user_metadata ?? {}
+  const nombre = String(userMeta.nombre ?? session?.user?.email?.split('@')[0] ?? 'Sin nombre').trim() || 'Sin nombre'
+
+  const { data, error } = await supabase
+    .from('perfiles')
+    .insert([
+      {
+        id: uid,
+        nombre,
+        documento: userMeta.documento ?? null,
+        grado: userMeta.grado ?? null,
+        grupo: userMeta.grupo ?? null,
+        rol: 'estudiante',
+        activo: true,
+        aprobado: true,
+      },
+    ])
+    .select()
+    .single()
+
+  if (error && !/duplicate|already exists/i.test(error.message)) {
+    throw error
+  }
+
+  return (data ?? null) as Perfil | null
+}
+
 interface AuthCtx {
   session: Session | null
   perfil: Perfil | null
@@ -45,9 +81,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const cargarPerfil = useCallback(async () => {
     if (!uid) return setPerfil(null)
-    const { data } = await supabase.from('perfiles').select('*').eq('id', uid).maybeSingle()
-    setPerfil((data as Perfil | null) ?? null)
-  }, [uid])
+
+    try {
+      const { data } = await supabase.from('perfiles').select('*').eq('id', uid).maybeSingle()
+      if (data) {
+        setPerfil(data as Perfil)
+        return
+      }
+
+      const creado = await crearPerfilSiFalta(uid, session)
+      setPerfil(creado)
+    } catch {
+      setPerfil(null)
+    }
+  }, [uid, session])
 
   useEffect(() => {
     setPerfil(undefined)
