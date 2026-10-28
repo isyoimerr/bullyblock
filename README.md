@@ -67,28 +67,69 @@ Este proyecto busca reducir la incertidumbre en situaciones sensibles, evitar qu
 
 ## Galería visual
 
-<p align="center">
-  <img src="./docs/screenshots/home-claro.png" alt="Landing page en modo claro" width="32%" />
-  <img src="./docs/screenshots/home-oscuro.png" alt="Landing page en modo oscuro" width="32%" />
-  <img src="./docs/screenshots/ayuda-estudiante.png" alt="Flujo de ayuda para estudiante" width="32%" />
-</p>
+### 1) Landing y primer acceso
 
 <p align="center">
-  <img src="./docs/screenshots/registro-situacion.png" alt="Pantalla para registrar una situación" width="32%" />
-  <img src="./docs/screenshots/reportes-estudiante.png" alt="Vista de reportes del estudiante" width="32%" />
-  <img src="./docs/screenshots/panel-docente.png" alt="Panel del docente" width="32%" />
+  <img src="./docs/screenshots/home-claro.png" alt="Landing page en modo claro" width="70%" />
 </p>
 
-<p align="center">
-  <img src="./docs/screenshots/panel-psicorientador.png" alt="Panel de psicorientación" width="32%" />
-  <img src="./docs/screenshots/panel-admin.png" alt="Panel administrativo" width="32%" />
-  <img src="./docs/screenshots/estadisticas-admin.png" alt="Estadísticas del administrador" width="32%" />
-</p>
+<strong>Landing page / bienvenida.</strong> Esta vista presenta la intención del producto al usuario. La pantalla busca transmitir calma, seguridad y claridad desde el primer momento, para que la persona entienda que puede pedir ayuda sin miedo y sin confusión.
+
+### 2) Estudiante: pedir ayuda y reportar
 
 <p align="center">
-  <img src="./docs/screenshots/estadisticas-docente.png" alt="Estadísticas del docente" width="49%" />
-  <img src="./docs/screenshots/peligro-mensaje-estudiante.png" alt="Alerta urgente de riesgo" width="49%" />
+  <img src="./docs/screenshots/ayuda-estudiante.png" alt="Flujo de ayuda para estudiante" width="70%" />
 </p>
+
+<strong>Rol: Estudiante.</strong> Aquí se observa la experiencia central del producto: el estudiante puede identificar la situación, describir lo vivido y acceder a una ruta clara para pedir apoyo. La idea es reducir la ansiedad y hacer visible que la ayuda existe, se entiende y se responde con orden.
+
+<p align="center">
+  <img src="./docs/screenshots/registro-situacion.png" alt="Pantalla para registrar una situación" width="70%" />
+</p>
+
+<strong>Registro de situación.</strong> En esta vista el estudiante puede describir el caso con contexto, detalles y una narrativa más clara. Esto ayuda a que el reporte sea útil para la institución sin que la persona se sienta abrumada o confundida.
+
+<p align="center">
+  <img src="./docs/screenshots/reportes-estudiante.png" alt="Vista de reportes del estudiante" width="70%" />
+</p>
+
+<strong>Estado del caso.</strong> La app permite al estudiante revisar el proceso, entender qué está pasando con su caso y saber que no se queda solo. Esta parte refuerza confianza y continuidad en el acompañamiento.
+
+### 3) Docente: seguimiento y acompañamiento
+
+<p align="center">
+  <img src="./docs/screenshots/panel-docente.png" alt="Panel del docente" width="75%" />
+</p>
+
+<strong>Rol: Docente.</strong> El docente revisa el caso, entiende el contexto y puede acompañar a la persona con criterio. La pantalla está pensada para dar seguimiento sin saturar, mantener orden y apoyar la atención con sensibilidad.
+
+<p align="center">
+  <img src="./docs/screenshots/estadisticas-docente.png" alt="Estadísticas del docente" width="75%" />
+</p>
+
+<strong>Panel de indicadores.</strong> Las métricas ayudan a detectar patrones y a tomar decisiones con más contexto institucional, sin perder la perspectiva de acompañamiento y cuidado.
+
+### 4) Psicorientación y administración
+
+<p align="center">
+  <img src="./docs/screenshots/panel-psicorientador.png" alt="Panel de psicorientación" width="75%" />
+</p>
+
+<strong>Rol: Psicorientación.</strong> Aquí se observa el centro de atención institucional: la persona encargada puede priorizar los casos, acompañar con criterio y organizar la respuesta para que cada situación reciba la atención adecuada.
+
+<p align="center">
+  <img src="./docs/screenshots/panel-admin.png" alt="Panel administrativo" width="75%" />
+</p>
+
+<strong>Rol: Admin.</strong> La vista administrativa muestra la operación general del sistema, los reportes y la supervisión del flujo para que la institución tenga claridad, orden y trazabilidad.
+
+### 5) Alerta de riesgo y atención inmediata
+
+<p align="center">
+  <img src="./docs/screenshots/peligro-mensaje-estudiante.png" alt="Alerta urgente de riesgo" width="70%" />
+</p>
+
+<strong>Estado crítico.</strong> Esta pantalla representa la urgencia dentro del flujo. Cuando una situación requiere atención inmediata, la interfaz prioriza la respuesta clara y directa para apoyar a la persona en el momento adecuado, sin perder empatía ni orden.
 
 ## Experiencia del producto
 
