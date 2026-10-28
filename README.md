@@ -2,135 +2,135 @@
 
 <p align="center">
   <a href="https://bullyblock-mu.vercel.app/" target="_blank" rel="noreferrer">
-    <img src="./docs/screenshots/home-claro.png" alt="BullyBlock landing page" width="100%" />
+    <img src="./docs/screenshots/home-claro.png" alt="Landing page de BullyBlock" width="100%" />
   </a>
 </p>
 
 <p align="center">
   <a href="https://bullyblock-mu.vercel.app/" target="_blank" rel="noreferrer">
-    <img alt="Open live demo" src="https://img.shields.io/badge/Live%20Demo-BullyBlock%20App-1A73E8?style=for-the-badge&logo=vercel&logoColor=white" />
+    <img alt="Demo en vivo" src="https://img.shields.io/badge/Demo%20en%20vivo-BullyBlock%20App-1A73E8?style=for-the-badge&logo=vercel&logoColor=white" />
   </a>
   <a href="https://github.com/isyoimerr/bullyblock" target="_blank" rel="noreferrer">
-    <img alt="GitHub Repository" src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white" />
+    <img alt="Repositorio de GitHub" src="https://img.shields.io/badge/GitHub-Repositorio-181717?style=for-the-badge&logo=github&logoColor=white" />
   </a>
 </p>
 
 <p align="center">
-  <strong>Open the app:</strong> <a href="https://bullyblock-mu.vercel.app/">https://bullyblock-mu.vercel.app/</a>
+  <strong>Entrar a la app:</strong> <a href="https://bullyblock-mu.vercel.app/">https://bullyblock-mu.vercel.app/</a>
 </p>
 
 <p align="center">
-  <img alt="Environment: Production Ready" src="https://img.shields.io/badge/Environment-Production%20Ready-22c55e?style=for-the-badge&logo=vercel&logoColor=white" />
-  <img alt="Mobile-First Design" src="https://img.shields.io/badge/Mobile-First%20Design-111827?style=for-the-badge&logo=smartphone&logoColor=white" />
-  <img alt="Institutional Purpose" src="https://img.shields.io/badge/Purpose-Student%20Care%20%26%20Protection-8b5cf6?style=for-the-badge&logo=shield&logoColor=white" />
+  <img alt="Entorno: listo para producción" src="https://img.shields.io/badge/Entorno-Listo%20para%20producci%C3%B3n-22c55e?style=for-the-badge&logo=vercel&logoColor=white" />
+  <img alt="Diseño mobile-first" src="https://img.shields.io/badge/Dise%C3%B1o-Mobile-First-111827?style=for-the-badge&logo=smartphone&logoColor=white" />
+  <img alt="Propósito institucional" src="https://img.shields.io/badge/Prop%C3%B3sito-Cuidado%20y%20protecci%C3%B3n%20estudiantil-8b5cf6?style=for-the-badge&logo=shield&logoColor=white" />
 </p>
 
-## Live Demo
+## Demo en vivo
 
-BullyBlock is already deployed and available for testing in production.
+BullyBlock ya está desplegado y disponible para pruebas en producción.
 
-This live environment is meant for quick validation of the onboarding flow, student reporting experience, educator dashboard, and institutional response workflow in a real deployment context.
+Este entorno permite validar de forma real el flujo de onboarding, la experiencia de reporte del estudiante, el panel docente y la respuesta institucional frente a situaciones de riesgo.
 
-## Mobile Experience
+## Experiencia móvil
 
-This product is designed to feel comfortable on mobile devices, with large touch targets, reduced visual clutter, and clear flows for urgent situations.
+Este producto está pensado para sentirse cómodo en dispositivos móviles, con objetivos grandes, menos ruido visual y flujos claros para situaciones urgentes.
 
 <p align="center">
   <a href="https://bullyblock-mu.vercel.app/" target="_blank" rel="noreferrer">
-    <img src="./docs/screenshots/home-claro.png" alt="Responsive mobile preview" width="320" />
+    <img src="./docs/screenshots/home-claro.png" alt="Vista previa responsiva del producto" width="320" />
   </a>
 </p>
 
-> For an even stronger product presentation, a short MP4 or GIF recording of the app in mobile mode can be added here after upload.
+> Para una presentación aún más fuerte, se puede agregar aquí un video corto en MP4 o GIF del uso en celular una vez se suba.
 
-## Project Core Intent
+## Intención central del proyecto
 
-BullyBlock is a mobile-first school wellbeing and reporting platform designed to protect students and improve institutional response. The core purpose is simple and urgent: students can report risk situations without fear, and the institution can respond with empathy, order, and absolute clarity.
+BullyBlock es una plataforma móvil para bienestar escolar y reporte de situaciones de riesgo, diseñada para proteger a los estudiantes y mejorar la respuesta institucional. La idea principal es clara: que un estudiante pueda reportar una situación sin miedo y que la institución responda con empatía, orden y claridad absoluta.
 
-This project was built to reduce uncertainty in sensitive situations, ensure that no incident is ignored or lost in informal communication, and give school staff a clear system for accompaniment, triage, and follow-up.
+Este proyecto busca reducir la incertidumbre en situaciones sensibles, evitar que un caso quede oculto o disperso en conversaciones informales y dar al personal escolar un sistema claro para acompañar, priorizar y dar seguimiento.
 
-## Why this project matters
+## ¿Por qué importa?
 
-- Students can report bullying, exclusion, intimidation, or risk without facing confusion or pressure.
-- Teachers and support staff can follow a structured process instead of relying on fragmented communication.
-- The school can prioritize interventions with context, traceability, and clarity.
-- The experience is designed for mobile use, clarity, and emotional safety.
+- Los estudiantes pueden reportar acoso, exclusión, intimidación o riesgo sin confundirse ni sentirse presionados.
+- Los docentes y personal de apoyo pueden seguir un proceso estructurado y no depender de comunicación fragmentada.
+- La institución puede priorizar intervenciones con contexto, trazabilidad y claridad.
+- La experiencia está diseñada para móvil, con claridad emocional y accesibilidad.
 
-## Role Architecture
+## Arquitectura de roles
 
-| Role | Focus | Responsibility |
+| Rol | Enfoque | Responsabilidad |
 | --- | --- | --- |
-| Estudiante | Reporting and support | Reports situations, receives guidance, and tracks case status. |
-| Docente | Daily accompaniment | Follows context, identifies patterns, and supports referrals. |
-| Psicorientación | Risk intervention | Reviews sensitive cases, prioritizes attention, and provides human accompaniment. |
-| Admin | Institutional oversight | Monitors overall system flow, reports, and operational visibility. |
+| Estudiante | Reporte y apoyo | Reporta situaciones, recibe orientación y consulta el estado del caso. |
+| Docente | Acompañamiento diario | Sigue el contexto, identifica patrones y apoya derivaciones. |
+| Psicorientación | Intervención por riesgo | Revisa casos sensibles, prioriza la atención y acompaña de forma humana. |
+| Admin | Supervisión institucional | Monitorea el flujo general, reportes y visibilidad operativa. |
 
-## UI Gallery
+## Galería visual
 
 <p align="center">
-  <img src="./docs/screenshots/home-claro.png" alt="Landing page in light mode" width="32%" />
-  <img src="./docs/screenshots/home-oscuro.png" alt="Landing page in dark mode" width="32%" />
-  <img src="./docs/screenshots/ayuda-estudiante.png" alt="Student assistance flow" width="32%" />
+  <img src="./docs/screenshots/home-claro.png" alt="Landing page en modo claro" width="32%" />
+  <img src="./docs/screenshots/home-oscuro.png" alt="Landing page en modo oscuro" width="32%" />
+  <img src="./docs/screenshots/ayuda-estudiante.png" alt="Flujo de ayuda para estudiante" width="32%" />
 </p>
 
 <p align="center">
-  <img src="./docs/screenshots/registro-situacion.png" alt="Report creation screen" width="32%" />
-  <img src="./docs/screenshots/reportes-estudiante.png" alt="Student reports view" width="32%" />
-  <img src="./docs/screenshots/panel-docente.png" alt="Teacher dashboard" width="32%" />
+  <img src="./docs/screenshots/registro-situacion.png" alt="Pantalla para registrar una situación" width="32%" />
+  <img src="./docs/screenshots/reportes-estudiante.png" alt="Vista de reportes del estudiante" width="32%" />
+  <img src="./docs/screenshots/panel-docente.png" alt="Panel del docente" width="32%" />
 </p>
 
 <p align="center">
-  <img src="./docs/screenshots/panel-psicorientador.png" alt="Orientation dashboard" width="32%" />
-  <img src="./docs/screenshots/panel-admin.png" alt="Administrative panel" width="32%" />
-  <img src="./docs/screenshots/estadisticas-admin.png" alt="Administrative analytics" width="32%" />
+  <img src="./docs/screenshots/panel-psicorientador.png" alt="Panel de psicorientación" width="32%" />
+  <img src="./docs/screenshots/panel-admin.png" alt="Panel administrativo" width="32%" />
+  <img src="./docs/screenshots/estadisticas-admin.png" alt="Estadísticas del administrador" width="32%" />
 </p>
 
 <p align="center">
-  <img src="./docs/screenshots/estadisticas-docente.png" alt="Teacher analytics" width="49%" />
-  <img src="./docs/screenshots/peligro-mensaje-estudiante.png" alt="Urgent risk alert" width="49%" />
+  <img src="./docs/screenshots/estadisticas-docente.png" alt="Estadísticas del docente" width="49%" />
+  <img src="./docs/screenshots/peligro-mensaje-estudiante.png" alt="Alerta urgente de riesgo" width="49%" />
 </p>
 
-## Product Experience
+## Experiencia del producto
 
-BullyBlock is designed as a guided, low-friction experience for people in stressful situations. Each screen is built to help the user understand what is happening, what action to take next, and who can help them.
+BullyBlock está diseñado como una experiencia guiada, sin fricción y clara para personas que están atravesando situaciones difíciles. Cada pantalla está pensada para ayudar a entender qué está pasando, qué acción seguir y quién puede apoyar.
 
-### Core user flow
+### Flujo principal
 
-1. The student enters the app.
-2. The person describes the situation in a clear and structured way.
-3. The report is registered with context and safety signals.
-4. The educational team reviews and prioritizes the case.
-5. The institution accompanies the student with order, empathy, and follow-up.
+1. El estudiante entra a la app.
+2. Describe la situación de forma clara y estructurada.
+3. El reporte queda registrado con contexto y señales de riesgo.
+4. El equipo educativo revisa y prioriza el caso.
+5. La institución acompaña al estudiante con orden, empatía y seguimiento.
 
-The result is a safer, clearer, and more organized response to risk and wellbeing situations in the school environment.
+El resultado es una respuesta más segura, clara y organizada frente a situaciones de riesgo y bienestar escolar.
 
-## Tech Stack
+## Stack tecnológico
 
 <p align="center">
   <img alt="React" src="https://img.shields.io/badge/React-18-%2361DAFB?style=for-the-badge&logo=react&logoColor=white" />
   <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5.x-%233178C6?style=for-the-badge&logo=typescript&logoColor=white" />
   <img alt="Vite" src="https://img.shields.io/badge/Vite-5.x-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
   <img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind-CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
-  <img alt="Supabase" src="https://img.shields.io/badge/Supabase-Database%20%26%20Auth-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" />
-  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
-  <img alt="Vercel" src="https://img.shields.io/badge/Vercel-Deploy-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+  <img alt="Supabase" src="https://img.shields.io/badge/Supabase-Base%20de%20datos%20y%20auth-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" />
+  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-Base%20de%20datos-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
+  <img alt="Vercel" src="https://img.shields.io/badge/Vercel-Despliegue-000000?style=for-the-badge&logo=vercel&logoColor=white" />
 </p>
 
-## Project Context
+## Contexto del proyecto
 
-This project is associated with the educational institution:
+Este proyecto está asociado a la institución educativa:
 
 **Institución Educativa Técnica José Agustín Blanco Barros**
 
-The application is designed to support student wellbeing, institutional response, and a safe communication channel for reporting risk situations inside the school ecosystem.
+La aplicación está diseñada para apoyar el bienestar estudiantil, la respuesta institucional y un canal seguro para reportar situaciones de riesgo dentro del ecosistema escolar.
 
-## Contributors
+## Contribuidores
 
-This repository is open to collaboration and community contribution.
+Este repositorio está abierto a colaboración y contribución comunitaria.
 
-[View contributors](https://github.com/isyoimerr/bullyblock/graphs/contributors)
+[Ver contribuidores](https://github.com/isyoimerr/bullyblock/graphs/contributors)
 
-## Getting Started
+## Cómo empezar
 
 ```bash
 git clone https://github.com/isyoimerr/bullyblock.git
@@ -139,16 +139,16 @@ npm install
 npm run dev
 ```
 
-### Environment variables
+### Variables de entorno
 
 ```env
 VITE_SUPABASE_URL=https://tu-proyecto.supabase.co
 VITE_SUPABASE_ANON_KEY=tu-clave-anon-publica
 ```
 
-> Keep all secrets and service-role credentials out of the repository.
+> Mantén fuera del repositorio todos los secretos y credenciales de servicio.
 
-## Project Structure
+## Estructura del proyecto
 
 ```text
 bullyblock/
@@ -198,17 +198,17 @@ bullyblock/
 └─ build-log.txt
 ```
 
-## Institutional License
+## Licencia institucional
 
-© 2026 **Institución Educativa Técnica José Agustín Blanco Barros**. All rights reserved.
+© 2026 **Institución Educativa Técnica José Agustín Blanco Barros**. Todos los derechos reservados.
 
-This repository and the associated project assets are the property of the institution for educational, operational, and institutional use. Any reuse, adaptation, redistribution, or commercial exploitation must be previously authorized in writing by the institution.
+Este repositorio y sus activos asociados son propiedad de la institución para uso educativo, operativo e institucional. Cualquier reutilización, adaptación, redistribución o explotación comercial debe ser autorizada previamente por escrito por la institución.
 
-## Status
+## Estado
 
-- Mobile-first UX: active
-- Institutional reporting flow: active
-- Multi-role access model: active
-- Visual dashboard and reporting system: active
-- Production-ready deployment pathway: active
+- UX mobile-first: activa
+- flujo de reporte institucional: activo
+- modelo multirrol: activo
+- panel visual y dashboard: activo
+- camino de despliegue listo para producción: activo
 
