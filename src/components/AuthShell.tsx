@@ -12,8 +12,11 @@ export default function AuthShell({ titulo, children }: { titulo: string; childr
           </div>
           <Marca className="text-2xl sm:text-3xl" />
         </Link>
-        <div className="card">
-          <h1 className="mb-4 text-2xl sm:text-[2rem]">{titulo}</h1>
+        <div className="card px-4 py-5 sm:px-5 sm:py-6">
+          <div className="mb-5">
+            <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--texto-suave)]">Acceso</p>
+            <h1 className="text-[1.7rem] font-bold leading-tight tracking-[-0.03em] text-[var(--texto-principal)] sm:text-[2rem]">{titulo}</h1>
+          </div>
           {children}
         </div>
         <p className="mt-5 text-center text-sm text-[var(--texto-suave)]">
