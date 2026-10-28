@@ -1,153 +1,133 @@
-<p align="center">
-  <img src="./docs/github-banner.svg" alt="BullyBlock banner" width="100%" />
-</p>
-
-<div align="center">
-
-[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)](https://react.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite)](https://vite.dev)
-[![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase)](https://supabase.com)
-[![Vercel](https://img.shields.io/badge/Vercel-Deploy-000000?style=for-the-badge&logo=vercel)](https://vercel.com)
-
-</div>
-
 # BullyBlock
 
-Aplicación web móvil primero para prevenir, denunciar y acompañar situaciones de acoso escolar con una experiencia clara, accesible y segura para estudiantes, docentes, orientación y administración.
+Somos un grupo de estudiantes y desarrolladores trabajando en una solución para apoyar a la comunidad escolar con una herramienta clara, accesible y útil para reportar situaciones de acoso, recibir ayuda y gestionar casos con responsabilidad.
 
-BullyBlock permite que la comunidad educativa reporte hechos con calma, reciba apoyo real y centralice la gestión de casos con una interfaz moderna y amigable.
+BullyBlock nace como una idea para que un estudiante pueda denunciar o reportar lo que vive con calma y sin miedo, y para que docentes, psicorientación y administración puedan atenderlo de forma ordenada, segura y humana.
 
-## ✨ ¿Qué hace?
+## Qué hace esta app
 
-- Registro e ingreso con roles diferenciados
-- Reportes de bullying o situaciones de riesgo
-- Seguimiento de casos por el personal institucional
-- Comunicación interna segura entre estudiante y equipo escolar
-- Panel privado para orientación y administración
-- Diseño responsive para móvil y escritorio
-- Tema claro/oscuro con enfoque en accesibilidad y navegación táctil
+- Permite a un estudiante registrar un caso de acoso o riesgo.
+- Ofrece un flujo simple para explicar lo sucedido con contexto y detalles.
+- Da visibilidad a docentes y psicorientación para atender casos de forma adecuada.
+- Centraliza la gestión de reportes y estados en un panel privado.
+- Ayuda a organizar la atención según cada rol y nivel de urgencia.
+- Está diseñada para ser clara en móvil, con una experiencia simple y accesible.
 
-## 🧩 Roles del sistema
+## Roles del sistema
 
-| Rol | Función principal |
-| --- | --- |
-| estudiante | Reporta situaciones y consulta el estado de su caso |
-| docente | Acompaña, informa y alerta cuando se detecta una necesidad |
-| psicoorientador | Revisa, asigna y gestiona casos con seguimiento |
-| admin | Administración del sistema y gestión de usuarios |
+La lógica del proyecto está pensada en 4 roles:
 
-## 🛠️ Stack tecnológico
+- Estudiante: reporta y revisa su estado.
+- Docente: acompaña, da seguimiento y toma decisiones de apoyo escolar.
+- Psicorientador: revisa casos sensibles, urgentes o de bienestar emocional.
+- Admin: supervisa y administra el sistema, sin reemplazar la intención ni la intervención real del equipo educativo.
 
-- React 18
-- TypeScript
+## Objetivo del proyecto
+
+Queremos crear una herramienta útil para una comunidad educativa que necesite:
+
+- denunciar situaciones con seguridad,
+- recibir apoyo real,
+- organizar la gestión de casos,
+- reducir la confusión,
+- y darle claridad a las personas que atienden estos reportes.
+
+No es solo una app de “reporte”. Es una forma de acompañar a una comunidad con cuidado, respeto y acción.
+
+## Cómo se ve el flujo
+
+1. El estudiante entra a la app y crea su reporte.
+2. El caso queda registrado con la información necesaria.
+3. El docente o psicorientador revisa el caso según la lógica del sistema.
+4. La persona encargada puede responder, cambiar el estado y dar seguimiento.
+5. El admin puede supervisar la operación general.
+
+## Stack
+
+- React + TypeScript
 - Vite
 - Tailwind CSS
-- Supabase Auth + PostgreSQL + RLS
+- Supabase
+- PostgreSQL
 - Vercel
-- Lucide React
 
-## 📸 Vista previa
+## Requisitos para probarlo
 
-<p align="center">
-  <img src="./docs/app-preview.svg" alt="Vista previa de BullyBlock" width="100%" />
-</p>
+Necesitamos un proyecto real de Supabase con:
 
-## 🚀 Inicio rápido
+- Auth activo
+- base de datos creada
+- políticas RLS bien configuradas
+- variables de entorno del proyecto
+
+### Variables de entorno
+
+```env
+VITE_SUPABASE_URL=https://tu-proyecto.supabase.co
+VITE_SUPABASE_ANON_KEY=tu-clave-anon-publica
+```
+
+> Nunca subir la Service Role Key ni los datos sensibles al repositorio.
+
+## Cómo arrancar el proyecto
 
 ```bash
 git clone https://github.com/isyoimerr/bullyblock.git
 cd bullyblock
 npm install
-cp .env.example .env
 npm run dev
 ```
 
-## ⚙️ Variables de entorno
+## Base de datos y pruebas rápidas
 
-La app está conectada exclusivamente a Supabase en producción real. Debes configurar la URL y la anon key del proyecto real.
+La base debe quedar limpia y ordenada. Para probar el flujo sin romper el proyecto, usamos scripts seguros de demo.
 
-```env
-VITE_SUPABASE_URL=https://tu-proyecto.supabase.co
-VITE_SUPABASE_ANON_KEY=tu-clave-anon-public
-```
-
-> Nunca uses la service role en el frontend ni la publiques en GitHub.
-
-## 🗄️ Base de datos en Supabase
-
-Ejecuta los archivos SQL en este orden:
+### 1) Ejecutar esquema base
 
 ```sql
 supabase/schema.sql
-supabase/staff.sql
+```
+
+### 2) Cargar datos iniciales de prueba
+
+```sql
 supabase/seed.sql
 ```
 
-- Authentication > Users: crea usuarios de personal
-- SQL Editor: ejecuta los scripts de esquema y roles
-- Project Settings > API: copia URL y anon key
+### 3) Crear usuarios del equipo en Supabase Auth
 
-## ☁️ Despliegue en Vercel
+Se recomienda crear usuarios reales con estos emails de prueba:
 
-1. Importa el repositorio en Vercel
-2. Selecciona el framework Vite
-3. Usa estas configuraciones:
-   - Build Command: `npm run build`
-   - Output Directory: `dist`
-4. Agrega estas variables de entorno:
-   - `VITE_SUPABASE_URL`
-   - `VITE_SUPABASE_ANON_KEY`
-5. Haz deploy
+- estudiante@gmail.com
+- profesor@gmail.com
+- psicorientador@gmail.com
+- admin@gmail.com
 
-### Config real de producción
+Las contraseñas pueden ser temporales para pruebas locales y se deben cambiar después.
 
-- `VITE_SUPABASE_URL=https://tu-proyecto.supabase.co`
-- `VITE_SUPABASE_ANON_KEY=tu-anon-key-publica`
+## Lógica recomendada para datos de prueba
 
-## 📁 Estructura del proyecto
+- El estudiante reporta un caso.
+- Los casos simples y operativos se asignan a docente.
+- Los casos más graves o sensibles se asignan a psicorientador.
+- El admin no debe aparecer como responsable directo del caso salvo casos muy específicos de supervisión.
 
-```text
-bullyblock/
-├─ docs/
-│  ├─ github-banner.svg
-│  ├─ app-preview.svg
-│  ├─ README.md
-│  ├─ 01-arquitectura-software.md
-│  ├─ 02-ui-ux-roadmap.md
-│  ├─ 03-base-datos-supabase.md
-│  ├─ 04-github-vercel.md
-│  └─ 05-checklist.md
-├─ scripts/
-│  └─ theme-regression.test.mjs
-├─ src/
-│  ├─ App.tsx
-│  ├─ index.css
-│  ├─ components/
-│  ├─ lib/
-│  └─ pages/
-├─ supabase/
-│  ├─ schema.sql
-│  ├─ staff.sql
-│  └─ seed.sql
-├─ .env.example
-├─ .gitignore
-├─ index.html
-├─ package.json
-├─ tailwind.config.js
-├─ vercel.json
-├─ vite.config.ts
-└─ README.md
-```
+Eso hace que el sistema se vea real y que la lógica de negocio se comprenda mejor.
 
-## 🧪 Validación
+## Consejo y noticias (futuro)
 
-```bash
-npm run test:theme
-npm run typecheck
-```
+Como siguiente mejora, podría agregarse una sección de consejos y noticias para que la app también funcione como espacio de orientación y comunidad. Por ejemplo:
 
-## 📘 Documentación adicional
+- noticias internas del colegio,
+- avisos institucionales,
+- consejos para estudiantes,
+- videos de apoyo,
+- materiales educativos,
+- guías para docentes y estudiantes.
+
+Eso ayudaría a que la app no sea solo un canal de denuncia, sino también un punto de información útil para la comunidad escolar.
+
+## Documentación del proyecto
 
 - [docs/README.md](docs/README.md)
 - [docs/01-arquitectura-software.md](docs/01-arquitectura-software.md)
@@ -156,17 +136,12 @@ npm run typecheck
 - [docs/04-github-vercel.md](docs/04-github-vercel.md)
 - [docs/05-checklist.md](docs/05-checklist.md)
 
-## 🌍 Objetivo
+## Lo importante
 
-BullyBlock busca convertirse en una plataforma clara, útil y segura para instituciones educativas que quieren acompañar a estudiantes, prevenir el bullying y mejorar la respuesta institucional con empatía, respeto y organización.
+Este proyecto es una base sólida para seguir creciendo con responsabilidad. No es solo una maqueta: busca ser una herramienta útil y seria para apoyar a una comunidad educativa real.
 
-## 🔒 Recomendaciones
-
-- Nunca publiques la clave de servicio de Supabase
-- No subas archivos `.env` al repositorio
-- Mantén activado el RLS de Supabase en producción
-- Usa correo verificado y flujo de autenticación con cuidado
+Nosotros lo estamos construyendo pensando en claridad, confianza y acción real. La idea es que una persona pueda pedir ayuda sin sentirse perdida, y que el equipo que atiende pueda hacerlo con orden.
 
 ## Licencia
 
-Este proyecto se entrega como base de desarrollo para uso institucional y adaptación. Ajusta la licencia final según la política del colegio o equipo que lo publique.
+Este proyecto está pensado como base para uso institucional y adaptación. Es una herramienta de apoyo para la comunidad educativa y puede ajustarse según el contexto del colegio o institución que lo use.
