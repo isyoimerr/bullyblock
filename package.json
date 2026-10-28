@@ -1,5 +1,6 @@
 {
   "name": "bullyblock",
+  "description": "BullyBlock is a responsive student safety and reporting app for schools, built with React, TypeScript, Supabase, and Vercel.",
   "private": true,
   "version": "1.0.0",
   "type": "module",

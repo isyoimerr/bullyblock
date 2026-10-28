@@ -65,15 +65,33 @@ npm run dev
 
 ## ⚙️ Variables de entorno
 
-Crea tu archivo .env con estos valores:
+La app está preparada para funcionar en modo demo sin base de datos para mostrar la experiencia pública. Por defecto, el proyecto usa demo mode para simplificar la prueba inicial.
 
 ```env
 VITE_SUPABASE_URL=https://tu-proyecto.supabase.co
 VITE_SUPABASE_ANON_KEY=tu-clave-anon-public
-VITE_DEMO_MODE=false
+VITE_DEMO_MODE=true
 ```
 
+Cuando quieras conectarlo a la base real, cambia a `false` y coloca la URL y anon key reales de Supabase.
+
 > Nunca uses la service role en el frontend ni la publiques en GitHub.
+
+## 🧪 Modo demo para presentación
+
+Esto permite probar la app sin tener la base lista todavía:
+
+- la landing funciona con contenido realista
+- el login usa credenciales demo
+- los paneles y rutas están disponibles para mostrar el flujo
+- no hace falta conectar Supabase para una demo inicial o presentación
+
+Las credenciales demo son:
+
+- `demo@estudiante.com` / `demo1234`
+- `docente.demo@estudiante.com` / `demo1234`
+- `orientacion.demo@estudiante.com` / `demo1234`
+- `admin.demo@estudiante.com` / `demo1234`
 
 ## 🗄️ Base de datos en Supabase
 
@@ -99,8 +117,22 @@ supabase/seed.sql
 4. Agrega estas variables de entorno:
    - `VITE_SUPABASE_URL`
    - `VITE_SUPABASE_ANON_KEY`
-   - `VITE_DEMO_MODE=false`
+   - `VITE_DEMO_MODE=true` para la demo pública
 5. Haz deploy
+
+Para producción real, cambia `VITE_DEMO_MODE` a `false` y conecta la URL y anon key reales de Supabase.
+
+### Config rápida para una demo pública
+
+- `VITE_DEMO_MODE=true`
+- deja la URL de Supabase en blanco o usa la de tu proyecto si ya la tienes
+- así la app se puede probar sin base real
+
+### Config real de producción
+
+- `VITE_DEMO_MODE=false`
+- `VITE_SUPABASE_URL=https://tu-proyecto.supabase.co`
+- `VITE_SUPABASE_ANON_KEY=tu-anon-key-publica`
 
 ## 📁 Estructura del proyecto
 
