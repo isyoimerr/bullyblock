@@ -2,7 +2,7 @@ import { useEffect, useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import AuthShell from '../components/AuthShell'
 import PasswordField from '../components/PasswordField'
-import { DEMO_MODE, demoUsers, iniciarDemoSesion, mensajeError, supabase } from '../lib/supabase'
+import { DEMO_MODE, credencialDemoValida, demoUsers, iniciarDemoSesion, mensajeError, supabase } from '../lib/supabase'
 import { rolPorCorreo, rutaPorRol } from '../lib/types'
 
 export default function Ingresar() {
@@ -36,7 +36,8 @@ export default function Ingresar() {
     setInfo('')
     setEnviando(true)
 
-    if (DEMO_MODE) {
+    const esDemo = DEMO_MODE || credencialDemoValida(email, clave)
+    if (esDemo) {
       const demo = iniciarDemoSesion(email.trim(), clave)
       if (demo) {
         setEnviando(false)

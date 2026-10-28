@@ -22,6 +22,11 @@ export const demoUsers: Array<{ email: string; password: string; rol: Rol; nombr
   { email: 'admin@estudiante.com', password: 'demo1234', rol: 'admin', nombre: 'Admin demo', grado: 9, grupo: '01' },
 ]
 
+export function credencialDemoValida(email: string, password: string) {
+  const valueEmail = email.trim().toLowerCase()
+  return demoUsers.some((u) => u.email.toLowerCase() === valueEmail && u.password === password)
+}
+
 export function iniciarDemoSesion(email: string, password: string) {
   const usuario = demoUsers.find((u) => u.email.toLowerCase() === email.trim().toLowerCase() && u.password === password)
   if (!usuario) return null
