@@ -143,22 +143,62 @@ Incluye principios como:
 
 La UI se diseñó para una persona que puede estar usando el celular con urgencia o estrés. Por eso la navegación busca ser fluida, clara y directa.
 
-## Capturas del flujo
+## Capturas del flujo y explicación visual
 
-La app cuenta con varias pantallas clave que muestran la idea del producto. En esta carpeta se pueden dejar organizadas las capturas reales:
+Estas pantallas muestran cómo se ve el producto en la práctica y cómo está pensado para cada tipo de usuario.
 
-- [docs/screenshots/README.md](docs/screenshots/README.md)
+### Landing y experiencia principal
 
-Se recomienda guardar imágenes como:
+<p align="center">
+  <img src="./docs/screenshots/home-claro.png" alt="Home claro de BullyBlock" width="48%" />
+  <img src="./docs/screenshots/home-oscuro.png" alt="Home oscuro de BullyBlock" width="48%" />
+</p>
 
-- home-dark.png
-- home-light.png
-- login.png
-- inicio-estudiante.png
-- reporte.png
-- detalle-caso.png
-- panel-psicorientacion.png
-- estadisticas.png
+La primera impresión se construye con un diseño limpio, serio y empático. La app presenta una promesa clara: hay un lugar para decir lo que pasó, sin miedo y con apoyo real.
+
+### Estudiante: ayuda, flujo y reportes
+
+<p align="center">
+  <img src="./docs/screenshots/ayuda-estudiante.png" alt="Pantalla de ayuda para estudiante" width="31%" />
+  <img src="./docs/screenshots/registro-situacion.png" alt="Registro de situación" width="31%" />
+  <img src="./docs/screenshots/reportes-estudiante.png" alt="Mis reportes del estudiante" width="31%" />
+</p>
+
+Desde el punto de vista del estudiante, la app busca ser clara y no abrumadora. Tiene un flujo de ayuda, un paso para describir el problema y una vista de reportes para que la persona vea qué pasó y en qué estado quedó su caso.
+
+### Docente: seguimiento y estadísticas
+
+<p align="center">
+  <img src="./docs/screenshots/panel-docente.png" alt="Panel docente" width="48%" />
+  <img src="./docs/screenshots/estadisticas-docente.png" alt="Estadísticas para docente" width="48%" />
+</p>
+
+El docente puede consultar casos, revisar el estado de los reportes y mirar tendencias o indicadores útiles para apoyar a la comunidad escolar. La idea es que no sea un tablero pesado, sino una vista funcional, ordenada y útil.
+
+### Psicorientación: atención, respuesta y asignación
+
+<p align="center">
+  <img src="./docs/screenshots/panel-psicorientador.png" alt="Panel de psicorientación" width="100%" />
+</p>
+
+Este flujo muestra la parte más sensible del sistema: orientación entra a responder, prioriza la atención, puede asignar al docente o al psicorientador correcto y da un acompañamiento más humano al caso.
+
+### Admin: supervisión y métricas institucionales
+
+<p align="center">
+  <img src="./docs/screenshots/panel-admin.png" alt="Panel administrativo" width="48%" />
+  <img src="./docs/screenshots/estadisticas-admin.png" alt="Estadísticas del administrador" width="48%" />
+</p>
+
+La administración puede ver la operación general del sistema, revisar el estado de los reportes y tener una visión global. Esto ayuda a mantener todo más ordenado y a tomar decisiones con criterio.
+
+### Alerta de riesgo y mensajes del estudiante
+
+<p align="center">
+  <img src="./docs/screenshots/peligro-mensaje-estudiante.png" alt="Pantalla de peligro o mensaje crítico del estudiante" width="48%" />
+</p>
+
+También hay una vista de emergencia o riesgo, donde se pone atención a mensajes que requieren prioridad, acompañamiento urgente o seguimiento más cercano.
 
 ## Stack tecnológico
 
