@@ -15,30 +15,49 @@ const navItems = [
 
 const pasos = [
   {
-    title: '1. Hablas',
-    text: 'Sin presión. Sin juicio. Sin fingir que estás bien.',
+    title: '1. Abres la app',
+    text: 'Entrás al espacio de ayuda con calma y sin presión.',
   },
   {
-    title: '2. Escuchamos',
-    text: 'Te escuchamos desde el primer mensaje, con calma.',
+    title: '2. Escribes lo que sientes',
+    text: 'Compartís tu situación de forma segura y respetuosa.',
   },
   {
-    title: '3. Acompañamos',
-    text: 'Te acompañamos sin dejarte solo en lo que sientes.',
+    title: '3. Te acompañamos',
+    text: 'Recibís escucha real, apoyo y seguimiento cuando lo necesitas.',
   },
 ]
 
 const beneficios = [
-  { title: 'Escucha', text: 'Te entienden desde el primer momento.' },
-  { title: 'Seguridad', text: 'Hablas con calma y sin presión.' },
-  { title: 'Apoyo', text: 'Te acompañamos cuando más lo necesitas.' },
-  { title: 'Porque importas', text: 'Tu bienestar merece cuidado real.' },
+  {
+    title: 'Registro seguro',
+    text: 'La app permite reportar con calma desde una cuenta escolar y un acceso controlado.',
+  },
+  {
+    title: 'Confidencialidad',
+    text: 'Los datos entran a la plataforma escolar, no se publican ni se usan para marketing.',
+  },
+  {
+    title: 'Acompañamiento real',
+    text: 'Orientación, docentes y directivos reciben la información necesaria para apoyar al estudiante.',
+  },
+  {
+    title: 'Riesgo y seguimiento',
+    text: 'Se puede hacer seguimiento del caso para actuar con rapidez y acompañamiento serio.',
+  },
+]
+
+const privacidad = [
+  'Los reportes quedan dentro de la plataforma escolar y solo los ve el equipo autorizado por la institución.',
+  'No se comparten datos con terceros ni con el resto de la comunidad estudiantil.',
+  'Se usan para atender la situación, apoyar al estudiante y mejorar la convivencia escolar.',
+  'Puedes solicitar conocer, corregir o eliminar tu información conforme a la normativa vigente.',
 ]
 
 const creadores = [
   {
     nombre: 'Andrés Felipe Castro Vergara',
-   universidad: 'Institución Educativa Técnica José Agustín Blanco Barros',
+    universidad: 'Institución Educativa Técnica José Agustín Blanco Barros',
     iniciales: 'AC',
   },
   {
@@ -53,10 +72,17 @@ const creadores = [
   },
 ]
 
-const fotoGrupo = 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80'
-
-const fondoEstudiante =
-  'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1000&q=80'
+const logoColegio = '/landing/logo%20instittucion.jpeg'
+const institucion = {
+  iniciales: 'IEJABB',
+  nombre: 'Institución Educativa José Agustín Blanco Barros',
+}
+const fotoGrupo = '/landing/foto%20del%20creadores.jpeg'
+const fondoEstudiante = '/landing/inicio%20foto.jpeg'
+const fotoHablar = '/landing/compartiendo.jpeg'
+const fotoEscuchar = '/landing/escuchar.jpeg'
+const fotoAcompañar = '/landing/jugando.jpeg'
+const fotoApp = '/landing/mirando%20la%20app.jpeg'
 
 export default function Bienvenida() {
   const { session, perfil, cargando } = useAuth()
@@ -76,15 +102,26 @@ export default function Bienvenida() {
         }}
       >
       <div className="mx-auto max-w-7xl">
-        <header className="relative z-20">
+        <header className="sticky top-3 z-30 pb-3">
           <div className="rounded-[28px] border border-[var(--borde)] bg-[var(--superficie)]/90 px-3 py-3 shadow-[0_18px_48px_rgba(14,27,41,0.08)] backdrop-blur-xl md:px-5">
             <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--borde)] bg-[var(--brand-navy)] shadow-[0_10px_24px_rgba(14,27,41,0.2)]">
-                  <Escudo size={28} />
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[var(--borde)] bg-[var(--superficie)] shadow-[0_10px_24px_rgba(14,27,41,0.08)] sm:h-14 sm:w-14">
+                  <Escudo size={32} />
                 </div>
-                <div>
-                  <Marca className="text-lg text-[var(--texto-principal)] sm:text-xl" />
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border border-[var(--borde)] bg-[var(--superficie-alt)] shadow-[0_10px_24px_rgba(14,27,41,0.18)] sm:h-14 sm:w-14">
+                  <img src={logoColegio} alt="Logo de la institución" className="h-full w-full object-cover" />
+                </div>
+                <div className="flex flex-col leading-none text-[var(--texto-principal)]">
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg font-black tracking-[-0.04em] sm:text-xl">BullyBlock</span>
+                    <span className="rounded-full border border-[var(--borde)] bg-[var(--superficie-alt)] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-[0.2em] text-[var(--texto-principal)]">
+                      {institucion.iniciales}
+                    </span>
+                  </div>
+                  <span className="mt-1 text-[8px] font-medium uppercase tracking-[0.18em] text-[var(--texto-secundario)] sm:text-[9px]">
+                    {institucion.nombre}
+                  </span>
                 </div>
               </div>
 
@@ -149,28 +186,30 @@ export default function Bienvenida() {
         </header>
 
         <main className="mt-6">
-          <section className="relative overflow-hidden rounded-[38px] border px-5 py-8 shadow-[0_30px_80px_rgba(15,23,42,0.12)] ring-1 md:px-10 md:py-10" style={{ borderColor: 'var(--borde)', background: 'var(--superficie)' }}>
-            <div className="pointer-events-none absolute -left-12 bottom-8 h-28 w-28 rounded-full bg-[#6366f1]/15 blur-2xl" />
-            <div className="pointer-events-none absolute -right-12 top-14 h-36 w-36 rounded-full bg-[#6366f1]/15 blur-3xl" />
-            <div className="pointer-events-none absolute right-16 top-1/3 h-12 w-12 rounded-full bg-[#6366f1]/40" />
+          <section className="relative overflow-hidden rounded-[32px] border border-[var(--borde)] bg-[linear-gradient(180deg,var(--superficie)_0%,var(--superficie-alt)_100%)] px-5 py-8 shadow-[0_30px_80px_rgba(15,23,42,0.12)] md:px-8 md:py-8">
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.06),_transparent_32%)]" />
+            <div className="pointer-events-none absolute -left-8 bottom-8 h-28 w-28 rounded-full bg-[#6366f1]/10 blur-2xl" />
+            <div className="pointer-events-none absolute right-14 top-10 h-20 w-20 rounded-full bg-[#60a5fa]/10 blur-2xl" />
 
-            <div className="relative grid items-center gap-8 lg:grid-cols-[1.04fr_0.96fr]">
-              <div className="max-w-xl text-center lg:text-left">
-                <p className="inline-flex rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] md:text-[11px] texto-principal" style={{ borderColor: 'var(--borde)', background: 'var(--superficie-alt)' }}>
+            <div className="relative grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+              <div className="max-w-xl text-left">
+                <p className="inline-flex rounded-full border border-[var(--borde)] bg-[var(--superficie-alt)] px-3 py-1 text-[10px] font-bold uppercase tracking-[0.22em] text-[var(--texto-principal)]">
                   Momento 0 · apoyo real
                 </p>
 
-                <h1 className="hero-title mt-4 texto-principal">
-                  Hay un lugar para decirlo
-                  <span className="block texto-principal">sin miedo ni ruido</span>
-                  <span className="block" style={{ color: 'var(--brand-green)' }}>Porque importas</span>
+                <h1 className="mt-4 text-[3.1rem] font-black leading-[0.9] tracking-[-0.06em] text-[var(--texto-principal)] md:text-[5.1rem]">
+                  Hay un lugar
+                  <span className="block">para decirlo</span>
+                  <span className="block">sin miedo</span>
+                  <span className="block">ni ruido</span>
+                  <span className="mt-2 block text-[var(--brand-green)]">Porque importas</span>
                 </h1>
 
-                <p className="mt-4 max-w-lg texto-secundario sm:text-base md:text-lg">
+                <p className="mt-4 max-w-lg text-base text-[var(--texto-secundario)] md:text-lg">
                   Habla con calma. Te escuchamos con respeto y apoyo real.
                 </p>
 
-                <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
+                <div className="mt-6 flex flex-col items-start gap-3 sm:flex-row">
                   <Link
                     to="/registro"
                     className="inline-flex min-h-[52px] items-center justify-center rounded-2xl bg-[var(--brand-green)] px-6 text-sm font-bold text-white shadow-[0_16px_30px_rgba(27,180,76,0.18)] transition hover:-translate-y-0.5 hover:bg-[var(--theme-button-hover)] sm:text-base"
@@ -184,37 +223,22 @@ export default function Bienvenida() {
                     Cómo te acompañamos
                   </a>
                 </div>
-
-                <div className="mt-6 flex flex-wrap items-center justify-center gap-2 lg:justify-start">
-                  {['Sin miedo', 'Con calma', 'Te escuchamos con respeto'].map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border px-3 py-1.5 text-[11px] font-semibold texto-principal"
-                      style={{ borderColor: 'var(--borde)', background: 'var(--superficie-alt)' }}
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
               </div>
 
-              <div className="relative mx-auto flex w-full max-w-[540px] items-center justify-center">
-                <div className="absolute left-0 top-10 h-20 w-20 rounded-full bg-[#6366f1]/20" />
-                <div className="absolute bottom-6 right-2 h-16 w-16 rounded-full bg-[#60a5fa]/25" />
-                <div className="absolute right-10 top-8 h-12 w-12 rounded-full bg-[#c7d2fe]/30" />
-
-                <div className="relative w-full max-w-[500px] rounded-[38px] bg-[linear-gradient(135deg,#1d4ed8_0%,#312e81_50%,#111827_100%)] p-4 shadow-[0_24px_70px_rgba(49,46,129,0.5)]">
-                  <div className="relative overflow-hidden rounded-[32px] border border-white/20 bg-[#0f172a]/50 p-4 backdrop-blur-sm">
+              <div className="relative mx-auto flex w-full max-w-[520px] items-center justify-center">
+                <div className="absolute right-0 top-8 h-10 w-10 rounded-full bg-[#6366f1]/20 shadow-[0_0_18px_rgba(99,102,241,0.18)]" />
+                <div className="relative w-full overflow-hidden rounded-[30px] border border-[var(--borde)] bg-[linear-gradient(135deg,#1d4ed8_0%,#312e81_50%,#111827_100%)] p-4 shadow-[0_24px_70px_rgba(49,46,129,0.18)]">
+                  <div className="relative overflow-hidden rounded-[26px] border border-white/10 bg-[#0c2c48] p-4">
                     <div className="mb-4 flex items-center justify-between">
                       <div className="flex gap-2">
-                        <span className="h-2.5 w-2.5 rounded-full bg-[var(--texto-secundario)]/80" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-[var(--texto-secundario)]/80" />
-                        <span className="h-2.5 w-2.5 rounded-full bg-[var(--texto-secundario)]/80" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-white/70" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-white/70" />
+                        <span className="h-2.5 w-2.5 rounded-full bg-white/70" />
                       </div>
-                      <div className="h-8 w-8 rounded-full bg-[#6366f1]" />
+                      <div className="h-7 w-7 rounded-full bg-[#8b5cf6]" />
                     </div>
 
-                    <div className="relative mx-auto h-[360px] w-full overflow-hidden rounded-[30%_70%_55%_45%/42%_48%_52%_58%] bg-gradient-to-br from-[#cfe0ff] via-[#eff6ff] to-[#dbeafe] shadow-inner">
+                    <div className="relative mx-auto aspect-[4/3] w-full max-w-[420px] overflow-hidden rounded-[30px] bg-[radial-gradient(circle_at_35%_25%,rgba(255,255,255,0.8),rgba(240,234,214,1)_30%,rgba(238,227,205,1)_52%,rgba(252,250,245,1)_100%)] shadow-inner sm:max-w-[440px] md:max-w-[470px] lg:max-w-[440px]">
                       <img
                         src={fondoEstudiante}
                         alt="Estudiante recibiendo apoyo"
@@ -222,14 +246,9 @@ export default function Bienvenida() {
                       />
                     </div>
 
-                    <div className="mt-5 flex items-center justify-between gap-3 rounded-[22px] border border-white/10 bg-[#0f172a]/70 p-3 backdrop-blur-sm">
-                      <div>
-                        <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#a5b4fc]">Porque importas</p>
-                        <p className="mt-1 text-sm font-semibold text-[var(--texto-inverso)]">Te escuchamos desde el primer momento</p>
-                      </div>
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#171d2d] text-[#facc15] font-black">
-                        ♥
-                      </div>
+                    <div className="mt-4 rounded-[18px] border border-white/10 bg-[#0b1d30]/80 p-3">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-sky-200">Porque importas</p>
+                      <p className="mt-1 text-sm font-semibold text-white">Te escuchamos desde el primer momento</p>
                     </div>
                   </div>
                 </div>
@@ -239,41 +258,28 @@ export default function Bienvenida() {
 
           <section id="casos" className="mt-8 px-1 md:px-2">
             <div className="mx-auto max-w-6xl">
-              <div className="mb-5 text-center">
+              <div className="mb-4 text-center">
                 <p className="ragikon-word text-[0.7rem] uppercase tracking-[0.2em] text-[var(--texto-secundario)] md:text-sm">Apoyo</p>
-                <h2 className="ragikon-word mt-3 text-[1.7rem] text-[var(--texto-principal)] sm:text-[2.2rem] md:text-[3rem]">
+                <h2 className="ragikon-word mt-2 text-[1.5rem] text-[var(--texto-principal)] sm:text-[2rem] md:text-[2.4rem]">
                   Hablar. Escuchar. Acompañar.
                 </h2>
               </div>
 
-              <div className="grid gap-4 md:grid-cols-3">
+              <div className="grid gap-3 sm:grid-cols-3">
                 {[
-                  {
-                    title: 'Hablar',
-                    text: 'A veces lo más difícil es decirlo en voz alta, y eso ya cuenta como un paso.',
-                    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80',
-                  },
-                  {
-                    title: 'Escuchar',
-                    text: 'Una escucha real puede cambiarte el día, la semana o incluso más.',
-                    image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80',
-                  },
-                  {
-                    title: 'Acompañar',
-                    text: 'No te toca cargarlo todo solo; aquí hay apoyo cuando más lo necesitas.',
-                    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80',
-                  },
+                  { title: 'Hablar', image: fotoHablar },
+                  { title: 'Escuchar', image: fotoEscuchar },
+                  { title: 'Acompañar', image: fotoAcompañar },
                 ].map((item) => (
                   <article
                     key={item.title}
-                    className="overflow-hidden rounded-[26px] border border-[var(--borde)] bg-[var(--superficie)] shadow-[0_18px_36px_rgba(14,27,41,0.06)] backdrop-blur-sm"
+                    className="overflow-hidden rounded-[22px] border border-[var(--borde)] bg-[var(--superficie)] shadow-[0_12px_24px_rgba(14,27,41,0.06)]"
                   >
-                    <div className="h-48 overflow-hidden border-b border-[var(--borde)] bg-[var(--superficie-alt)]">
+                    <div className="h-40 overflow-hidden border-b border-[var(--borde)] bg-[var(--superficie-alt)] md:h-48">
                       <img src={item.image} alt={item.title} className="h-full w-full object-cover" />
                     </div>
-                    <div className="p-4 md:p-5">
-                      <h3 className="text-lg font-bold text-[var(--texto-principal)]">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-[var(--texto-secundario)]">{item.text}</p>
+                    <div className="px-3 py-3">
+                      <h3 className="text-base font-bold text-[var(--texto-principal)]">{item.title}</h3>
                     </div>
                   </article>
                 ))}
@@ -281,137 +287,120 @@ export default function Bienvenida() {
             </div>
           </section>
 
-          <section id="como-funciona" className="mt-8 px-1 md:px-2">
-            <div className="mx-auto max-w-5xl text-center">
-              <p className="ragikon-word text-[0.7rem] uppercase tracking-[0.2em] text-[var(--texto-secundario)] md:text-sm">Cómo funciona</p>
-              <h2 className="ragikon-word mt-3 text-[1.8rem] text-[var(--texto-principal)] sm:text-[2.2rem] md:text-[3rem]">
-                Así empieza a sentirse mejor
-              </h2>
-            </div>
-
-            <div className="mx-auto mt-6 grid max-w-6xl gap-4 md:grid-cols-3">
-              {pasos.map((paso, index) => (
-                <article
-                  key={paso.title}
-                  className="rounded-[24px] border border-[var(--borde)] bg-[var(--superficie)] p-4 shadow-[0_14px_28px_rgba(14,27,41,0.04)] md:p-5"
-                >
-                  <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-[var(--superficie-alt)] text-base font-black text-[var(--texto-principal)]">
-                    {index + 1}
-                  </div>
-                  <h3 className="text-base font-bold text-[var(--texto-principal)] md:text-lg">{paso.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-[var(--texto-secundario)]">{paso.text}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section id="beneficios" className="mt-10 rounded-[28px] border border-[var(--borde)] bg-[var(--superficie)]/80 px-4 py-8 backdrop-blur-sm md:px-8 md:py-10">
-            <div className="mx-auto max-w-6xl text-center">
-              <p className="ragikon-word text-[0.7rem] uppercase tracking-[0.2em] text-[var(--texto-secundario)] md:text-sm">Lo que aquí sientes</p>
-              <h2 className="ragikon-word mt-3 text-[1.7rem] text-[var(--texto-principal)] sm:text-[2.1rem] md:text-[2.8rem]">
-                Seguridad, calma y apoyo real
-              </h2>
-            </div>
-
-            <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-              {beneficios.map((beneficio) => (
-                <article
-                  key={beneficio.title}
-                  className="rounded-[22px] bg-[var(--superficie)] p-4 shadow-[0_12px_24px_rgba(14,27,41,0.04)] ring-1 ring-[var(--borde)] transition hover:-translate-y-1 hover:shadow-[0_18px_32px_rgba(14,27,41,0.08)]"
-                >
-                  <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-2xl bg-[var(--superficie-alt)] text-base font-black text-[var(--texto-principal)]">
-                    ✓
-                  </div>
-                  <h3 className="text-base font-bold text-[var(--texto-principal)]">{beneficio.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-[var(--texto-secundario)]">{beneficio.text}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section id="privacidad" className="mt-10 bg-transparent px-1 pb-8 md:px-2">
-            <div className="mx-auto grid max-w-6xl gap-5 rounded-[28px] border border-[var(--borde)] bg-[var(--superficie)] p-5 shadow-[0_18px_32px_rgba(14,27,41,0.05)] md:grid-cols-[1fr_1.08fr] md:p-8">
-              <div>
-                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--texto-secundario)]">Confianza</p>
-                <h2 className="ragikon-word mt-3 text-[1.6rem] text-[var(--texto-principal)] sm:text-[2rem] md:text-[2.7rem]">
-                  Tu historia vive en un lugar seguro
-                </h2>
-                <p className="mt-3 text-sm leading-6 text-[var(--texto-secundario)] md:text-base">
-                  Aquí se cuida tu información, se respeta tu voz y se protege tu bienestar desde el primer momento.
-                </p>
+          <section id="como-funciona" className="mt-7 px-1 md:px-2">
+            <div className="mx-auto max-w-6xl">
+              <div className="mb-4 text-center">
+                <p className="ragikon-word text-[0.7rem] uppercase tracking-[0.2em] text-[var(--texto-secundario)] md:text-sm">Cómo usar la app</p>
               </div>
 
-              <div className="grid gap-3 sm:grid-cols-2">
-                {[
-                  ['Confianza', 'Tu información se cuida con respeto y discreción.'],
-                  ['Acompañamiento', 'No te dejan solo en lo que sientes ni en lo que necesitas.'],
-                  ['Respeto', 'Se escucha sin juzgar y sin poner barreras.'],
-                  ['Seguridad', 'Hay un camino claro para pedir ayuda y seguir adelante.'],
-                ].map(([title, text]) => (
-                  <div key={title} className="rounded-[20px] bg-[var(--superficie-alt)] p-4 shadow-sm ring-1 ring-[var(--borde)]">
-                    <h3 className="text-base font-bold text-[var(--texto-principal)]">{title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-[var(--texto-secundario)]">{text}</p>
-                  </div>
+              <div className="mb-5 flex justify-center overflow-hidden rounded-[28px] border border-[var(--borde)] bg-[var(--superficie)] p-2 shadow-[0_18px_32px_rgba(14,27,41,0.05)] md:p-3">
+                <img
+                  src="/docs/screenshots/mobile-demo.gif"
+                  alt="Demo móvil de BullyBlock"
+                  className="mx-auto w-full max-w-[420px] rounded-[22px] object-contain object-center shadow-[0_12px_28px_rgba(14,27,41,0.08)] sm:max-w-[440px] md:max-w-[460px]"
+                />
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-3">
+                {pasos.map((paso, index) => (
+                  <article
+                    key={paso.title}
+                    className="rounded-[20px] border border-[var(--borde)] bg-[var(--superficie)] p-3 shadow-[0_10px_20px_rgba(14,27,41,0.04)]"
+                  >
+                    <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--superficie-alt)] text-sm font-black text-[var(--texto-principal)]">
+                      {index + 1}
+                    </div>
+                    <h3 className="text-sm font-bold text-[var(--texto-principal)]">{paso.title}</h3>
+                    <p className="mt-1 text-xs leading-5 text-[var(--texto-secundario)]">{paso.text}</p>
+                  </article>
                 ))}
+              </div>
+            </div>
+          </section>
+
+          <section id="beneficios" className="mt-7 px-1 md:px-2">
+            <div className="mx-auto max-w-6xl">
+              <div className="mb-4 text-center">
+                <p className="ragikon-word text-[0.7rem] uppercase tracking-[0.2em] text-[var(--texto-secundario)] md:text-sm">Beneficios</p>
+                <h2 className="ragikon-word mt-2 text-[1.5rem] text-[var(--texto-principal)] sm:text-[2rem] md:text-[2.4rem]">
+                  Una respuesta clara, segura y humana.
+                </h2>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                {beneficios.map((beneficio, index) => (
+                  <article
+                    key={beneficio.title}
+                    className="rounded-[22px] border border-[var(--borde)] bg-[var(--superficie)] p-4 shadow-[0_12px_24px_rgba(14,27,41,0.05)]"
+                  >
+                    <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--superficie-alt)] text-sm font-black text-[var(--texto-principal)]">
+                      {index + 1}
+                    </div>
+                    <h3 className="text-base font-bold text-[var(--texto-principal)]">{beneficio.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-[var(--texto-secundario)]">{beneficio.text}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section id="privacidad" className="mt-7 px-1 md:px-2">
+            <div className="mx-auto max-w-6xl overflow-hidden rounded-[26px] border border-[var(--borde)] bg-[var(--superficie)] p-4 shadow-[0_18px_32px_rgba(14,27,41,0.05)] md:p-6">
+              <div className="mb-4 text-center">
+                <p className="ragikon-word text-[0.7rem] uppercase tracking-[0.2em] text-[var(--texto-secundario)] md:text-sm">Privacidad</p>
+                <h2 className="ragikon-word mt-2 text-[1.5rem] text-[var(--texto-principal)] sm:text-[2rem] md:text-[2.4rem]">
+                  Tus datos se tratan con cuidado.
+                </h2>
+              </div>
+
+              <div className="grid gap-3 md:grid-cols-2">
+                <div className="rounded-[22px] border border-[var(--borde)] bg-[var(--superficie-alt)] p-4">
+                  <p className="text-sm leading-7 text-[var(--texto-secundario)]">
+                    BullyBlock es una herramienta escolar para prevenir y comunicar situaciones de bullying con
+                    respeto, acompañamiento y respaldo institucional.
+                  </p>
+                  <p className="mt-3 text-sm leading-7 text-[var(--texto-secundario)]">
+                    Los datos de registro y los reportes se almacenan en la plataforma de la institución para apoyar
+                    al estudiante y al equipo de orientación. No se usan para publicidad ni se comparten con terceros.
+                  </p>
+                </div>
+
+                <div className="rounded-[22px] border border-[var(--borde)] bg-[var(--superficie-alt)] p-4">
+                  <ul className="space-y-3 text-sm leading-6 text-[var(--texto-principal)]">
+                    {privacidad.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--brand-green)] text-[10px] font-black text-white">
+                          ✓
+                        </span>
+                        <span className="text-[var(--texto-secundario)]">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </section>
         </main>
 
-        <section className="mt-10 px-1 md:px-2">
-          <div className="mx-auto max-w-6xl rounded-[30px] border border-[var(--borde)] bg-[var(--superficie)] px-4 py-6 shadow-[0_24px_60px_rgba(14,27,41,0.05)] backdrop-blur-md md:px-7 md:py-8">
-            <div className="mb-5 text-center md:text-left">
-              <p className="ragikon-word text-[0.7rem] uppercase tracking-[0.2em] text-[var(--texto-secundario)] md:text-sm">Esto es para todos</p>
-              <h2 className="ragikon-word mt-3 text-[1.5rem] text-[var(--texto-principal)] sm:text-[1.8rem] md:text-[2.4rem]">
-                Acompañamiento humano, claro y cercano
-              </h2>
-            </div>
+        <section className="mt-7 px-1 md:px-2">
+          <div className="mx-auto max-w-6xl overflow-hidden rounded-[26px] border border-[var(--borde)] bg-[var(--superficie)] p-3 shadow-[0_18px_32px_rgba(14,27,41,0.05)]">
+            <img
+              src={fotoGrupo}
+              alt="Equipo de trabajo del proyecto"
+              className="h-[260px] w-full rounded-[18px] object-cover object-[center_20%] sm:h-[320px] lg:h-[420px]"
+            />
 
-            <div className="grid gap-4 md:grid-cols-3">
-              {[
-                ['Escucha', 'Porque cada persona merece que la entiendan sin juzgarla.'],
-                ['Seguridad', 'Porque hablar sin miedo debería ser siempre posible.'],
-                ['Acompañamiento', 'Porque nadie debe atravesar un problema solo.'],
-              ].map(([titulo, texto]) => (
-                <div key={titulo} className="rounded-[22px] border border-[var(--borde)] bg-[var(--superficie-alt)] p-4 text-left shadow-[0_12px_24px_rgba(14,27,41,0.04)]">
-                  <h3 className="text-base font-bold text-[var(--texto-principal)]">{titulo}</h3>
-                  <p className="mt-2 text-sm leading-6 text-[var(--texto-secundario)]">{texto}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="mt-10 px-1 md:px-2">
-          <div className="mx-auto max-w-6xl rounded-[30px] border border-[var(--borde)] bg-[var(--superficie)] px-4 py-7 shadow-[0_24px_60px_rgba(14,27,41,0.05)] backdrop-blur-md md:px-8 md:py-10">
-            <div className="mb-6 text-center md:text-left">
-              <p className="ragikon-word text-[0.7rem] uppercase tracking-[0.2em] text-[var(--texto-secundario)] md:text-sm">Creadores</p>
-              <h2 className="ragikon-word mt-3 text-[1.7rem] text-[var(--texto-principal)] sm:text-[2.1rem] md:text-[2.8rem]">
-                Jóvenes soñadores de un mundo mejor
-              </h2>
-            </div>
-
-            <div className="mb-5 overflow-hidden rounded-[28px] border border-[var(--borde)] bg-[var(--superficie-alt)] shadow-[0_16px_28px_rgba(14,27,41,0.04)]">
-              <img src={fotoGrupo} alt="Equipo de trabajo del proyecto" className="h-56 w-full object-cover md:h-72" />
-            </div>
-
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="mt-3 grid gap-2 sm:grid-cols-3">
               {creadores.map((creador) => (
-                <article
+                <div
                   key={creador.nombre}
-                  className="group flex h-full flex-col items-center gap-4 rounded-[28px] border border-[var(--borde)] bg-[var(--superficie-alt)] p-4 text-center shadow-[0_16px_28px_rgba(14,27,41,0.04)] transition duration-300 hover:bg-[var(--superficie)] md:items-start md:text-left"
+                  className="rounded-[18px] border border-[var(--borde)] bg-[var(--superficie-alt)] px-3 py-3 text-left"
                 >
-                  <div className="flex w-full items-center justify-center md:justify-start">
-                    <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-[24px] border border-[var(--borde)] bg-[linear-gradient(135deg,var(--superficie-alt),var(--superficie))] text-lg font-black text-[var(--texto-principal)] shadow-[0_12px_24px_rgba(14,27,41,0.08)] md:h-24 md:w-24">
-                      {creador.iniciales}
-                    </div>
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--superficie)] text-[10px] font-black text-[var(--texto-principal)] ring-1 ring-[var(--borde)]">
+                    {creador.iniciales}
                   </div>
-
-                  <div className="w-full">
-                    <h3 className="text-xl font-extrabold tracking-[-0.04em] text-[var(--texto-principal)]">{creador.nombre}</h3>
-                    <p className="mt-3 text-sm leading-6 text-[var(--texto-secundario)]">{creador.universidad}</p>
-                  </div>
-                </article>
+                  <p className="mt-2 text-sm font-bold leading-5 text-[var(--texto-principal)]">{creador.nombre}</p>
+                </div>
               ))}
             </div>
           </div>
