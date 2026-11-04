@@ -4,6 +4,7 @@ import Escudo, { Marca } from '../components/Escudo'
 import { Cargando } from '../components/ui'
 import { useAuth } from '../lib/auth'
 import { rutaPorRol } from '../lib/types'
+import mobileDemo from '../../docs/screenshots/mobile-demo.gif'
 
 const navItems = [
   { label: 'Inicio', href: '#inicio' },
@@ -295,7 +296,7 @@ export default function Bienvenida() {
 
               <div className="mb-5 flex justify-center overflow-hidden rounded-[28px] border border-[var(--borde)] bg-[var(--superficie)] p-2 shadow-[0_18px_32px_rgba(14,27,41,0.05)] md:p-3">
                 <img
-                  src="/docs/screenshots/mobile-demo.gif"
+                  src={mobileDemo}
                   alt="Demo móvil de BullyBlock"
                   className="mx-auto w-full max-w-[420px] rounded-[22px] object-contain object-center shadow-[0_12px_28px_rgba(14,27,41,0.08)] sm:max-w-[440px] md:max-w-[460px]"
                 />
