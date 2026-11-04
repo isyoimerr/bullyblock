@@ -302,14 +302,11 @@ export default function Bienvenida() {
               </div>
 
               <div className="grid gap-3 sm:grid-cols-3">
-                {pasos.map((paso, index) => (
+                {pasos.map((paso) => (
                   <article
                     key={paso.title}
                     className="rounded-[20px] border border-[var(--borde)] bg-[var(--superficie)] p-3 shadow-[0_10px_20px_rgba(14,27,41,0.04)]"
                   >
-                    <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--superficie-alt)] text-sm font-black text-[var(--texto-principal)]">
-                      {index + 1}
-                    </div>
                     <h3 className="text-sm font-bold text-[var(--texto-principal)]">{paso.title}</h3>
                     <p className="mt-1 text-xs leading-5 text-[var(--texto-secundario)]">{paso.text}</p>
                   </article>
@@ -345,38 +342,17 @@ export default function Bienvenida() {
           </section>
 
           <section id="privacidad" className="mt-7 px-1 md:px-2">
-            <div className="mx-auto max-w-6xl overflow-hidden rounded-[26px] border border-[var(--borde)] bg-[var(--superficie)] p-4 shadow-[0_18px_32px_rgba(14,27,41,0.05)] md:p-6">
-              <div className="mb-4 text-center">
+            <div className="mx-auto max-w-6xl overflow-hidden rounded-[26px] border border-[var(--borde)] bg-[var(--superficie)] p-4 shadow-[0_18px_32px_rgba(14,27,41,0.05)] md:p-5">
+              <div className="mb-3 text-center">
                 <p className="ragikon-word text-[0.7rem] uppercase tracking-[0.2em] text-[var(--texto-secundario)] md:text-sm">Privacidad</p>
-                <h2 className="ragikon-word mt-2 text-[1.5rem] text-[var(--texto-principal)] sm:text-[2rem] md:text-[2.4rem]">
-                  Tus datos se tratan con cuidado.
-                </h2>
               </div>
 
-              <div className="grid gap-3 md:grid-cols-2">
-                <div className="rounded-[22px] border border-[var(--borde)] bg-[var(--superficie-alt)] p-4">
-                  <p className="text-sm leading-7 text-[var(--texto-secundario)]">
-                    BullyBlock es una herramienta escolar para prevenir y comunicar situaciones de bullying con
-                    respeto, acompañamiento y respaldo institucional.
-                  </p>
-                  <p className="mt-3 text-sm leading-7 text-[var(--texto-secundario)]">
-                    Los datos de registro y los reportes se almacenan en la plataforma de la institución para apoyar
-                    al estudiante y al equipo de orientación. No se usan para publicidad ni se comparten con terceros.
-                  </p>
-                </div>
-
-                <div className="rounded-[22px] border border-[var(--borde)] bg-[var(--superficie-alt)] p-4">
-                  <ul className="space-y-3 text-sm leading-6 text-[var(--texto-principal)]">
-                    {privacidad.map((item) => (
-                      <li key={item} className="flex gap-3">
-                        <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[var(--brand-green)] text-[10px] font-black text-white">
-                          ✓
-                        </span>
-                        <span className="text-[var(--texto-secundario)]">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="rounded-[20px] border border-[var(--borde)] bg-[var(--superficie-alt)] p-4">
+                <p className="text-sm leading-7 text-[var(--texto-secundario)]">
+                  BullyBlock usa la información solo para apoyar a estudiantes, docentes y orientación escolar.
+                  Los reportes quedan dentro de la plataforma institucional y solo los ve el equipo autorizado.
+                  No se usan para publicidad ni se comparten con terceros.
+                </p>
               </div>
             </div>
           </section>
@@ -384,6 +360,10 @@ export default function Bienvenida() {
 
         <section className="mt-7 px-1 md:px-2">
           <div className="mx-auto max-w-6xl overflow-hidden rounded-[26px] border border-[var(--borde)] bg-[var(--superficie)] p-3 shadow-[0_18px_32px_rgba(14,27,41,0.05)]">
+            <div className="mb-3 text-center">
+              <p className="ragikon-word text-[0.7rem] uppercase tracking-[0.2em] text-[var(--texto-secundario)] md:text-sm">Creadores</p>
+            </div>
+
             <img
               src={fotoGrupo}
               alt="Equipo de trabajo del proyecto"
